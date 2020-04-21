@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>0977d1b8-f8eb-4881-a091-634fb8f592cc</ProjectGuid>
+    <ProjectGuid>{0977D1B8-F8EB-4881-A091-634FB8F592CC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Persistencia</RootNamespace>
@@ -30,25 +30,32 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System"/>
-    
-    <Reference Include="System.Core"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="System.Data.DataSetExtensions"/>
-    
-    
-    <Reference Include="Microsoft.CSharp"/>
-    
-    <Reference Include="System.Data"/>
-    
-    <Reference Include="System.Net.Http"/>
-    
-    <Reference Include="System.Xml"/>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="clasesTrabajo\PersistenciaDocumentacion.cs" />
+    <Compile Include="clasesTrabajo\PersistenciaEmpleado.cs" />
+    <Compile Include="clasesTrabajo\PersistenciaExigen.cs" />
+    <Compile Include="clasesTrabajo\PersistenciaHorasExtra.cs" />
+    <Compile Include="clasesTrabajo\PersistenciaSolicitante.cs" />
+    <Compile Include="clasesTrabajo\PersistenciaSolicitud.cs" />
+    <Compile Include="clasesTrabajo\PersistenciaTramite.cs" />
+    <Compile Include="interfaces\IPersistenciaDocumentacion.cs" />
+    <Compile Include="interfaces\IPersistenciaEmpleado.cs" />
+    <Compile Include="interfaces\IPersistenciaHorasExtra.cs" />
+    <Compile Include="interfaces\IPersistenciaSolicitante.cs" />
+    <Compile Include="interfaces\IPersistenciaSolicitud.cs" />
+    <Compile Include="interfaces\IPersistenciaTramite.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
@@ -57,5 +64,4 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-
- </Project>
+</Project>

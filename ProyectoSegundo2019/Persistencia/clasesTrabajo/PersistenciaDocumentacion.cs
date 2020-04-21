@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Logica
+namespace Persistencia.clasesTrabajo
 {
-    public class Class1
+    class PersistenciaDocumentacion
     {
     }
 }
