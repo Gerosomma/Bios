@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using EntidadesCompartidas;
 
-namespace Persistencia.interfaces
+namespace Persistencia.Interfaces
 {
-    interface IPersistenciaHorasExtra
+    public interface IPersistenciaHorasExtra
     {
+        void AltaHoraExtra(EmpleadoHorasExtra hemp, Empleado empLog);
     }
 }
