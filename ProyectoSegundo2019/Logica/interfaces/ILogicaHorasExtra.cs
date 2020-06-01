@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EntidadesCompartidas;
 
-namespace Logica.interfaces
+namespace Logica.Interfaces
 {
-    interface ILogicaHorasExtra
+    public interface ILogicaHorasExtra
     {
+        void AltaHoraExtra(EmpleadoHorasExtra hemp, Empleado empLog);
     }
 }

@@ -4,9 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Logica.interfaces
+using EntidadesCompartidas;
+
+namespace Logica
 {
-    interface ILogicaDocumentacion
+    public interface ILogicaDocumentacion
     {
+        Documentacion BuscarDocumentacion(int codigoInterno);
+        Documentacion BuscarDocumentacionAux(int codigoInterno, Empleado empLog);
+        void AltaDocumentacion(Documentacion documentacion, Empleado empLog);
+        void ModificarDocumentacion(Documentacion documentacion, Empleado empLog);
+        void BajaDocumentacion(Documentacion documentacion, Empleado empLog);
+        List<Documentacion> listadoDocumentacion(Empleado empLog);
     }
 }

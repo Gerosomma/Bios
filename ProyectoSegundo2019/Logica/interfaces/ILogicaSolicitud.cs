@@ -3,10 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EntidadesCompartidas;
 
-namespace Logica.interfaces
+namespace Logica
 {
-    interface ILogicaSolicitud
+    public interface ILogicaSolicitud
     {
+        void AltaSolicitud(Solicitud solicitud, Usuario empLog);
+        List<Solicitud> listadoSolicitud(Usuario usLog);
+        Solicitud BuscarSolicitud(int documento, Usuario usLog);
+        void CambiarEstadoSolicitud(int solicitud, int accion, Empleado usLog);
     }
 }

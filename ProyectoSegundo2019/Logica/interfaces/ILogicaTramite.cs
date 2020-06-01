@@ -3,10 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EntidadesCompartidas;
+using System.Xml;
 
-namespace Logica.interfaces
+namespace Logica
 {
-    interface ILogicaTramite
+    public interface ILogicaTramite
     {
+        Tramite BuscarTramite(string codigoTramite, Usuario empLog);
+        void AltaTramite(Tramite tramite, Empleado empLog);
+        void ModificarTramite(Tramite tramite, Empleado empLog);
+        void BajaTramite(Tramite tramite, Empleado empLog);
+        List<Tramite> ListarTramites();
+        string listadoTramitesXml();
     }
 }
