@@ -47,6 +47,8 @@
     <Compile Include="clasesTrabajo\PersistenciaSolicitante.cs" />
     <Compile Include="clasesTrabajo\PersistenciaSolicitud.cs" />
     <Compile Include="clasesTrabajo\PersistenciaTramite.cs" />
+    <Compile Include="Conexion.cs" />
+    <Compile Include="FabricaPersistencia.cs" />
     <Compile Include="interfaces\IPersistenciaDocumentacion.cs" />
     <Compile Include="interfaces\IPersistenciaEmpleado.cs" />
     <Compile Include="interfaces\IPersistenciaHorasExtra.cs" />
@@ -55,7 +57,16 @@
     <Compile Include="interfaces\IPersistenciaTramite.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\EntidadesCompartidas\EntidadesCompartidas.csproj">
+      <Project>{b80b4d16-2441-4968-a147-9d49e78af3f3}</Project>
+      <Name>EntidadesCompartidas</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logica\Logica.csproj">
+      <Project>{b9a9a159-ab00-42c5-aec3-9097a474dcc8}</Project>
+      <Name>Logica</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -45,6 +45,7 @@
     <Compile Include="clasesTrabajo\LogicaSolicitud.cs" />
     <Compile Include="clasesTrabajo\LogicaTramite.cs" />
     <Compile Include="clasesTrabajo\LogicaUsuario.cs" />
+    <Compile Include="FabricaLogica.cs" />
     <Compile Include="interfaces\ILogicaDocumentacion.cs" />
     <Compile Include="interfaces\ILogicaHorasExtra.cs" />
     <Compile Include="interfaces\ILogicaSolicitud.cs" />

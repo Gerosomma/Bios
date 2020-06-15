@@ -13,8 +13,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistencia", "Persistenci
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MisControles", "MisControles\MisControles.csproj", "{47BF6469-8464-46F8-9D63-22F3182BEBBE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "winServiceTramites", "winServiceTramites\winServiceTramites.csproj", "{1DE9699C-A835-4E14-8BC4-E29FA6EF986C}"
-EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WebTramites", "WebTramites\", "{695D8838-24A4-41D6-A39E-C1A71C55DFCD}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
@@ -83,10 +81,6 @@ Global
 		{47BF6469-8464-46F8-9D63-22F3182BEBBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47BF6469-8464-46F8-9D63-22F3182BEBBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47BF6469-8464-46F8-9D63-22F3182BEBBE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1DE9699C-A835-4E14-8BC4-E29FA6EF986C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1DE9699C-A835-4E14-8BC4-E29FA6EF986C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1DE9699C-A835-4E14-8BC4-E29FA6EF986C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1DE9699C-A835-4E14-8BC4-E29FA6EF986C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{695D8838-24A4-41D6-A39E-C1A71C55DFCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{695D8838-24A4-41D6-A39E-C1A71C55DFCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{695D8838-24A4-41D6-A39E-C1A71C55DFCD}.Release|Any CPU.ActiveCfg = Debug|Any CPU
