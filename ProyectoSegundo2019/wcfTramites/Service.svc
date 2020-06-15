@@ -1,1 +1,152 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="Service" CodeBehind="~/App_Code/Service.cs" %>
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Service" CodeBehind="~/Service.svc" %>
+//using System;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Runtime.Serialization;
+//using System.ServiceModel;
+//using System.ServiceModel.Web;
+//using System.Text;
+//using System.Xml;
+//using EntidadesCompartidas;
+//using Logica;
+
+//public class Service : IService
+//{
+//    public Solicitante serz(Solicitante sol)
+//    {
+//        return sol;
+//    }
+
+//    public List<Documentacion> docSinc(List<Documentacion> lista)
+//    {
+//        return lista;
+//    }
+
+//    public Tramite tramSinc(Tramite t)
+//    {
+//        return t;
+//    }
+
+//    public Solicitud solSinc(Solicitud t)
+//    {
+//        return t;
+//    }
+
+//    public void AltaDocumentacion(Documentacion documentacion, Empleado empLog)
+//    {
+//        FabricaLogica.GetLogicaDocumentacion().AltaDocumentacion(documentacion, empLog);
+//    }
+
+//    public void AltaSolicitud(Solicitud solicitud, Usuario usLog)
+//    {
+//        FabricaLogica.GetLogicaSolicitud().AltaSolicitud(solicitud, usLog);
+//    }
+
+//    public void AltaTramite(Tramite tramite, Empleado empLog)
+//    {
+//        FabricaLogica.GetLogicaTramite().AltaTramite(tramite, empLog);
+//    }
+
+//    public void AltaUsuario(Usuario usuario, Usuario usLog)
+//    {
+//        FabricaLogica.GetLogicaUsuario().AltaUsuario(usuario, usLog);
+//    }
+
+//    public void BajaDocumentacion(Documentacion documentacion, Empleado empLog)
+//    {
+//        FabricaLogica.GetLogicaDocumentacion().BajaDocumentacion(documentacion, empLog);
+//    }
+
+//    public void BajaTramite(Tramite tramite, Empleado empLog)
+//    {
+//        FabricaLogica.GetLogicaTramite().BajaTramite(tramite, empLog);
+//    }
+
+//    public void BajaUsuario(Usuario empleado, Empleado empLog)
+//    {
+//        FabricaLogica.GetLogicaUsuario().BajaUsuario(empleado, empLog);
+//    }
+
+//    public Documentacion BuscarDocumentacion(int codigoInterno)
+//    {
+//        return FabricaLogica.GetLogicaDocumentacion().BuscarDocumentacion(codigoInterno);
+//    }
+
+//    public Solicitud BuscarSolicitud(int documento, Usuario usLog)
+//    {
+//        return FabricaLogica.GetLogicaSolicitud().BuscarSolicitud(documento, usLog);
+//    }
+
+//    public void CambiarEstadoSolicitud(Solicitud solicitud, int accion, Empleado usLog)
+//    {
+//        FabricaLogica.GetLogicaSolicitud().CambiarEstadoSolicitud(solicitud, accion, usLog);
+//    }
+
+//    public Tramite BuscarTramite(string codigoTramite, Usuario empLog)
+//    {
+//        return FabricaLogica.GetLogicaTramite().BuscarTramite(codigoTramite, empLog);
+//    }
+
+//    public Usuario BuscarUsuario(int documento, Usuario usLog)
+//    {
+//        return FabricaLogica.GetLogicaUsuario().BuscarUsuario(documento, usLog);
+//    }
+
+//    public string GetData(int value)
+//    {
+//        return string.Format("You entered: {0}", value);
+//    }
+
+//    public CompositeType GetDataUsingDataContract(CompositeType composite)
+//    {
+//        if (composite == null)
+//        {
+//            throw new ArgumentNullException("composite");
+//        }
+//        if (composite.BoolValue)
+//        {
+//            composite.StringValue += "Suffix";
+//        }
+//        return composite;
+//    }
+
+//    public List<Documentacion> listadoDocumentacion(Empleado empLog)
+//    {
+//        return FabricaLogica.GetLogicaDocumentacion().listadoDocumentacion(empLog);
+//    }
+
+//    public List<Solicitud> listadoSolicitud(Usuario usLog)
+//    {
+//        return FabricaLogica.GetLogicaSolicitud().listadoSolicitud(usLog);
+//    }
+
+//    public string listadoTramitesXml()
+//    {
+//        return FabricaLogica.GetLogicaTramite().listadoTramitesXml();
+//    }
+
+//    public List<Tramite> ListarTramites()
+//    {
+//        return FabricaLogica.GetLogicaTramite().ListarTramites();
+//    }
+
+//    public Usuario LogueoUsuario(int documento, string contraseana)
+//    {
+//        return FabricaLogica.GetLogicaUsuario().LogueoUsuario(documento, contraseana);
+//    }
+
+//    public void ModificarDocumentacion(Documentacion documentacion, Empleado empLog)
+//    {
+//        FabricaLogica.GetLogicaDocumentacion().ModificarDocumentacion(documentacion, empLog);
+//    }
+
+//    public void ModificarTramite(Tramite tramite, Empleado empLog)
+//    {
+//        FabricaLogica.GetLogicaTramite().ModificarTramite(tramite, empLog);
+//    }
+
+//    public void ModificarUsuario(Usuario empleado, Empleado empLog)
+//    {
+//        FabricaLogica.GetLogicaUsuario().ModificarUsuario(empleado, empLog);
+//    }
+//}

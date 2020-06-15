@@ -1,0 +1,116 @@
+﻿body 
+{
+    font-family:Calibri;
+}
+
+div.title-bar #lblTitulo
+{
+    font-size:50px;
+    vertical-align:middle;
+    margin-left: 35px;
+}
+    
+div.title-bar #lblMensaje
+{
+    float: right;
+    vertical-align:bottom;
+    margin-left: 35px;
+}
+
+div.title-bar
+{
+    background-color: #0B2161;
+    color: White;
+    height: 80px;
+    width: 100%;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    text-align: left;
+    font-size:20px;
+    vertical-align:middle;
+    border-bottom-color:Black;
+    border-bottom-style:groove;
+    border-bottom-width:2px;
+}
+div.content-bar
+{
+    position:fixed;
+    display:inline;
+    margin-left:5%;
+    height: 100%;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    text-align: center;
+    vertical-align:middle;
+    top: 141px;
+    left: 69px;
+}
+
+div.side-bar
+{
+   position: fixed;
+   display: inline;
+   width: 151px;
+   height: 1198px;
+   background-color: #5882FA;
+   float: left;
+    top: 136px;
+    left: 10px;
+}
+
+.content-bar 
+{
+    width: 100%;
+    float:left;
+}
+
+a #TreeView1 
+{
+    width: 25%;
+    width: 100%;      
+}
+div.cont 
+{
+    text-align: -webkit-center;
+}
+
+#rpRepeater 
+{
+    width:30%;
+}
+table.tabRepeater 
+{
+    font-size: 17px;
+    color: black;
+    border:1px solid black;
+    width: 100%;
+}
+.tabTr
+{
+    border:1px solid black;
+}
+.tabTh 
+{
+    border:1px solid black;
+}
+
+.derecha 
+{
+    float: right;
+}
+
+.mediaIzquierda
+{
+    width: 35%;
+    margin-left: 18%;
+    height: 100%;
+    float:left;    
+}
+.mediaDerecha
+{
+    width: 35%;
+    margin-left: 10%;
+    height: 100%; 
+    float: left;
+}
+

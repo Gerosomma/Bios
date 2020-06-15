@@ -31,6 +31,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WebTramites", "WebTramites\
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "45519"
+		SlnRelativePath = "WebTramites\"
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
@@ -52,6 +53,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "wcfTramites", "wcfTramites\
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "45701"
+		SlnRelativePath = "wcfTramites\"
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
