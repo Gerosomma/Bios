@@ -7,7 +7,11 @@ using System.Linq;
 using System.ServiceProcess;
 using System.Text;
 using System.Threading.Tasks;
-
+using Logica;
+using EntidadesCompartidas;
+using System.Timers;
+using System.IO;
+using System.Xml;
 namespace servicioWindows
 {
     public partial class Service1 : ServiceBase

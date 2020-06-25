@@ -90,6 +90,21 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmABMDocumentacion.resx">
+      <DependentUpon>frmABMDocumentacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmABMEmpleado.resx">
+      <DependentUpon>frmABMEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmABMTramite.resx">
+      <DependentUpon>frmABMTramite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListadoSolicitudes.resx">
+      <DependentUpon>frmListadoSolicitudes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogueo.resx">
+      <DependentUpon>frmLogueo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -99,6 +114,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -117,6 +133,12 @@
     <Content Include="img\eliminar.png" />
     <Content Include="img\modificar.bmp" />
     <Content Include="img\nuevo.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MisControles\MisControles.csproj">
+      <Project>{47bf6469-8464-46f8-9d63-22f3182bebbe}</Project>
+      <Name>MisControles</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
