@@ -58,6 +58,10 @@
       <Project>{b80b4d16-2441-4968-a147-9d49e78af3f3}</Project>
       <Name>EntidadesCompartidas</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Persistencia\Persistencia.csproj">
+      <Project>{0977d1b8-f8eb-4881-a091-634fb8f592cc}</Project>
+      <Name>Persistencia</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

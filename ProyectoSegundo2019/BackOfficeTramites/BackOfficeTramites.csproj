@@ -92,11 +92,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service References\wcfTramite\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="frmABMDocumentacion.resx">
       <DependentUpon>frmABMDocumentacion.cs</DependentUpon>
     </EmbeddedResource>
@@ -131,34 +126,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Service References\wcfTramite\BackOfficeTramites.wcfTramite.CompositeType.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\wcfTramite\BackOfficeTramites.wcfTramite.Documentacion.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\wcfTramite\BackOfficeTramites.wcfTramite.Solicitud.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\wcfTramite\BackOfficeTramites.wcfTramite.Tramite.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\wcfTramite\BackOfficeTramites.wcfTramite.Usuario.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\wcfTramite\Service.wsdl" />
-    <None Include="Service References\wcfTramite\Service.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\wcfTramite\Service1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\wcfTramite\Service2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\wcfTramite\Service3.xsd">
-      <SubType>Designer</SubType>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -168,24 +135,12 @@
     <Content Include="img\eliminar.png" />
     <Content Include="img\modificar.bmp" />
     <Content Include="img\nuevo.bmp" />
-    <None Include="Service References\wcfTramite\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <None Include="Service References\wcfTramite\configuration.svcinfo" />
-    <None Include="Service References\wcfTramite\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MisControles\MisControles.csproj">
       <Project>{47bf6469-8464-46f8-9d63-22f3182bebbe}</Project>
       <Name>MisControles</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Service References\wcfTramite\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
