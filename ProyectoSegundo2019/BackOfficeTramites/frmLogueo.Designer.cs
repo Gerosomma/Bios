@@ -32,12 +32,13 @@
             this.lblError = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+            this.controlLogueo1 = new MisControles.controlLogueo();
             this.SuspendLayout();
             // 
             // lblError
             // 
             this.lblError.AutoSize = true;
-            this.lblError.Location = new System.Drawing.Point(357, 490);
+            this.lblError.Location = new System.Drawing.Point(331, 272);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(0, 13);
             this.lblError.TabIndex = 4;
@@ -53,11 +54,19 @@
             this.label1.Text = "Logueo Empleado";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // controlLogueo1
+            // 
+            this.controlLogueo1.Location = new System.Drawing.Point(132, 55);
+            this.controlLogueo1.Name = "controlLogueo1";
+            this.controlLogueo1.Size = new System.Drawing.Size(399, 214);
+            this.controlLogueo1.TabIndex = 5;
+            // 
             // frmLogueo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(741, 701);
+            this.Controls.Add(this.controlLogueo1);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.label1);
             this.Name = "frmLogueo";
@@ -73,5 +82,6 @@
         private System.Windows.Forms.Label lblError;
         private System.Windows.Forms.Label label1;
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
+        private MisControles.controlLogueo controlLogueo1;
     }
 }
