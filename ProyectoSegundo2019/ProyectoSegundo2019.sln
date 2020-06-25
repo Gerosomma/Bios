@@ -13,31 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistencia", "Persistenci
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MisControles", "MisControles\MisControles.csproj", "{47BF6469-8464-46F8-9D63-22F3182BEBBE}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WebTramites", "WebTramites\", "{695D8838-24A4-41D6-A39E-C1A71C55DFCD}"
-	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_45519"
-		Debug.AspNetCompiler.PhysicalPath = "WebTramites\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_45519\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_45519"
-		Release.AspNetCompiler.PhysicalPath = "WebTramites\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_45519\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "45519"
-		SlnRelativePath = "WebTramites\"
-		DefaultWebSiteLanguage = "Visual C#"
-	EndProjectSection
-EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "wcfTramites", "wcfTramites\", "{AC67AE29-F274-4DF9-B28F-917D769713CA}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
+		ProjectReferences = "{b80b4d16-2441-4968-a147-9d49e78af3f3}|EntidadesCompartidas.dll;{b9a9a159-ab00-42c5-aec3-9097a474dcc8}|Logica.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_45701"
 		Debug.AspNetCompiler.PhysicalPath = "wcfTramites\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_45701\"
@@ -54,6 +33,29 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "wcfTramites", "wcfTramites\
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "45701"
 		SlnRelativePath = "wcfTramites\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "servicioWindows", "servicioWindows\servicioWindows.csproj", "{AC33790A-B295-4061-A34E-CBF1032158D3}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "sitioTramites", "sitioTramites\", "{F57998FD-1E88-4086-83D2-D0F61997B124}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_24478"
+		Debug.AspNetCompiler.PhysicalPath = "sitioTramites\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_24478\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_24478"
+		Release.AspNetCompiler.PhysicalPath = "sitioTramites\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_24478\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "24478"
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
@@ -83,14 +85,18 @@ Global
 		{47BF6469-8464-46F8-9D63-22F3182BEBBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47BF6469-8464-46F8-9D63-22F3182BEBBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47BF6469-8464-46F8-9D63-22F3182BEBBE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{695D8838-24A4-41D6-A39E-C1A71C55DFCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{695D8838-24A4-41D6-A39E-C1A71C55DFCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{695D8838-24A4-41D6-A39E-C1A71C55DFCD}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{695D8838-24A4-41D6-A39E-C1A71C55DFCD}.Release|Any CPU.Build.0 = Debug|Any CPU
 		{AC67AE29-F274-4DF9-B28F-917D769713CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AC67AE29-F274-4DF9-B28F-917D769713CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC67AE29-F274-4DF9-B28F-917D769713CA}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{AC67AE29-F274-4DF9-B28F-917D769713CA}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{AC33790A-B295-4061-A34E-CBF1032158D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC33790A-B295-4061-A34E-CBF1032158D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC33790A-B295-4061-A34E-CBF1032158D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC33790A-B295-4061-A34E-CBF1032158D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F57998FD-1E88-4086-83D2-D0F61997B124}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F57998FD-1E88-4086-83D2-D0F61997B124}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F57998FD-1E88-4086-83D2-D0F61997B124}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{F57998FD-1E88-4086-83D2-D0F61997B124}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
