@@ -31,6 +31,7 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.lblError = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
             // lblError
@@ -50,6 +51,7 @@
             this.label1.Size = new System.Drawing.Size(247, 31);
             this.label1.TabIndex = 3;
             this.label1.Text = "Logueo Empleado";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // frmLogueo
             // 
@@ -70,5 +72,6 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Label lblError;
         private System.Windows.Forms.Label label1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker2;
     }
 }
