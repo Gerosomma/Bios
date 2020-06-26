@@ -1,4 +1,4 @@
-﻿namespace BackOfficeTramitesWin
+﻿namespace BackOfficeTramites
 {
     partial class frmABMDocumentacion
     {

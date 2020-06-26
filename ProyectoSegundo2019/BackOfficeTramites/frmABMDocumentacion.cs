@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BackOfficeTramites.wcfTramite;
 
-namespace BackOfficeTramitesWin
+namespace BackOfficeTramites
 {
     public partial class frmABMDocumentacion : Form
     {
