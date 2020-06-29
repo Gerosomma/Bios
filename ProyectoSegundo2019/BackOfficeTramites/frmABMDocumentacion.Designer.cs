@@ -1,4 +1,4 @@
-﻿namespace BackOfficeTramitesWin
+﻿namespace BackOfficeTramites
 {
     partial class frmABMDocumentacion
     {
@@ -83,6 +83,7 @@
             this.BtnAlta.Name = "BtnAlta";
             this.BtnAlta.Size = new System.Drawing.Size(23, 22);
             this.BtnAlta.Text = "Dar Alta";
+            this.BtnAlta.Click += new System.EventHandler(this.BtnAlta_Click);
             // 
             // BtnBaja
             // 
@@ -93,6 +94,7 @@
             this.BtnBaja.Name = "BtnBaja";
             this.BtnBaja.Size = new System.Drawing.Size(23, 22);
             this.BtnBaja.Text = "Eliminar ";
+            this.BtnBaja.Click += new System.EventHandler(this.BtnBaja_Click);
             // 
             // BtnModificar
             // 
@@ -103,6 +105,7 @@
             this.BtnModificar.Name = "BtnModificar";
             this.BtnModificar.Size = new System.Drawing.Size(23, 22);
             this.BtnModificar.Text = "Modificar";
+            this.BtnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
             // 
             // BtnDeshacer
             // 
@@ -112,6 +115,7 @@
             this.BtnDeshacer.Name = "BtnDeshacer";
             this.BtnDeshacer.Size = new System.Drawing.Size(23, 22);
             this.BtnDeshacer.Text = "Deshacer";
+            this.BtnDeshacer.Click += new System.EventHandler(this.BtnDeshacer_Click);
             // 
             // label2
             // 
@@ -160,6 +164,7 @@
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(198, 20);
             this.txtNumero.TabIndex = 51;
+            this.txtNumero.Validating += new System.ComponentModel.CancelEventHandler(this.txtNumero_Validating);
             // 
             // frmABMDocumentacion
             // 

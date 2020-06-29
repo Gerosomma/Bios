@@ -79,7 +79,14 @@ public class Service : IService
 
     Usuario IService.BuscarUsuario(int documento, Usuario usLog)
     {
-        return FabricaLogica.GetLogicaUsuario().BuscarUsuario(documento, usLog);
+        try
+        {
+            return FabricaLogica.GetLogicaUsuario().BuscarUsuario(documento, usLog);
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
     }
 
     string IService.GetData(int value)

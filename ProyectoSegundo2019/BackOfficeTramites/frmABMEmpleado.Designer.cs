@@ -1,4 +1,4 @@
-﻿namespace BackOfficeTramitesWin
+﻿namespace BackOfficeTramites
 {
     partial class frmABMEmpleado
     {
@@ -92,6 +92,7 @@
             this.TxtNumero.Name = "TxtNumero";
             this.TxtNumero.Size = new System.Drawing.Size(198, 20);
             this.TxtNumero.TabIndex = 40;
+            this.TxtNumero.Validating += new System.ComponentModel.CancelEventHandler(this.TxtNumero_Validating);
             // 
             // BarraEstado
             // 
@@ -116,6 +117,7 @@
             this.BtnDeshacer.Name = "BtnDeshacer";
             this.BtnDeshacer.Size = new System.Drawing.Size(23, 22);
             this.BtnDeshacer.Text = "Deshacer";
+            this.BtnDeshacer.Click += new System.EventHandler(this.BtnDeshacer_Click);
             // 
             // BtnModificar
             // 
@@ -126,6 +128,7 @@
             this.BtnModificar.Name = "BtnModificar";
             this.BtnModificar.Size = new System.Drawing.Size(23, 22);
             this.BtnModificar.Text = "Modificar";
+            this.BtnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
             // 
             // BarraHerramientas
             // 
@@ -149,6 +152,7 @@
             this.BtnAlta.Name = "BtnAlta";
             this.BtnAlta.Size = new System.Drawing.Size(23, 22);
             this.BtnAlta.Text = "Dar Alta";
+            this.BtnAlta.Click += new System.EventHandler(this.BtnAlta_Click);
             // 
             // BtnBaja
             // 
@@ -159,6 +163,7 @@
             this.BtnBaja.Name = "BtnBaja";
             this.BtnBaja.Size = new System.Drawing.Size(23, 22);
             this.BtnBaja.Text = "Eliminar ";
+            this.BtnBaja.Click += new System.EventHandler(this.BtnBaja_Click);
             // 
             // label1
             // 

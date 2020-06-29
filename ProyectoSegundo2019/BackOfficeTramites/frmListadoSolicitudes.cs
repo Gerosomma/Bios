@@ -7,10 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BackOfficeTramitesWin.wcfTramite;
+using BackOfficeTramites.wcfTramite;
 using System.Linq;
 
-namespace BackOfficeTramitesWin
+namespace BackOfficeTramites
 {
     public partial class frmListadoSolicitudes : Form
     {

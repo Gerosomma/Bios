@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BackOfficeTramitesWin.wcfTramite;
+using BackOfficeTramites.wcfTramite;
 using System.Xml;
 using System.IO;
 
@@ -76,11 +76,6 @@ namespace BackOfficeTramites
             {
                 lblError.Text = ex.Message;
             }
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
 
         }
     }

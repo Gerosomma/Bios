@@ -11,12 +11,12 @@ namespace EntidadesCompartidas
     [KnownType(typeof(Empleado))]
     [KnownType(typeof(Solicitante))]
     [DataContract]
-    public abstract class Usuario
+    public class Usuario
     {
         private int _documento;
         private string _contrasenia;
         private string _nombreCompleto;
-        private Regex _expresion = new Regex(@"[a-zA-ZñÑ]{3}\d{2}[\|°¬¡!#$%&\/=()¿?'-_\\´{},;.:`+*~^<>@]");
+        //private Regex _expresion = new Regex(@"[a-zA-ZñÑ]{3}\d{2}[\|°¬¡!#$%&\/=()¿?'-_\\´{},;.:`+*~^<>@]");
 
         [DataMember]
         public int Documento
@@ -37,6 +37,7 @@ namespace EntidadesCompartidas
             get { return _contrasenia; }
             set
             {
+                Regex _expresion = new Regex(@"[a-zA-ZñÑ]{3}\d{2}[\|°¬¡!#$%&\/=()¿?'-_\\´{},;.:`+*~^<>@]");
                 if ((value.Trim().Length > 6) || (value.Trim().Length <= 0))
                 {
                     throw new Exception("La contraseña debe contener 6 caracteres en total.");

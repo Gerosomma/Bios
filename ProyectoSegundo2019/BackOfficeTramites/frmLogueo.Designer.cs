@@ -38,7 +38,7 @@
             // lblError
             // 
             this.lblError.AutoSize = true;
-            this.lblError.Location = new System.Drawing.Point(331, 272);
+            this.lblError.Location = new System.Drawing.Point(165, 260);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(0, 13);
             this.lblError.TabIndex = 4;
@@ -52,11 +52,10 @@
             this.label1.Size = new System.Drawing.Size(247, 31);
             this.label1.TabIndex = 3;
             this.label1.Text = "Logueo Empleado";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // controlLogueo1
             // 
-            this.controlLogueo1.Location = new System.Drawing.Point(132, 55);
+            this.controlLogueo1.Location = new System.Drawing.Point(138, 43);
             this.controlLogueo1.Name = "controlLogueo1";
             this.controlLogueo1.Size = new System.Drawing.Size(399, 214);
             this.controlLogueo1.TabIndex = 5;

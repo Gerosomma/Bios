@@ -1,0 +1,45 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Tramites WEB</title>
+    <link href="Css/estilos.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div class="title-bar">
+        <asp:Label ID="lblTitulo" runat="server">Tramites WEB</asp:Label>       
+        <br />
+        <asp:Label ID="lblMensaje" runat="server"></asp:Label>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Label ID="lblPagina" runat="server"></asp:Label>
+    </div>
+    <div class="side-bar">
+        <asp:TreeView ID="TreeView1" runat="server" Height="111px" Width="96%" 
+            NodeWrap="True" style="margin-top: 0px">
+            <Nodes>
+                <asp:TreeNode NavigateUrl="~/default.aspx" Text="Inicio" 
+                    Value="Inicio"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/ConsultaTramite.aspx" 
+                    Text="Consultar tramites disponibles" Value="Consulta de Tramite">
+                </asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/RegistroDeUsuario.aspx" Text="Registro" 
+                    Value="Registro"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Logueo.aspx" Text="Logueo" 
+                    Value="Logueo"></asp:TreeNode>
+            </Nodes>
+        </asp:TreeView>
+    </div>
+    <div class="content-bar">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

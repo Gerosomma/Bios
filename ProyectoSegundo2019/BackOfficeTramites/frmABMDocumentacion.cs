@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BackOfficeTramites.wcfTramite;
 
-namespace BackOfficeTramitesWin
+namespace BackOfficeTramites
 {
     public partial class frmABMDocumentacion : Form
     {
@@ -30,7 +30,7 @@ namespace BackOfficeTramitesWin
             {
                 numero = Convert.ToInt32(txtNumero.Text);
             }
-            catch (FormatException ex)
+            catch (FormatException)
             {
                 LblError.Text = "Numero es invalido.";
             }
@@ -39,6 +39,7 @@ namespace BackOfficeTramitesWin
             {
                 //Documentacion unaDocumentacion = FabricaLogica.GetLogicaDocumentacion().BuscarDocumentacion(numero);
                 Documentacion unaDocumentacion = wcf.BuscarDocumentacion(numero);
+                
                 if (unaDocumentacion == null)
                 {
                     BtnAlta.Enabled = true;

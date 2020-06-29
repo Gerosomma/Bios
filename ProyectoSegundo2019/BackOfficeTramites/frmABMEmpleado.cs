@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BackOfficeTramitesWin.wcfTramite;
+using BackOfficeTramites.wcfTramite;
 
-namespace BackOfficeTramitesWin
+namespace BackOfficeTramites
 {
     public partial class frmABMEmpleado : Form
     {

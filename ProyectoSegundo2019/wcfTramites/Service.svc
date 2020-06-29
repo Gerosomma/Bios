@@ -1,4 +1,4 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="Service" CodeBehind="~/App_Code/IService.cs" %>
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Service" CodeBehind="~/Service.svc" %>
 //using System;
 //using System.Collections.Generic;
 //using System.Linq;

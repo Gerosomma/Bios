@@ -7,16 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BackOfficeTramitesWin.wcfTramite;
+using BackOfficeTramites.wcfTramite;
 using System.Collections;
 
-namespace BackOfficeTramitesWin
+namespace BackOfficeTramites
 {
     public partial class frmABMTramite : Form
     {
         ServiceClient wcf = new ServiceClient();
-        List<BackOfficeTramitesWin.wcfTramite.Documentacion> DocumentacionActiva = new List<BackOfficeTramitesWin.wcfTramite.Documentacion>();
-        List<BackOfficeTramitesWin.wcfTramite.Documentacion> DocumentacionTramite = new List<BackOfficeTramitesWin.wcfTramite.Documentacion>();
+        List<BackOfficeTramites.wcfTramite.Documentacion> DocumentacionActiva = new List<BackOfficeTramites.wcfTramite.Documentacion>();
+        List<BackOfficeTramites.wcfTramite.Documentacion> DocumentacionTramite = new List<BackOfficeTramites.wcfTramite.Documentacion>();
         Empleado empleadoLogueado = null;
         Tramite tramite = null;
         public frmABMTramite(Empleado empleado)
