@@ -30,7 +30,7 @@ namespace BackOfficeTramites
             {
                 numero = Convert.ToInt32(txtNumero.Text);
             }
-            catch (FormatException ex)
+            catch (FormatException)
             {
                 LblError.Text = "Numero es invalido.";
             }
