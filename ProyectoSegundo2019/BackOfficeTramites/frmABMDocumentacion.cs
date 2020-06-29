@@ -39,6 +39,7 @@ namespace BackOfficeTramites
             {
                 //Documentacion unaDocumentacion = FabricaLogica.GetLogicaDocumentacion().BuscarDocumentacion(numero);
                 Documentacion unaDocumentacion = wcf.BuscarDocumentacion(numero);
+                
                 if (unaDocumentacion == null)
                 {
                     BtnAlta.Enabled = true;

@@ -68,6 +68,7 @@
             this.btnLimpiar.TabIndex = 17;
             this.btnLimpiar.Text = "Limpiar Filtros";
             this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnXFecha
             // 
@@ -77,6 +78,7 @@
             this.btnXFecha.TabIndex = 16;
             this.btnXFecha.Text = "Filtrar x Fecha";
             this.btnXFecha.UseVisualStyleBackColor = true;
+            this.btnXFecha.Click += new System.EventHandler(this.btnXFecha_Click);
             // 
             // btnXDocumentacion
             // 
@@ -86,6 +88,7 @@
             this.btnXDocumentacion.TabIndex = 15;
             this.btnXDocumentacion.Text = "Resumen x Documentacion";
             this.btnXDocumentacion.UseVisualStyleBackColor = true;
+            this.btnXDocumentacion.Click += new System.EventHandler(this.btnXDocumentacion_Click);
             // 
             // btnXMes
             // 
@@ -95,6 +98,7 @@
             this.btnXMes.TabIndex = 14;
             this.btnXMes.Text = "Resumen Mensual";
             this.btnXMes.UseVisualStyleBackColor = true;
+            this.btnXMes.Click += new System.EventHandler(this.btnXMes_Click);
             // 
             // btnXTramite
             // 
@@ -104,6 +108,7 @@
             this.btnXTramite.TabIndex = 13;
             this.btnXTramite.Text = "Resumen x Tramite";
             this.btnXTramite.UseVisualStyleBackColor = true;
+            this.btnXTramite.Click += new System.EventHandler(this.btnXTramite_Click);
             // 
             // dgvSolicitudes
             // 

@@ -97,6 +97,7 @@
             this.btnAgregarDoc.TabIndex = 78;
             this.btnAgregarDoc.Text = "<-- Agregar";
             this.btnAgregarDoc.UseVisualStyleBackColor = true;
+            this.btnAgregarDoc.Click += new System.EventHandler(this.btnAgregarDoc_Click);
             // 
             // btnQuitarDoc
             // 
@@ -106,6 +107,7 @@
             this.btnQuitarDoc.TabIndex = 77;
             this.btnQuitarDoc.Text = "Quitar -->";
             this.btnQuitarDoc.UseVisualStyleBackColor = true;
+            this.btnQuitarDoc.Click += new System.EventHandler(this.btnQuitarDoc_Click);
             // 
             // dgvDocumentosActivos
             // 
@@ -186,6 +188,7 @@
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(198, 20);
             this.txtCodigo.TabIndex = 68;
+            this.txtCodigo.Validating += new System.ComponentModel.CancelEventHandler(this.txtNumero_Validating);
             // 
             // BtnModificar
             // 
@@ -196,6 +199,7 @@
             this.BtnModificar.Name = "BtnModificar";
             this.BtnModificar.Size = new System.Drawing.Size(23, 22);
             this.BtnModificar.Text = "Modificar";
+            this.BtnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
             // 
             // BtnBaja
             // 
@@ -206,6 +210,7 @@
             this.BtnBaja.Name = "BtnBaja";
             this.BtnBaja.Size = new System.Drawing.Size(23, 22);
             this.BtnBaja.Text = "Eliminar ";
+            this.BtnBaja.Click += new System.EventHandler(this.BtnBaja_Click);
             // 
             // BtnAlta
             // 
@@ -216,6 +221,7 @@
             this.BtnAlta.Name = "BtnAlta";
             this.BtnAlta.Size = new System.Drawing.Size(23, 22);
             this.BtnAlta.Text = "Dar Alta";
+            this.BtnAlta.Click += new System.EventHandler(this.BtnAlta_Click);
             // 
             // BtnDeshacer
             // 
@@ -225,6 +231,7 @@
             this.BtnDeshacer.Name = "BtnDeshacer";
             this.BtnDeshacer.Size = new System.Drawing.Size(23, 22);
             this.BtnDeshacer.Text = "Deshacer";
+            this.BtnDeshacer.Click += new System.EventHandler(this.BtnDeshacer_Click);
             // 
             // BarraHerramientas
             // 
