@@ -112,7 +112,7 @@ namespace BackOfficeTramites
             {
                 cedula = Convert.ToInt32(doc);
             }
-            catch (FormatException ex)
+            catch (FormatException)
             {
                 LblError.Text = "La cedula es invalida.";
             }
