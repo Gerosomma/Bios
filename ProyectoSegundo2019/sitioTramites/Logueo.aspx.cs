@@ -8,7 +8,6 @@ using wcfTramite;
 
 public partial class Logueo : System.Web.UI.Page
 {
-    ServiceClient wcf = new ServiceClient();
     protected void Page_Load(object sender, EventArgs e)
     {
         Session["Usuario"] = null;
@@ -20,6 +19,8 @@ public partial class Logueo : System.Web.UI.Page
         {
             int _Usu = Convert.ToInt32(controlLog.UserName.Trim());
             string _Pass = controlLog.Password.Trim();
+
+            ServiceClient wcf = new ServiceClient();
             Solicitante _unCliente = (Solicitante)wcf.LogueoUsuario(_Usu, _Pass);
 
             if (_unCliente == null)

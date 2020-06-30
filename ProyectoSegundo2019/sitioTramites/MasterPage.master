@@ -28,10 +28,10 @@
                 <asp:TreeNode NavigateUrl="~/ConsultaTramite.aspx" 
                     Text="Consultar tramites disponibles" Value="Consulta de Tramite">
                 </asp:TreeNode>
-                <asp:TreeNode NavigateUrl="~/RegistroDeUsuario.aspx" Text="Registro" 
+                <asp:TreeNode NavigateUrl="~/RegistroDeUsuario.aspx" Text="Registro de Usuario" 
                     Value="Registro"></asp:TreeNode>
-                <asp:TreeNode NavigateUrl="~/Logueo.aspx" Text="Logueo" 
-                    Value="Logueo"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Logueo.aspx" Text="Login" 
+                    Value="Login"></asp:TreeNode>
             </Nodes>
         </asp:TreeView>
     </div>
