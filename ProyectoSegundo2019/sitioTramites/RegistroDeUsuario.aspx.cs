@@ -11,7 +11,7 @@ public partial class RegistroDeUsuario : System.Web.UI.Page
     ServiceClient wcf = new ServiceClient();
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        ((Label)this.Master.FindControl("lblPagina")).Text = "Registro de usuario";
     }
 
     protected void btnRegistrar_Click(object sender, EventArgs e)

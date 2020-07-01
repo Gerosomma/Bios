@@ -16,7 +16,7 @@ public partial class ConsultaTramite : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        ((Label)this.Master.FindControl("lblPagina")).Text = "Listado de Tramites activos";
+        ((Label)this.Master.FindControl("lblPagina")).Text = "Tramites disponibles";
 
         if (!IsPostBack)
         {

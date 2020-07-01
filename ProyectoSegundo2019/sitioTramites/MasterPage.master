@@ -20,19 +20,21 @@
         <asp:Label ID="lblPagina" runat="server"></asp:Label>
     </div>
     <div class="side-bar">
-        <asp:TreeView ID="TreeView1" runat="server" Height="111px" Width="96%" 
-            NodeWrap="True" style="margin-top: 0px">
+        <asp:TreeView ID="TreeView1" runat="server" Width="98%" style="margin-top: 0px" HoverNodeStyle-BorderStyle="Outset" BackColor="#F3F7FC" BorderColor="#999999" BorderStyle="Solid" Font-Bold="True">
+            <HoverNodeStyle BorderColor="ActiveBorder" BorderStyle="Outset" Font-Bold="True" />
             <Nodes>
                 <asp:TreeNode NavigateUrl="~/default.aspx" Text="Inicio" 
-                    Value="Inicio"></asp:TreeNode>
+                    Value="Inicio" ImageUrl="img/casa.png"></asp:TreeNode>
                 <asp:TreeNode NavigateUrl="~/ConsultaTramite.aspx" 
-                    Text="Consultar tramites disponibles" Value="Consulta de Tramite">
+                    Text="Consultar tramites disponibles" Value="Consulta de Tramite" ImageUrl="img/calendario.png">
                 </asp:TreeNode>
                 <asp:TreeNode NavigateUrl="~/RegistroDeUsuario.aspx" Text="Registro de Usuario" 
-                    Value="Registro"></asp:TreeNode>
+                    Value="Registro" ImageUrl="img/mas2.png"></asp:TreeNode>
                 <asp:TreeNode NavigateUrl="~/Logueo.aspx" Text="Login" 
-                    Value="Login"></asp:TreeNode>
+                    Value="Login" ImageUrl="img/usuario.png"></asp:TreeNode>
             </Nodes>
+            <NodeStyle BorderStyle="None" Font-Bold="True" NodeSpacing="1px" VerticalPadding="9px" Width="100%" />
+            <SelectedNodeStyle BackColor="#3F5BCD" />
         </asp:TreeView>
     </div>
     <div class="content-bar">

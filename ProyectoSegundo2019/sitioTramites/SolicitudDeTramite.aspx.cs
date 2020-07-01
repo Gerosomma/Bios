@@ -14,6 +14,7 @@ public partial class SolicitudDeTramite : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        ((Label)this.Master.FindControl("lblPagina")).Text = "Solicitud de Tramite";
         Response.CacheControl = "no-cache";
         usuarioLogueado = (Usuario)Session["Usuario"];
 

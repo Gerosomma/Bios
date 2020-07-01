@@ -11,14 +11,15 @@ public partial class Logueo : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         Session["Usuario"] = null;
+        ((Label)this.Master.FindControl("lblPagina")).Text = "Acceso de usuario";
     }
 
-    protected void Login_Authenticate(object sender, AuthenticateEventArgs e)
+    protected void btnLog_Click(object sender, EventArgs e)
     {
         try
         {
-            int _Usu = Convert.ToInt32(controlLog.UserName.Trim());
-            string _Pass = controlLog.Password.Trim();
+            int _Usu = Convert.ToInt32(txtDocumento.Text.Trim());
+            string _Pass = txtContrasena.Text;
 
             ServiceClient wcf = new ServiceClient();
             Solicitante _unCliente = (Solicitante)wcf.LogueoUsuario(_Usu, _Pass);
@@ -32,6 +33,10 @@ public partial class Logueo : System.Web.UI.Page
                 Session["Usuario"] = _unCliente;
                 Response.Redirect("~/SolicitudDeTramite.aspx");
             }
+        }
+        catch (FormatException)
+        {
+            lblError.Text = "Documento invalido.";
         }
         catch (Exception ex)
         {
