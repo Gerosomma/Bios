@@ -80,7 +80,6 @@
         <div class="mediaDerecha">
             <asp:Xml ID="Xml1" runat="server" TransformSource="~/XSLT/detalleTramite.xslt"></asp:Xml>
         </div>
-        
     </div>
 <asp:Label ID="lblMensaje" BackColor="White" runat="server"></asp:Label>
 </asp:Content>

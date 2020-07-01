@@ -20,9 +20,8 @@ public partial class SolicitudDeTramite : System.Web.UI.Page
 
         if (usuarioLogueado == null || !(usuarioLogueado is Solicitante))
         {
-            Session["Mensaje"] = "¡ERROR! Acceso denegado.";
-
-            Response.Redirect("~/Default.aspx");
+            Session["Mensaje"] = "Acceso denegado, debe loguearse como usuario para solicitar tramites.";
+            Response.Redirect("~/Logueo.aspx");
         }
         try
         {

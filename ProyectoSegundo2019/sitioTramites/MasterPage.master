@@ -16,7 +16,6 @@
         <asp:Label ID="lblTitulo" runat="server">Tramites WEB</asp:Label>       
         <br />
         <asp:Label ID="lblMensaje" runat="server"></asp:Label>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Label ID="lblPagina" runat="server"></asp:Label>
     </div>
     <div class="side-bar">
@@ -31,7 +30,10 @@
                 <asp:TreeNode NavigateUrl="~/RegistroDeUsuario.aspx" Text="Registro de Usuario" 
                     Value="Registro" ImageUrl="img/mas2.png"></asp:TreeNode>
                 <asp:TreeNode NavigateUrl="~/Logueo.aspx" Text="Login" 
-                    Value="Login" ImageUrl="img/usuario.png"></asp:TreeNode>
+                    Value="Login" ImageUrl="img/usuario.png">
+                    <asp:TreeNode ImageUrl="~/img/gps.png" NavigateUrl="~/SolicitudDeTramite.aspx" Text="Solicitar tramite" Value="Solicitar tramite"></asp:TreeNode>
+                    <asp:TreeNode ImageUrl="~/img/usuariout.png" Text="Logout" Value="Logout"></asp:TreeNode>
+                </asp:TreeNode>
             </Nodes>
             <NodeStyle BorderStyle="None" Font-Bold="True" NodeSpacing="1px" VerticalPadding="9px" Width="100%" />
             <SelectedNodeStyle BackColor="#3F5BCD" />

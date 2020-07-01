@@ -12,6 +12,7 @@ public partial class Logueo : System.Web.UI.Page
     {
         Session["Usuario"] = null;
         ((Label)this.Master.FindControl("lblPagina")).Text = "Acceso de usuario";
+        lblError.Text = (String)Session["Mensaje"];
     }
 
     protected void btnLog_Click(object sender, EventArgs e)

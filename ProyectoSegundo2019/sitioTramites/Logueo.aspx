@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <div style="height: 981px; width: 90%; text-align: -webkit-center;">
+    <div style="height: 981px; width: 70%; text-align: -webkit-center;">
         <table class="tabLogin" style="border: black 1px solid; padding: 10px;">
             <tr class="tabTr">
                 <th>Documento: </th>
