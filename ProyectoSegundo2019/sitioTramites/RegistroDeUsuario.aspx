@@ -3,10 +3,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <div style="height: 981px; width: 70%;">
-        <table>
+    <div class="general">
+        <table class="tabLogin">
             <tr>
-                <td>Registro de Usuario</td>
+                <td></td>
                 <asp:Label id="lblError" runat="server"></asp:Label>
             </tr>
             <tr>
@@ -30,6 +30,6 @@
                 <td><asp:Button ID="btnRegistrar" runat="server" Text="Registrar" OnClick="btnRegistrar_Click" /></td>
             </tr>
         </table>
-    </div>
+   </div>
 </asp:Content>
 

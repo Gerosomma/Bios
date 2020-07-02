@@ -3,10 +3,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <div style="height: 981px; width: 90%; text-align: -webkit-center;">
+    <div style=" text-align: -webkit-center;">
         <table style="width: 70%;">
             <tr>
-                <td style="font-size: xx-large; color: #33CC33;" class="style2">¡BIENVENIDO!</td>
+                <td style="font-size: xx-large;">¡BIENVENIDO!</td>
                 <asp:Label id="lblError" runat="server"></asp:Label>
             </tr>
             <tr>

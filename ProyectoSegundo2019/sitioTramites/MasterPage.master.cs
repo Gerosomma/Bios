@@ -15,10 +15,17 @@ public partial class MasterPage : System.Web.UI.MasterPage
         if (usuario == null || !(usuario is Solicitante))
         {
             lblMensaje.Text = "Usuario desconectado";
+            btnLogout.Visible = false;
         }
         else
         {
             lblMensaje.Text = usuario.Documento.ToString() + " - " + usuario.NombreCompleto;
+            btnLogout.Visible = true;
         }
+    }
+
+    protected void btnLogout_Click(object sender, EventArgs e)
+    {
+        Session["Usuario"] = null;
     }
 }

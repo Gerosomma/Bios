@@ -3,8 +3,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <div style="height: 981px; width: 70%; text-align: -webkit-center;">
-        <table class="tabLogin" style="border: black 1px solid; padding: 10px;">
+    <div class="general">
+        <table class="tabLogin">
             <tr class="tabTr">
                 <th>Documento: </th>
                 <th><asp:TextBox ID="txtDocumento" runat="server"></asp:TextBox></th>

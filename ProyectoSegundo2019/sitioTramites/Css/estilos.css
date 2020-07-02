@@ -23,52 +23,72 @@ div.title-bar #lblPagina
     margin-left:44%;
 }
 
+div.title-bar #btnLogout
+{
+    float: right;
+    vertical-align:bottom;
+    margin-left: 35px;
+    margin-right: 2%;
+}
+
+div.title-bar #logo
+{
+    margin-left:2%;
+}
+
 div.title-bar
 {
-    background-color: #0B2161;
-    color: White;
-    height: 80px;
+    background-color: #455054;
+    color: #308695;
+    height: auto;
     width: 100%;
     padding-bottom: 20px;
     padding-top: 20px;
     text-align: left;
     font-size:20px;
     vertical-align:middle;
-    border-bottom-color:Black;
+    border-bottom-color:black;
     border-bottom-style:groove;
-    border-bottom-width:2px;
+    border-bottom-width:3px;
 }
 div.content-bar
 {
-    position:fixed;
-    display:inline;
     margin-left:261px;
     padding-left:1%;
-    height: 100%;
+    height: auto;
+    width:auto ;
     padding-bottom: 20px;
     padding-top: 20px;
     text-align: center;
-    vertical-align:middle;
     top: 141px;
+    background-color:#D4CFC9;
+    color: #308695;
 }
 
 div.side-bar
 {
-   position: fixed;
+   position: absolute;
    display: inline;
    width: 261px;
-   height: 1198px;
-   background-color: #5882FA;
+   height: 1080px;
+   background-color: #D45769;
    float: left;
     top: 136px;
     left: 10px;
 }
 
-.content-bar 
+div.note-bar
 {
-    width: 100%;
-    float:left;
+   position: absolute;
+   display: inline;
+   width: 261px;
+   height: 1080px;
+   background-color: #2F3A56;
+   float: right;
+    top: 187px;
+    left: 854px;
 }
+
 
 a #TreeView1 
 {
@@ -78,6 +98,7 @@ a #TreeView1
 div.cont 
 {
     text-align: -webkit-center;
+    height:1080px;
 }
 
 #rpRepeater 
@@ -118,5 +139,15 @@ table.tabRepeater
     margin-left: 5%;
     height: 100%; 
     float: left;
+}
+table.tabLogin 
+{
+    border: black 1px solid; padding: 10px;
+}
+.general 
+{
+    height: 981px; 
+    width: 85%; 
+    text-align: -webkit-center;
 }
 

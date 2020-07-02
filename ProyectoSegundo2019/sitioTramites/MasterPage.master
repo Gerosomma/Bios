@@ -6,6 +6,7 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Tramites WEB</title>
+    <link rel="icon" href="img/favicon.ico" type="image/ico" />
     <link href="Css/estilos.css" rel="stylesheet" />
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -13,13 +14,14 @@
 <body>
     <form id="form1" runat="server">
     <div class="title-bar">
-        <asp:Label ID="lblTitulo" runat="server">Tramites WEB</asp:Label>       
+        <asp:ImageButton ID="logo" runat="server" PostBackUrl="~/Default.aspx" ImageUrl="~/img/red.png" EnableTheming="False" />
         <br />
-        <asp:Label ID="lblMensaje" runat="server"></asp:Label>
         <asp:Label ID="lblPagina" runat="server"></asp:Label>
+        <asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click" PostBackUrl="~/Default.aspx" Width="70px" />
+        <asp:Label ID="lblMensaje" runat="server"></asp:Label>
     </div>
     <div class="side-bar">
-        <asp:TreeView ID="TreeView1" runat="server" Width="98%" style="margin-top: 0px" HoverNodeStyle-BorderStyle="Outset" BackColor="#F3F7FC" BorderColor="#999999" BorderStyle="Solid" Font-Bold="True">
+        <asp:TreeView ID="TreeView1" runat="server" Width="100%" style="margin-top: 0px" HoverNodeStyle-BorderStyle="Outset" BackColor="#E69D45" Font-Bold="True">
             <HoverNodeStyle BorderColor="ActiveBorder" BorderStyle="Outset" Font-Bold="True" />
             <Nodes>
                 <asp:TreeNode NavigateUrl="~/default.aspx" Text="Inicio" 
@@ -32,7 +34,7 @@
                 <asp:TreeNode NavigateUrl="~/Logueo.aspx" Text="Login" 
                     Value="Login" ImageUrl="img/usuario.png">
                     <asp:TreeNode ImageUrl="~/img/gps.png" NavigateUrl="~/SolicitudDeTramite.aspx" Text="Solicitar tramite" Value="Solicitar tramite"></asp:TreeNode>
-                    <asp:TreeNode ImageUrl="~/img/usuariout.png" Text="Logout" Value="Logout"></asp:TreeNode>
+                    
                 </asp:TreeNode>
             </Nodes>
             <NodeStyle BorderStyle="None" Font-Bold="True" NodeSpacing="1px" VerticalPadding="9px" Width="100%" />
@@ -45,5 +47,5 @@
         </asp:ContentPlaceHolder>
     </div>
     </form>
-</body>
+</body> 
 </html>
