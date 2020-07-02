@@ -15,7 +15,6 @@ namespace BackOfficeTramites
 {
     public partial class frmLogueo : Form
     {
-        ServiceClient wcf = new ServiceClient();
         public frmLogueo()
         {
             InitializeComponent();
@@ -27,7 +26,7 @@ namespace BackOfficeTramites
         {
             try
             {
-                //Empleado _unEmpleado = (Empleado)FabricaLogica.GetLogicaUsuario().LogueoUsuario(controlLogueo1.Usuario, controlLogueo1.Contrasena);
+                ServiceClient wcf = new ServiceClient();
                 Empleado _unEmpleado = (Empleado)wcf.LogueoUsuario(controlLogueo1.Usuario, controlLogueo1.Contrasena);
 
                 if (_unEmpleado == null)

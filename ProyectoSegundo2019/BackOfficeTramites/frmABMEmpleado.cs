@@ -13,7 +13,6 @@ namespace BackOfficeTramites
 {
     public partial class frmABMEmpleado : Form
     {
-        ServiceClient wcf = new ServiceClient();
         private Empleado empleadoLogueado = null;
         private Empleado objEmpleado = null;
 
@@ -39,7 +38,7 @@ namespace BackOfficeTramites
                 empleado.HoraInicio = dtpInicio.Value.TimeOfDay.ToString();
                 empleado.HoraFin = dtpFin.Value.TimeOfDay.ToString();
 
-                //FabricaLogica.GetLogicaUsuario().AltaUsuario(empleado, empleadoLogueado);
+                ServiceClient wcf = new ServiceClient();
                 wcf.AltaUsuario(empleado, empleadoLogueado);
                 this.DesActivoBotones();
                 this.LimpioControles();
@@ -59,7 +58,7 @@ namespace BackOfficeTramites
         {
             try
             {
-                //FabricaLogica.GetLogicaUsuario().BajaUsuario(objEmpleado, empleadoLogueado);
+                ServiceClient wcf = new ServiceClient();
                 wcf.BajaUsuario(objEmpleado, empleadoLogueado);
                 this.DesActivoBotones();
                 this.LimpioControles();
@@ -86,7 +85,7 @@ namespace BackOfficeTramites
                 objEmpleado.HoraInicio = dtpFin.Value.TimeOfDay.ToString();
                 objEmpleado.HoraFin = dtpFin.Value.TimeOfDay.ToString();
 
-                //FabricaLogica.GetLogicaUsuario().ModificarUsuario(objEmpleado, empleadoLogueado);
+                ServiceClient wcf = new ServiceClient();
                 wcf.ModificarUsuario(objEmpleado, empleadoLogueado);
                 this.DesActivoBotones();
                 this.LimpioControles();
@@ -120,7 +119,7 @@ namespace BackOfficeTramites
             try
             {
                 Empleado _unEmpleado = null;
-                //_unEmpleado = (Empleado)FabricaLogica.GetLogicaUsuario().BuscarUsuario(cedula, empleadoLogueado);
+                ServiceClient wcf = new ServiceClient();
                 _unEmpleado = (Empleado)wcf.BuscarUsuario(cedula, empleadoLogueado);
                 if (_unEmpleado == null)
                 {

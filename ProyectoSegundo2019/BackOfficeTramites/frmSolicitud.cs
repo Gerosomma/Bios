@@ -13,7 +13,6 @@ namespace BackOfficeTramites
 {
     public partial class frmSolicitud : Form
     {
-        ServiceClient wcf = new ServiceClient();
         Empleado empleadoLogueado = null;
         List<Solicitud> listaSolicitudes = new List<Solicitud>();
         public frmSolicitud(Empleado empleado)
@@ -23,6 +22,7 @@ namespace BackOfficeTramites
 
             try
             {
+                ServiceClient wcf = new ServiceClient();
                 listaSolicitudes = wcf.listadoSolicitud(empleadoLogueado).ToList<Solicitud>();
                 dgvSolicitudes.AutoGenerateColumns = true;
                 dgvSolicitudes.DataSource = listaSolicitudes;
@@ -40,7 +40,7 @@ namespace BackOfficeTramites
         {
             try
             {
-                //listaSolicitudes = FabricaLogica.GetLogicaSolicitud().listadoSolicitud(empleadoLogueado);
+                ServiceClient wcf = new ServiceClient();
                 listaSolicitudes = wcf.listadoSolicitud(empleadoLogueado).ToList<Solicitud>();
                 dgvSolicitudes.DataSource = listaSolicitudes;
             }
@@ -59,6 +59,7 @@ namespace BackOfficeTramites
             {
                 Solicitud solicitud = null;
                 int accion;
+                ServiceClient wcf = new ServiceClient();
 
                 foreach (DataGridViewRow fila in dgvSolicitudes.SelectedRows)
                 {
@@ -91,6 +92,7 @@ namespace BackOfficeTramites
                 Solicitud solicitud = null;
                 int accion;
 
+                ServiceClient wcf = new ServiceClient();
                 foreach (DataGridViewRow fila in dgvSolicitudes.SelectedRows)
                 {
                     if (fila.Selected)

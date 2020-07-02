@@ -26,6 +26,9 @@ public partial class MasterPage : System.Web.UI.MasterPage
 
     protected void btnLogout_Click(object sender, EventArgs e)
     {
-        Session["Usuario"] = null;
+        Session.Remove("Usuario");
+        Session.Remove("Mensaje");
+        lblMensaje.Text = "Usuario desconectado";
+        Response.Redirect("~/Default.aspx");
     }
 }

@@ -8,7 +8,7 @@ using wcfTramite;
 
 public partial class RegistroDeUsuario : System.Web.UI.Page
 {
-    ServiceClient wcf = new ServiceClient();
+    
     protected void Page_Load(object sender, EventArgs e)
     {
         ((Label)this.Master.FindControl("lblPagina")).Text = "Registro de usuario";
@@ -30,6 +30,7 @@ public partial class RegistroDeUsuario : System.Web.UI.Page
             nuevoSolicitante.NombreCompleto = nombre;
             nuevoSolicitante.Telefono = telefono;
 
+            ServiceClient wcf = new ServiceClient();
             wcf.AltaUsuario(nuevoSolicitante, null);
 
             lblError.Text = "Registro realizado con éxito";

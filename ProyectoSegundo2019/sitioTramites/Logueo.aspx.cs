@@ -10,9 +10,18 @@ public partial class Logueo : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        Session["Usuario"] = null;
+        Usuario us = (Usuario)Session["Usuario"];
         ((Label)this.Master.FindControl("lblPagina")).Text = "Acceso de usuario";
-        lblError.Text = (String)Session["Mensaje"];
+        if (us != null)
+        {
+            lblError.Text = "Usted ya esta logueado con el documento: " + us.Documento;
+            btnLog.Enabled = false;
+        }
+        else
+        {
+            lblError.Text = (String)Session["Mensaje"];
+            btnLog.Enabled = true;
+        }
     }
 
     protected void btnLog_Click(object sender, EventArgs e)

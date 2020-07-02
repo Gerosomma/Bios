@@ -14,7 +14,6 @@ namespace BackOfficeTramites
 {
     public partial class frmABMTramite : Form
     {
-        ServiceClient wcf = new ServiceClient();
         List<BackOfficeTramites.wcfTramite.Documentacion> DocumentacionActiva = new List<BackOfficeTramites.wcfTramite.Documentacion>();
         List<BackOfficeTramites.wcfTramite.Documentacion> DocumentacionTramite = new List<BackOfficeTramites.wcfTramite.Documentacion>();
         Empleado empleadoLogueado = null;
@@ -26,7 +25,7 @@ namespace BackOfficeTramites
 
             try
             {
-                //DocumentacionActiva = FabricaLogica.GetLogicaDocumentacion().listadoDocumentacion(empleadoLogueado);
+                ServiceClient wcf = new ServiceClient();
                 DocumentacionActiva = wcf.listadoDocumentacion(empleadoLogueado).ToList<Documentacion>();
                 var res = (from doc in DocumentacionActiva
                            select new
@@ -68,7 +67,7 @@ namespace BackOfficeTramites
 
             try
             {
-                //Tramite unTramite = FabricaLogica.GetLogicaTramite().BuscarTramite(codigo, empleadoLogueado);
+                ServiceClient wcf = new ServiceClient();
                 Tramite unTramite = wcf.BuscarTramite(codigo, empleadoLogueado);
                 if (unTramite == null)
                 {
@@ -117,6 +116,8 @@ namespace BackOfficeTramites
                 {
                     tramite.DocumentacionExigida[i] = DocumentacionTramite[i];
                 }
+
+                ServiceClient wcf = new ServiceClient();
                 wcf.AltaTramite(tramite, empleadoLogueado);
                 this.DesActivoBotones();
                 this.LimpioControles();
@@ -141,7 +142,7 @@ namespace BackOfficeTramites
             {
                 try
                 {
-                    //FabricaLogica.GetLogicaTramite().BajaTramite(tramite, empleadoLogueado);
+                    ServiceClient wcf = new ServiceClient();
                     wcf.BajaTramite(tramite, empleadoLogueado);
                     this.DesActivoBotones();
                     this.LimpioControles();
@@ -175,7 +176,7 @@ namespace BackOfficeTramites
                 //tramite.DocumentacionExigida[0] = DocumentacionTramite[0];
                 tramite.Precio = Convert.ToDecimal(txtPrecio.Text);
 
-                //FabricaLogica.GetLogicaTramite().ModificarTramite(tramite, empleadoLogueado);
+                ServiceClient wcf = new ServiceClient();
                 wcf.ModificarTramite(tramite, empleadoLogueado);
                 this.DesActivoBotones();
                 this.LimpioControles();

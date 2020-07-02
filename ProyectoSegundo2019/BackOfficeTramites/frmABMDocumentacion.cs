@@ -15,7 +15,6 @@ namespace BackOfficeTramites
     {
         private Empleado empleadoLogueado = null;
         private Documentacion documentacion = null;
-        ServiceClient wcf = new ServiceClient();
 
         public frmABMDocumentacion(Empleado empleado)
         {
@@ -37,7 +36,7 @@ namespace BackOfficeTramites
 
             try
             {
-                //Documentacion unaDocumentacion = FabricaLogica.GetLogicaDocumentacion().BuscarDocumentacion(numero);
+                ServiceClient wcf = new ServiceClient();
                 Documentacion unaDocumentacion = wcf.BuscarDocumentacion(numero);
                 
                 if (unaDocumentacion == null)
@@ -74,7 +73,7 @@ namespace BackOfficeTramites
                 doc.NomDocumentacion = txtNombre.Text.Trim();
                 doc.Lugar = txtLugar.Text;
 
-                //FabricaLogica.GetLogicaDocumentacion().AltaDocumentacion(empleado, empleadoLogueado);
+                ServiceClient wcf = new ServiceClient();
                 wcf.AltaDocumentacion(doc, empleadoLogueado);
                 this.DesActivoBotones();
                 this.LimpioControles();
@@ -97,7 +96,7 @@ namespace BackOfficeTramites
         {
             try
             {
-                //FabricaLogica.GetLogicaDocumentacion().BajaDocumentacion(documentacion, empleadoLogueado);
+                ServiceClient wcf = new ServiceClient();
                 wcf.BajaDocumentacion(documentacion, empleadoLogueado);
                 this.DesActivoBotones();
                 this.LimpioControles();
@@ -123,7 +122,7 @@ namespace BackOfficeTramites
                 documentacion.CodigoInterno = Convert.ToInt32(txtNumero.Text.Trim());
                 documentacion.Lugar = txtLugar.Text.Trim();
 
-                //FabricaLogica.GetLogicaDocumentacion().ModificarDocumentacion(documentacion, empleadoLogueado);
+                ServiceClient wcf = new ServiceClient();
                 wcf.ModificarDocumentacion(documentacion, empleadoLogueado);
                 this.DesActivoBotones();
                 this.LimpioControles();

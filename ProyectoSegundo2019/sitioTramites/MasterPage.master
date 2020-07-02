@@ -17,11 +17,11 @@
         <asp:ImageButton ID="logo" runat="server" PostBackUrl="~/Default.aspx" ImageUrl="~/img/red.png" EnableTheming="False" />
         <br />
         <asp:Label ID="lblPagina" runat="server"></asp:Label>
-        <asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click" PostBackUrl="~/Default.aspx" Width="70px" />
+        <asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click" Width="70px" />
         <asp:Label ID="lblMensaje" runat="server"></asp:Label>
     </div>
     <div class="side-bar">
-        <asp:TreeView ID="TreeView1" runat="server" Width="100%" style="margin-top: 0px" HoverNodeStyle-BorderStyle="Outset" BackColor="#E69D45" Font-Bold="True">
+        <asp:TreeView ID="TreeView1" runat="server" Width="100%" HoverNodeStyle-BorderStyle="Outset" BackColor="#E69D45" Font-Bold="True" ShowExpandCollapse="False">
             <HoverNodeStyle BorderColor="ActiveBorder" BorderStyle="Outset" Font-Bold="True" />
             <Nodes>
                 <asp:TreeNode NavigateUrl="~/default.aspx" Text="Inicio" 
@@ -34,7 +34,6 @@
                 <asp:TreeNode NavigateUrl="~/Logueo.aspx" Text="Login" 
                     Value="Login" ImageUrl="img/usuario.png">
                     <asp:TreeNode ImageUrl="~/img/gps.png" NavigateUrl="~/SolicitudDeTramite.aspx" Text="Solicitar tramite" Value="Solicitar tramite"></asp:TreeNode>
-                    
                 </asp:TreeNode>
             </Nodes>
             <NodeStyle BorderStyle="None" Font-Bold="True" NodeSpacing="1px" VerticalPadding="9px" Width="100%" />

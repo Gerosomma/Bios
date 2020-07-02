@@ -10,7 +10,7 @@ using wcfTramite;
 
 public partial class ConsultaTramite : System.Web.UI.Page
 {
-    ServiceClient wcf = new ServiceClient();
+    
     static string documento = "";
     static XmlDocument doc = new XmlDocument();
 
@@ -22,6 +22,7 @@ public partial class ConsultaTramite : System.Web.UI.Page
         {
             try
             {
+                ServiceClient wcf = new ServiceClient();
                 documento = wcf.listadoTramitesXml();
                 doc.LoadXml(documento);
 
