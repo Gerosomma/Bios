@@ -56,22 +56,36 @@ namespace BackOfficeTramites
             switch (dgvSolicitudes.Columns[e.ColumnIndex].Name)
             {
                 case "Ejecutar":
-                    accion = 1;
-                    numero = Convert.ToInt32(dgvSolicitudes.Rows[e.RowIndex].Cells["Numero"].Value);
-                    ServiceClient wcf = new ServiceClient();
-                    solicitud = wcf.BuscarSolicitud(numero, empleadoLogueado);
-                    wcf.CambiarEstadoSolicitud(solicitud.Numero, accion, empleadoLogueado);
-                    LblError.Text = "Solicitud ejecutada con éxito";
-                    RecargarLista();
+                    try
+                    {
+                        accion = 1;
+                        numero = Convert.ToInt32(dgvSolicitudes.Rows[e.RowIndex].Cells["Numero"].Value);
+                        ServiceClient wcf = new ServiceClient();
+                        solicitud = wcf.BuscarSolicitud(numero, empleadoLogueado);
+                        wcf.CambiarEstadoSolicitud(solicitud.Numero, accion, empleadoLogueado);
+                        LblError.Text = "Solicitud ejecutada con éxito";
+                        RecargarLista();
+                    }
+                    catch (Exception ex)
+                    {
+                        LblError.Text = ex.Message;
+                    }
                     break;
                 case "Anular":
-                    accion = 2;
-                    numero = Convert.ToInt32(dgvSolicitudes.Rows[e.RowIndex].Cells["Numero"].Value);
-                    ServiceClient wcf2 = new ServiceClient();
-                    solicitud = wcf2.BuscarSolicitud(numero, empleadoLogueado);
-                    wcf2.CambiarEstadoSolicitud(solicitud.Numero, accion, empleadoLogueado);
-                    LblError.Text = "Solicitud anulada con éxito";
-                    RecargarLista();
+                    try
+                    {
+                        accion = 2;
+                        numero = Convert.ToInt32(dgvSolicitudes.Rows[e.RowIndex].Cells["Numero"].Value);
+                        ServiceClient wcf2 = new ServiceClient();
+                        solicitud = wcf2.BuscarSolicitud(numero, empleadoLogueado);
+                        wcf2.CambiarEstadoSolicitud(solicitud.Numero, accion, empleadoLogueado);
+                        LblError.Text = "Solicitud anulada con éxito";
+                        RecargarLista();
+                    }
+                    catch (Exception ex)
+                    {
+                        LblError.Text = ex.Message;
+                    }
                     break;
                 default:
                     break;
