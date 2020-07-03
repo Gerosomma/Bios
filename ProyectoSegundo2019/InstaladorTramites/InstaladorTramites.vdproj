@@ -431,7 +431,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:InstaladorTramites"
         "ProductCode" = "8:{A097EB7F-E330-460C-92C9-FB78A3CF1A6A}"
-        "PackageCode" = "8:{2270747C-B805-4580-8F93-F4903DDDE03F}"
+        "PackageCode" = "8:{056EB7CB-C277-4687-A6D8-84EAB792F63C}"
         "UpgradeCode" = "8:{938F8EEE-61E4-499F-869E-9A98E4A7F400}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -551,6 +551,20 @@
         }
         "Shortcut"
         {
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_2F57E64556434CECB79BB483ADC562B6"
+            {
+            "Name" = "8:Tramites"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_839BEA98CDEC46189DB584CFECC55A8F"
+            "Folder" = "8:_839BEA98CDEC46189DB584CFECC55A8F"
+            "WorkingFolder" = "8:_839BEA98CDEC46189DB584CFECC55A8F"
+            "Icon" = "8:"
+            "Feature" = "8:"
+            }
         }
         "UserInterface"
         {
