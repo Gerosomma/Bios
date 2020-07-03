@@ -33,7 +33,7 @@
             // 
             // Service1
             // 
-            this.ServiceName = "Service1";
+            this.ServiceName = "Backoffice servicio";
             ((System.ComponentModel.ISupportInitialize)(this.eventLog)).EndInit();
 
         }
