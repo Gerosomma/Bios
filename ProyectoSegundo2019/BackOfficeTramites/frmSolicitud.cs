@@ -13,36 +13,47 @@ namespace BackOfficeTramites
 {
     public partial class frmSolicitud : Form
     {
-        ServiceClient wcf = new ServiceClient();
         Empleado empleadoLogueado = null;
         List<Solicitud> listaSolicitudes = new List<Solicitud>();
         public frmSolicitud(Empleado empleado)
         {
             InitializeComponent();
             empleadoLogueado = empleado;
-
-            try
-            {
-                listaSolicitudes = wcf.listadoSolicitud(empleadoLogueado).ToList<Solicitud>();
-                dgvSolicitudes.AutoGenerateColumns = true;
-                dgvSolicitudes.DataSource = listaSolicitudes;
-            }
-            catch (Exception ex)
-            {
-                if (ex.Message.Length > 40)
-                    LblError.Text = ex.Message.Substring(0, 40);
-                else
-                    LblError.Text = ex.Message;
-            }
+            RecargarLista();
         }
 
         private void RecargarLista()
         {
             try
             {
-                //listaSolicitudes = FabricaLogica.GetLogicaSolicitud().listadoSolicitud(empleadoLogueado);
+                ServiceClient wcf = new ServiceClient();
                 listaSolicitudes = wcf.listadoSolicitud(empleadoLogueado).ToList<Solicitud>();
-                dgvSolicitudes.DataSource = listaSolicitudes;
+                var res = (from sol in listaSolicitudes
+                           select new
+                           {
+                               Numero = sol.Numero.ToString(),
+                               Estado = sol.Estado,
+                               Fecha = sol.FechaHora.ToShortDateString(),
+                               Solicitante = sol.Solicitante.NombreCompleto,
+                               Tramite = sol.Tramite.NombreTramite
+                           }).ToList();
+                dgvSolicitudes.AutoGenerateColumns = true;
+                dgvSolicitudes.DataSource = res;
+
+                DataGridViewButtonColumn colEjecutar = new DataGridViewButtonColumn();
+                colEjecutar.Name = "Ejecturar";
+                colEjecutar.Text = "Ejecturar";
+                colEjecutar.UseColumnTextForButtonValue = true;
+                colEjecutar.HeaderText = "Ejecutar";
+
+                DataGridViewButtonColumn colAnular = new DataGridViewButtonColumn();
+                colAnular.Name = "Anular";
+                colAnular.Text = "Anular";
+                colAnular.UseColumnTextForButtonValue = true;
+                colAnular.HeaderText = "Anular";
+
+                dgvSolicitudes.Columns.Add(colEjecutar);
+                dgvSolicitudes.Columns.Add(colAnular);
             }
             catch (Exception ex)
             {
@@ -59,21 +70,27 @@ namespace BackOfficeTramites
             {
                 Solicitud solicitud = null;
                 int accion;
-
-                foreach (DataGridViewRow fila in dgvSolicitudes.SelectedRows)
+                if (dgvSolicitudes.SelectedRows.Count != 0)
                 {
-                    if (fila.Selected)
+                    ServiceClient wcf = new ServiceClient();
+
+                    foreach (DataGridViewRow fila in dgvSolicitudes.SelectedRows)
                     {
-                        accion = 1;
-                        solicitud = wcf.BuscarSolicitud(Convert.ToInt32(fila.Cells["Numero"].Value), empleadoLogueado);
-
-
-                        wcf.CambiarEstadoSolicitud(solicitud.Numero, accion, empleadoLogueado);
+                        if (fila.Selected)
+                        {
+                            accion = 1;
+                            solicitud = wcf.BuscarSolicitud(Convert.ToInt32(fila.Cells["Numero"].Value), empleadoLogueado);
+                            wcf.CambiarEstadoSolicitud(solicitud.Numero, accion, empleadoLogueado);
+                        }
                     }
-                }
 
-                LblError.Text = "Solicitudes modificadas con éxito";
-                RecargarLista();
+                    LblError.Text = "Solicitudes ejecutadas con éxito";
+                    RecargarLista();
+                }
+                else
+                {
+                    LblError.Text = "No selecciono Solicitud.";
+                }
             }
             catch (Exception ex)
             {
@@ -90,20 +107,26 @@ namespace BackOfficeTramites
             {
                 Solicitud solicitud = null;
                 int accion;
-
-                foreach (DataGridViewRow fila in dgvSolicitudes.SelectedRows)
+                if (dgvSolicitudes.SelectedRows.Count != 0)
                 {
-                    if (fila.Selected)
+                    ServiceClient wcf = new ServiceClient();
+                    foreach (DataGridViewRow fila in dgvSolicitudes.SelectedRows)
                     {
-                        accion = 2;
-                        solicitud = wcf.BuscarSolicitud(Convert.ToInt32(fila.Cells["Numero"].Value), empleadoLogueado);
-                        wcf.CambiarEstadoSolicitud(solicitud.Numero, accion, empleadoLogueado);
+                        if (fila.Selected)
+                        {
+                            accion = 2;
+                            solicitud = wcf.BuscarSolicitud(Convert.ToInt32(fila.Cells["Numero"].Value), empleadoLogueado);
+                            wcf.CambiarEstadoSolicitud(solicitud.Numero, accion, empleadoLogueado);
+                        }
                     }
+
+                    LblError.Text = "Solicitudes anuladas con éxito";
+                    RecargarLista();
                 }
-
-                LblError.Text = "Solicitudes modificadas con éxito";
-                RecargarLista();
-
+                else
+                {
+                    LblError.Text = "No selecciono Solicitud.";
+                }
             }
             catch (Exception ex)
             {

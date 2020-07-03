@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListadoSolicitudes));
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblMensaje = new System.Windows.Forms.ToolStripStatusLabel();
             this.btnLimpiar = new System.Windows.Forms.Button();
@@ -227,8 +228,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ddlMes);
             this.Controls.Add(this.ddlDia);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmListadoSolicitudes";
-            this.Text = "frmListadoSolicitudes";
+            this.Text = "Listados de Solicitudes";
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitudes)).EndInit();

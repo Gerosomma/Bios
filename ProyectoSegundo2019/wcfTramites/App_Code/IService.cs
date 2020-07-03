@@ -46,6 +46,8 @@ public interface IService
     [OperationContract]
     Documentacion BuscarDocumentacion(int codigoInterno);
     [OperationContract]
+    Documentacion BuscarDocumentacionAux(int codigoInterno);
+    [OperationContract]
     void AltaDocumentacion(Documentacion documentacion, Empleado empLog);
     [OperationContract]
     void ModificarDocumentacion(Documentacion documentacion, Empleado empLog);

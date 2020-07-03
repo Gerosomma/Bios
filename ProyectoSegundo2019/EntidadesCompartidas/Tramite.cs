@@ -13,8 +13,7 @@ namespace EntidadesCompartidas
         private string _descripcion;
         private decimal _precio;
         private List<Documentacion> _documentacionExigida = new List<Documentacion>();
-        private Regex _expresion = new Regex("[0-9]{4}[a-zA-ZñÑ]{5}");    //"[0-9]{4}[a-zA-ZñÑ]{5}]$" ---------- @"^[0-9]{4}[a-zA-ZñÑ]{5}]$"
-
+        
         [DataMember]
         public string CodigoTramite
         {
@@ -27,6 +26,7 @@ namespace EntidadesCompartidas
                 }
                 else
                 {
+                    Regex _expresion = new Regex("[0-9]{4}[a-zA-ZñÑ]{5}");
                     if (_expresion.IsMatch(value))
                     {
                         _codigoTramite = value;
@@ -105,31 +105,6 @@ namespace EntidadesCompartidas
             Descripcion = descripcion;
             Precio = precio;
             DocumentacionExigida = documentacionExigida;
-        }
-
-
-        //se va
-        public bool validarFormatoCodigo(string codigo)
-        {
-            Boolean resultado = false;
-            List<char> caracteresValidos = new List<char> { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'Ñ', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
-            List<char> numerosValidos = new List<char> { '1', '2', '3', '4', '5', '6', '7', '8', '9', '0' };
-            int numeros = 0;
-            int caracteres = 0;
-
-            foreach (char a in codigo.ToUpper())
-            {
-                if (caracteresValidos.Contains(a))
-                    caracteres++;
-
-                if (numerosValidos.Contains(a))
-                    numeros++;
-            }
-
-            if (caracteres == 5 && numeros == 4)
-                resultado = true;
-
-            return resultado;
         }
     }
 }

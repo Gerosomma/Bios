@@ -8,14 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BackOfficeTramites.wcfTramite;
+using MisControles;
 
 namespace BackOfficeTramites
 {
     public partial class frmABMDocumentacion : Form
-    {
+    { 
         private Empleado empleadoLogueado = null;
         private Documentacion documentacion = null;
-        ServiceClient wcf = new ServiceClient();
 
         public frmABMDocumentacion(Empleado empleado)
         {
@@ -29,21 +29,15 @@ namespace BackOfficeTramites
             try
             {
                 numero = Convert.ToInt32(txtNumero.Text);
-            }
-            catch (FormatException)
-            {
-                LblError.Text = "Numero es invalido.";
-            }
-
-            try
-            {
-                //Documentacion unaDocumentacion = FabricaLogica.GetLogicaDocumentacion().BuscarDocumentacion(numero);
-                Documentacion unaDocumentacion = wcf.BuscarDocumentacion(numero);
+            
+                ServiceClient wcf = new ServiceClient();
+                Documentacion unaDocumentacion = wcf.BuscarDocumentacionAux(numero);
                 
                 if (unaDocumentacion == null)
                 {
                     BtnAlta.Enabled = true;
                     txtNumero.Enabled = false;
+                    LblError.Text = "No existe documento, agregelo.";
                 }
                 else
                 {
@@ -54,7 +48,20 @@ namespace BackOfficeTramites
                     txtNombre.Text = unaDocumentacion.NomDocumentacion;
                     txtLugar.Text = unaDocumentacion.Lugar;
                     txtNumero.Enabled = false;
+                    btnActivo.Text = "Activo";
+
+                    if (!unaDocumentacion.Activo)
+                    {
+                        btnActivo.Enabled = true;
+                        LblError.Text = "El documento esta inactivo.";
+                        btnActivo.Image = BackOfficeTramites.Properties.Resources.inactivo;
+                        btnActivo.Text = "Activar";
+                    }
                 }
+            }
+            catch (FormatException)
+            {
+                LblError.Text = "Numero es inválido.";
             }
             catch (Exception ex)
             {
@@ -74,15 +81,23 @@ namespace BackOfficeTramites
                 doc.NomDocumentacion = txtNombre.Text.Trim();
                 doc.Lugar = txtLugar.Text;
 
-                //FabricaLogica.GetLogicaDocumentacion().AltaDocumentacion(empleado, empleadoLogueado);
+                ServiceClient wcf = new ServiceClient();
                 wcf.AltaDocumentacion(doc, empleadoLogueado);
                 this.DesActivoBotones();
                 this.LimpioControles();
 
                 txtNumero.Enabled = true;
                 txtNumero.ReadOnly = false;
-
                 LblError.Text = "Alta con Exito";
+
+                if (!doc.Activo)
+                {
+                    LblError.Text = "Se activo la documentacion con Exito";
+                }
+            }
+            catch (FormatException)
+            {
+                LblError.Text = "Numero es inválido.";
             }
             catch (Exception ex)
             {
@@ -97,7 +112,7 @@ namespace BackOfficeTramites
         {
             try
             {
-                //FabricaLogica.GetLogicaDocumentacion().BajaDocumentacion(documentacion, empleadoLogueado);
+                ServiceClient wcf = new ServiceClient();
                 wcf.BajaDocumentacion(documentacion, empleadoLogueado);
                 this.DesActivoBotones();
                 this.LimpioControles();
@@ -123,7 +138,7 @@ namespace BackOfficeTramites
                 documentacion.CodigoInterno = Convert.ToInt32(txtNumero.Text.Trim());
                 documentacion.Lugar = txtLugar.Text.Trim();
 
-                //FabricaLogica.GetLogicaDocumentacion().ModificarDocumentacion(documentacion, empleadoLogueado);
+                ServiceClient wcf = new ServiceClient();
                 wcf.ModificarDocumentacion(documentacion, empleadoLogueado);
                 this.DesActivoBotones();
                 this.LimpioControles();
@@ -153,6 +168,7 @@ namespace BackOfficeTramites
             BtnAlta.Enabled = false;
             BtnBaja.Enabled = false;
             BtnModificar.Enabled = false;
+            btnActivo.Enabled = false;
         }
 
         private void LimpioControles()
@@ -161,8 +177,14 @@ namespace BackOfficeTramites
             txtNombre.Text = "";
             txtLugar.Text = "";
             LblError.Text = "";
+            btnActivo.Text = "Activo";
             txtNumero.Enabled = true;
+            btnActivo.Image = BackOfficeTramites.Properties.Resources.activo;
         }
 
+        private void txtNumero_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            utiles.soloNumeros(e);
+        }
     }
 }

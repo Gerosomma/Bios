@@ -10,7 +10,7 @@ namespace Persistencia.Interfaces
     public interface IPersistenciaDocumentacion
     {
         Documentacion BuscarDocumentacion(int codigoInterno);
-        Documentacion BuscarDocumentacionAux(int codigoInterno, Empleado empLog);
+        Documentacion BuscarDocumentacionAux(int codigoInterno);
         void AltaDocumentacion(Documentacion documentacion, Empleado empLog);
         void ModificarDocumentacion(Documentacion documentacion, Empleado empLog);
         void BajaDocumentacion(Documentacion documentacion, Empleado empLog);

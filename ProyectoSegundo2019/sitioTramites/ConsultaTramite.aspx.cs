@@ -10,18 +10,19 @@ using wcfTramite;
 
 public partial class ConsultaTramite : System.Web.UI.Page
 {
-    ServiceClient wcf = new ServiceClient();
+    
     static string documento = "";
     static XmlDocument doc = new XmlDocument();
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        ((Label)this.Master.FindControl("lblPagina")).Text = "Listado de Tramites activos";
+        ((Label)this.Master.FindControl("lblPagina")).Text = "Tramites disponibles";
 
         if (!IsPostBack)
         {
             try
             {
+                ServiceClient wcf = new ServiceClient();
                 documento = wcf.listadoTramitesXml();
                 doc.LoadXml(documento);
 

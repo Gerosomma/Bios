@@ -39,27 +39,9 @@ namespace MisControles
 
         private void txtUsuario_KeyPress(object sender, KeyPressEventArgs e)
         {
-            soloNumeros(e);
+            utiles.soloNumeros(e);
         }
 
-        private static void soloNumeros(KeyPressEventArgs e) {
-            if (char.IsDigit(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (char.IsSeparator(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (char.IsControl(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true;
-                MessageBox.Show("Ingresar documento sin puntos ni guiones.");
-            }
-        }
+        
     }
 }

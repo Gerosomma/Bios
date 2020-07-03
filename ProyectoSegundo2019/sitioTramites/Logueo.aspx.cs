@@ -8,18 +8,30 @@ using wcfTramite;
 
 public partial class Logueo : System.Web.UI.Page
 {
-    ServiceClient wcf = new ServiceClient();
     protected void Page_Load(object sender, EventArgs e)
     {
-        Session["Usuario"] = null;
+        Usuario us = (Usuario)Session["Usuario"];
+        ((Label)this.Master.FindControl("lblPagina")).Text = "Acceso de usuario";
+        if (us != null)
+        {
+            lblError.Text = "Usted ya esta logueado con el documento: " + us.Documento;
+            btnLog.Enabled = false;
+        }
+        else
+        {
+            lblError.Text = (String)Session["Mensaje"];
+            btnLog.Enabled = true;
+        }
     }
 
-    protected void Login_Authenticate(object sender, AuthenticateEventArgs e)
+    protected void btnLog_Click(object sender, EventArgs e)
     {
         try
         {
-            int _Usu = Convert.ToInt32(controlLog.UserName.Trim());
-            string _Pass = controlLog.Password.Trim();
+            int _Usu = Convert.ToInt32(txtDocumento.Text.Trim());
+            string _Pass = txtContrasena.Text;
+
+            ServiceClient wcf = new ServiceClient();
             Solicitante _unCliente = (Solicitante)wcf.LogueoUsuario(_Usu, _Pass);
 
             if (_unCliente == null)
@@ -31,6 +43,10 @@ public partial class Logueo : System.Web.UI.Page
                 Session["Usuario"] = _unCliente;
                 Response.Redirect("~/SolicitudDeTramite.aspx");
             }
+        }
+        catch (FormatException)
+        {
+            lblError.Text = "Documento invalido.";
         }
         catch (Exception ex)
         {

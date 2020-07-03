@@ -42,6 +42,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtLugar = new System.Windows.Forms.TextBox();
             this.txtNumero = new System.Windows.Forms.TextBox();
+            this.btnActivo = new System.Windows.Forms.Button();
             this.BarraEstado.SuspendLayout();
             this.BarraHerramientas.SuspendLayout();
             this.SuspendLayout();
@@ -164,13 +165,28 @@
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(198, 20);
             this.txtNumero.TabIndex = 51;
+            this.txtNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumero_KeyPress);
             this.txtNumero.Validating += new System.ComponentModel.CancelEventHandler(this.txtNumero_Validating);
+            // 
+            // btnActivo
+            // 
+            this.btnActivo.Enabled = false;
+            this.btnActivo.Image = global::BackOfficeTramites.Properties.Resources.activo;
+            this.btnActivo.Location = new System.Drawing.Point(486, 133);
+            this.btnActivo.Name = "btnActivo";
+            this.btnActivo.Size = new System.Drawing.Size(78, 103);
+            this.btnActivo.TabIndex = 58;
+            this.btnActivo.Text = "Activo";
+            this.btnActivo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnActivo.UseVisualStyleBackColor = true;
+            this.btnActivo.Click += new System.EventHandler(this.BtnAlta_Click);
             // 
             // frmABMDocumentacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(576, 261);
+            this.Controls.Add(this.btnActivo);
             this.Controls.Add(this.BarraEstado);
             this.Controls.Add(this.BarraHerramientas);
             this.Controls.Add(this.label2);
@@ -179,6 +195,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtLugar);
             this.Controls.Add(this.txtNumero);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmABMDocumentacion";
             this.Text = "frmABMDocumentacion";
             this.BarraEstado.ResumeLayout(false);
@@ -205,5 +222,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtLugar;
         private System.Windows.Forms.TextBox txtNumero;
+        private System.Windows.Forms.Button btnActivo;
     }
 }

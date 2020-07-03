@@ -14,7 +14,6 @@ namespace BackOfficeTramites
 {
     public partial class frmListadoSolicitudes : Form
     {
-        ServiceClient wcf = new ServiceClient();
         Empleado empleadoLogueado = null;
         List<Solicitud> solicitudes = new List<Solicitud>();
         List<Tramite> tramites = new List<Tramite>();
@@ -32,9 +31,7 @@ namespace BackOfficeTramites
             try
             {
                 empleadoLogueado = empleado;
-                //documentacion = FabricaLogica.GetLogicaDocumentacion().listadoDocumentacion(empleado);
-                //tramites = FabricaLogica.GetLogicaTramite().ListarTramites();
-                //solicitudes = FabricaLogica.GetLogicaSolicitud().listadoSolicitud(empleado);
+                ServiceClient wcf = new ServiceClient();
                 documentacion = wcf.listadoDocumentacion(empleado).ToList<Documentacion>();
                 tramites = wcf.ListarTramites().ToList<Tramite>();
                 solicitudes = wcf.listadoSolicitud(empleado).ToList<Solicitud>();

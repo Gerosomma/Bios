@@ -8,12 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BackOfficeTramites.wcfTramite;
+using MisControles;
 
 namespace BackOfficeTramites
 {
     public partial class frmABMEmpleado : Form
     {
-        ServiceClient wcf = new ServiceClient();
         private Empleado empleadoLogueado = null;
         private Empleado objEmpleado = null;
 
@@ -25,7 +25,14 @@ namespace BackOfficeTramites
 
         private void TxtNumero_Validating(object sender, CancelEventArgs e)
         {
-            buscarEmpleado(TxtNumero.Text);
+            if (TxtNumero.Text.Trim() != "")
+            {
+                buscarEmpleado(TxtNumero.Text);
+            }
+            else
+            {
+                LblError.Text = "No ingreso documento.";
+            }
         }
 
         private void BtnAlta_Click(object sender, EventArgs e)
@@ -39,7 +46,7 @@ namespace BackOfficeTramites
                 empleado.HoraInicio = dtpInicio.Value.TimeOfDay.ToString();
                 empleado.HoraFin = dtpFin.Value.TimeOfDay.ToString();
 
-                //FabricaLogica.GetLogicaUsuario().AltaUsuario(empleado, empleadoLogueado);
+                ServiceClient wcf = new ServiceClient();
                 wcf.AltaUsuario(empleado, empleadoLogueado);
                 this.DesActivoBotones();
                 this.LimpioControles();
@@ -59,14 +66,21 @@ namespace BackOfficeTramites
         {
             try
             {
-                //FabricaLogica.GetLogicaUsuario().BajaUsuario(objEmpleado, empleadoLogueado);
-                wcf.BajaUsuario(objEmpleado, empleadoLogueado);
-                this.DesActivoBotones();
-                this.LimpioControles();
-                TxtNumero.Enabled = true;
-                TxtNumero.ReadOnly = false;
+                if (objEmpleado != null)
+                {
+                    ServiceClient wcf = new ServiceClient();
+                    wcf.BajaUsuario(objEmpleado, empleadoLogueado);
+                    this.DesActivoBotones();
+                    this.LimpioControles();
+                    TxtNumero.Enabled = true;
+                    TxtNumero.ReadOnly = false;
 
-                LblError.Text = "Baja con Exito";
+                    LblError.Text = "Baja con Exito";
+                }
+                else
+                {
+                    LblError.Text = "Debe buscar empleado para dar de baja";
+                }
             }
             catch (Exception ex)
             {
@@ -81,20 +95,27 @@ namespace BackOfficeTramites
         {
             try
             {
-                objEmpleado.NombreCompleto = TxtNombre.Text.Trim();
-                objEmpleado.Contrasenia = TxtPassword.Text.Trim();
-                objEmpleado.HoraInicio = dtpFin.Value.TimeOfDay.ToString();
-                objEmpleado.HoraFin = dtpFin.Value.TimeOfDay.ToString();
+                if (objEmpleado != null)
+                {
+                    objEmpleado.NombreCompleto = TxtNombre.Text.Trim();
+                    objEmpleado.Contrasenia = TxtPassword.Text.Trim();
+                    objEmpleado.HoraInicio = dtpInicio.Value.TimeOfDay.ToString();
+                    objEmpleado.HoraFin = dtpFin.Value.TimeOfDay.ToString();
 
-                //FabricaLogica.GetLogicaUsuario().ModificarUsuario(objEmpleado, empleadoLogueado);
-                wcf.ModificarUsuario(objEmpleado, empleadoLogueado);
-                this.DesActivoBotones();
-                this.LimpioControles();
+                    ServiceClient wcf = new ServiceClient();
+                    wcf.ModificarUsuario(objEmpleado, empleadoLogueado);
+                    this.DesActivoBotones();
+                    this.LimpioControles();
 
-                TxtNumero.Enabled = true;
-                TxtNumero.ReadOnly = false;
+                    TxtNumero.Enabled = true;
+                    TxtNumero.ReadOnly = false;
 
-                LblError.Text = "Modificacion con Exito";
+                    LblError.Text = "Modificacion con Exito";
+                }
+                else
+                {
+                    LblError.Text = "Debe buscar empleado para dar de baja";
+                }
             }
             catch (Exception ex)
             {
@@ -111,20 +132,15 @@ namespace BackOfficeTramites
             try
             {
                 cedula = Convert.ToInt32(doc);
-            }
-            catch (FormatException ex)
-            {
-                LblError.Text = "La cedula es invalida.";
-            }
 
-            try
-            {
                 Empleado _unEmpleado = null;
-                //_unEmpleado = (Empleado)FabricaLogica.GetLogicaUsuario().BuscarUsuario(cedula, empleadoLogueado);
+                ServiceClient wcf = new ServiceClient();
                 _unEmpleado = (Empleado)wcf.BuscarUsuario(cedula, empleadoLogueado);
                 if (_unEmpleado == null)
                 {
                     BtnAlta.Enabled = true;
+                    TxtNumero.Enabled = false;
+                    LblError.Text = "No existe documento, puede agregarlo.";
                 }
                 else
                 {
@@ -137,6 +153,10 @@ namespace BackOfficeTramites
                     dtpInicio.Value = Convert.ToDateTime(_unEmpleado.HoraInicio);
                     dtpFin.Value = Convert.ToDateTime(_unEmpleado.HoraFin);
                 }
+            }
+            catch (FormatException)
+            {
+                LblError.Text = "La cedula es invalida.";
             }
             catch (Exception ex)
             {
@@ -169,6 +189,11 @@ namespace BackOfficeTramites
         {
             DesActivoBotones();
             LimpioControles();
+        }
+
+        private void TxtNumero_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            utiles.soloNumeros(e);
         }
     }
 }

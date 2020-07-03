@@ -65,6 +65,7 @@
             // 
             this.dtpInicio.CustomFormat = "HH:mm";
             this.dtpInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpInicio.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.dtpInicio.Location = new System.Drawing.Point(84, 129);
             this.dtpInicio.Name = "dtpInicio";
             this.dtpInicio.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -92,6 +93,7 @@
             this.TxtNumero.Name = "TxtNumero";
             this.TxtNumero.Size = new System.Drawing.Size(198, 20);
             this.TxtNumero.TabIndex = 40;
+            this.TxtNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNumero_KeyPress);
             this.TxtNumero.Validating += new System.ComponentModel.CancelEventHandler(this.TxtNumero_Validating);
             // 
             // BarraEstado
@@ -227,6 +229,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmABMEmpleado";
             this.Text = "frmABMEmpleado";
             this.BarraEstado.ResumeLayout(false);

@@ -9,24 +9,24 @@ using wcfTramite;
 
 public partial class SolicitudDeTramite : System.Web.UI.Page
 {
-    ServiceClient wcf = new ServiceClient();
+    
     Usuario usuarioLogueado = null;
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        ((Label)this.Master.FindControl("lblPagina")).Text = "Solicitud de Tramite";
         Response.CacheControl = "no-cache";
         usuarioLogueado = (Usuario)Session["Usuario"];
 
         if (usuarioLogueado == null || !(usuarioLogueado is Solicitante))
         {
-            Session["Mensaje"] = "¡ERROR! Acceso denegado.";
-
-            Response.Redirect("~/Default.aspx");
+            Session["Mensaje"] = "Acceso denegado, debe loguearse como usuario para solicitar tramites.";
+            Response.Redirect("~/Logueo.aspx");
         }
         try
         {
             List<Tramite> tramites = new List<Tramite>();
-
+            ServiceClient wcf = new ServiceClient();
             tramites = wcf.ListarTramites().ToList<Tramite>();
             gvTramites.DataSource = tramites;
             gvTramites.DataBind();
@@ -63,6 +63,8 @@ public partial class SolicitudDeTramite : System.Web.UI.Page
             }
 
             DateTime fechaHora = new DateTime(fecha.Year, fecha.Month, fecha.Day, hora, 0, 0);
+
+            ServiceClient wcf = new ServiceClient();
             Tramite tramiteSeleccionado = wcf.BuscarTramite(gvTramites.SelectedValue.ToString(), usuarioLogueado);
 
             Solicitud solicitud = new Solicitud();
