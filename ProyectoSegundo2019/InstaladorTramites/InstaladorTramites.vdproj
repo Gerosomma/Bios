@@ -16,13 +16,19 @@
         "Entry"
         {
         "MsmKey" = "8:_069707BFF42C26751637935F05854D9D"
-        "OwnerKey" = "8:_66E4F20B67774FE7A9A52BE2329CE749"
+        "OwnerKey" = "8:_420A3B8AE9AD44C798D4AC7F5ECF78F5"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_420A3B8AE9AD44C798D4AC7F5ECF78F5"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_4FECAE3A0F154074878E58348DD415A6"
-        "OwnerKey" = "8:_66E4F20B67774FE7A9A52BE2329CE749"
+        "OwnerKey" = "8:_420A3B8AE9AD44C798D4AC7F5ECF78F5"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -39,12 +45,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_66E4F20B67774FE7A9A52BE2329CE749"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_7C3DE727469C5DBE82FA4D8FB4904847"
         "OwnerKey" = "8:_CF9C354D260C4C77ABD7E06B534FACC4"
         "MsmSig" = "8:_UNDEFINED"
@@ -52,7 +52,7 @@
         "Entry"
         {
         "MsmKey" = "8:_7C3DE727469C5DBE82FA4D8FB4904847"
-        "OwnerKey" = "8:_66E4F20B67774FE7A9A52BE2329CE749"
+        "OwnerKey" = "8:_420A3B8AE9AD44C798D4AC7F5ECF78F5"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -64,7 +64,7 @@
         "Entry"
         {
         "MsmKey" = "8:_8FA7B853C88E6AC42F7D1ED04072955F"
-        "OwnerKey" = "8:_66E4F20B67774FE7A9A52BE2329CE749"
+        "OwnerKey" = "8:_420A3B8AE9AD44C798D4AC7F5ECF78F5"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -82,13 +82,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_7C3DE727469C5DBE82FA4D8FB4904847"
+        "OwnerKey" = "8:_CF9C354D260C4C77ABD7E06B534FACC4"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_66E4F20B67774FE7A9A52BE2329CE749"
+        "OwnerKey" = "8:_420A3B8AE9AD44C798D4AC7F5ECF78F5"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -112,13 +112,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_CF9C354D260C4C77ABD7E06B534FACC4"
+        "OwnerKey" = "8:_B40C122A75263F6AF8D1DAC8A8450748"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_B40C122A75263F6AF8D1DAC8A8450748"
+        "OwnerKey" = "8:_7C3DE727469C5DBE82FA4D8FB4904847"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -139,6 +139,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.5"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.5 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.5"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -155,6 +171,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -407,7 +431,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:InstaladorTramites"
         "ProductCode" = "8:{A097EB7F-E330-460C-92C9-FB78A3CF1A6A}"
-        "PackageCode" = "8:{D2231AFA-5F52-4D7C-AA4F-C160D85F9943}"
+        "PackageCode" = "8:{2270747C-B805-4580-8F93-F4903DDDE03F}"
         "UpgradeCode" = "8:{938F8EEE-61E4-499F-869E-9A98E4A7F400}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -418,7 +442,7 @@
         "Manufacturer" = "8:Bios tramites"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
-        "Title" = "8:InstaladorTramites"
+        "Title" = "8:Backoffice Tramites"
         "Subject" = "8:"
         "ARPCONTACT" = "8:Bios tramites"
         "Keywords" = "8:"
@@ -926,7 +950,7 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_66E4F20B67774FE7A9A52BE2329CE749"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_420A3B8AE9AD44C798D4AC7F5ECF78F5"
             {
             "SourcePath" = "8:..\\servicioWindows\\obj\\Debug\\servicioWindows.exe"
             "TargetName" = "8:"
