@@ -29,34 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSolicitud));
-            this.btnEjecutar = new System.Windows.Forms.Button();
-            this.btnRechazada = new System.Windows.Forms.Button();
             this.dgvSolicitudes = new System.Windows.Forms.DataGridView();
+            this.Ejecutar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Anular = new System.Windows.Forms.DataGridViewButtonColumn();
             this.BarraEstado = new System.Windows.Forms.StatusStrip();
             this.LblError = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblTitulo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitudes)).BeginInit();
             this.BarraEstado.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnEjecutar
-            // 
-            this.btnEjecutar.Location = new System.Drawing.Point(122, 12);
-            this.btnEjecutar.Name = "btnEjecutar";
-            this.btnEjecutar.Size = new System.Drawing.Size(149, 23);
-            this.btnEjecutar.TabIndex = 71;
-            this.btnEjecutar.Text = "Marcar como ejecutada";
-            this.btnEjecutar.UseVisualStyleBackColor = true;
-            this.btnEjecutar.Click += new System.EventHandler(this.btnEjecutar_Click_1);
-            // 
-            // btnRechazada
-            // 
-            this.btnRechazada.Location = new System.Drawing.Point(277, 12);
-            this.btnRechazada.Name = "btnRechazada";
-            this.btnRechazada.Size = new System.Drawing.Size(152, 23);
-            this.btnRechazada.TabIndex = 72;
-            this.btnRechazada.Text = "Marcar como anulada";
-            this.btnRechazada.UseVisualStyleBackColor = true;
-            this.btnRechazada.Click += new System.EventHandler(this.btnRechazada_Click_1);
             // 
             // dgvSolicitudes
             // 
@@ -66,20 +47,42 @@
             this.dgvSolicitudes.AllowUserToResizeColumns = false;
             this.dgvSolicitudes.AllowUserToResizeRows = false;
             this.dgvSolicitudes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSolicitudes.Location = new System.Drawing.Point(12, 71);
+            this.dgvSolicitudes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Ejecutar,
+            this.Anular});
+            this.dgvSolicitudes.Location = new System.Drawing.Point(12, 36);
             this.dgvSolicitudes.MultiSelect = false;
             this.dgvSolicitudes.Name = "dgvSolicitudes";
             this.dgvSolicitudes.ReadOnly = true;
-            this.dgvSolicitudes.Size = new System.Drawing.Size(560, 465);
+            this.dgvSolicitudes.Size = new System.Drawing.Size(767, 465);
             this.dgvSolicitudes.TabIndex = 73;
+            this.dgvSolicitudes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSolicitudes_CellClick);
+            // 
+            // Ejecutar
+            // 
+            this.Ejecutar.HeaderText = "Ejecutar";
+            this.Ejecutar.Name = "Ejecutar";
+            this.Ejecutar.ReadOnly = true;
+            this.Ejecutar.Text = "Ejecutar";
+            this.Ejecutar.UseColumnTextForButtonValue = true;
+            this.Ejecutar.Width = 50;
+            // 
+            // Anular
+            // 
+            this.Anular.HeaderText = "Anular";
+            this.Anular.Name = "Anular";
+            this.Anular.ReadOnly = true;
+            this.Anular.Text = "Anular";
+            this.Anular.UseColumnTextForButtonValue = true;
+            this.Anular.Width = 50;
             // 
             // BarraEstado
             // 
             this.BarraEstado.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.LblError});
-            this.BarraEstado.Location = new System.Drawing.Point(0, 539);
+            this.BarraEstado.Location = new System.Drawing.Point(0, 518);
             this.BarraEstado.Name = "BarraEstado";
-            this.BarraEstado.Size = new System.Drawing.Size(584, 22);
+            this.BarraEstado.Size = new System.Drawing.Size(791, 22);
             this.BarraEstado.TabIndex = 74;
             this.BarraEstado.Text = "statusStrip1";
             // 
@@ -88,15 +91,24 @@
             this.LblError.Name = "LblError";
             this.LblError.Size = new System.Drawing.Size(0, 17);
             // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Location = new System.Drawing.Point(13, 13);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(514, 20);
+            this.lblTitulo.TabIndex = 75;
+            this.lblTitulo.Text = "Seleccione una solicitud de tramite para cambiar su estado.";
+            // 
             // frmSolicitud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 561);
+            this.ClientSize = new System.Drawing.Size(791, 540);
+            this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.BarraEstado);
             this.Controls.Add(this.dgvSolicitudes);
-            this.Controls.Add(this.btnRechazada);
-            this.Controls.Add(this.btnEjecutar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmSolicitud";
             this.Text = "Estado de Solicitudes";
@@ -109,11 +121,11 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnEjecutar;
-        private System.Windows.Forms.Button btnRechazada;
         private System.Windows.Forms.DataGridView dgvSolicitudes;
         private System.Windows.Forms.StatusStrip BarraEstado;
         private System.Windows.Forms.ToolStripStatusLabel LblError;
+        private System.Windows.Forms.DataGridViewButtonColumn Ejecutar;
+        private System.Windows.Forms.DataGridViewButtonColumn Anular;
+        private System.Windows.Forms.Label lblTitulo;
     }
 }
