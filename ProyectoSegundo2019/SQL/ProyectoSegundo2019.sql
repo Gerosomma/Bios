@@ -380,7 +380,7 @@ END
 GO
 
 -----------SP Documentacion-----------
-ALTER PROCEDURE AltaDocumentacion
+CREATE PROCEDURE AltaDocumentacion
 @codigoInterno INT,
 @nomDocumentacion VARCHAR(50),
 @lugar VARCHAR(50)

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://localhost/servTramites/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/" />
-  <xs:import schemaLocation="http://localhost/servTramites/Service.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" />
+  <xs:import schemaLocation="http://pc107/WCF/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/" />
+  <xs:import schemaLocation="http://pc107/WCF/Service.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" />
   <xs:element name="GetDataUsingDataContract">
     <xs:complexType>
       <xs:sequence>
@@ -99,11 +99,25 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="BuscarDocumentacionAux">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="codigoInterno" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuscarDocumentacionAuxResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="BuscarDocumentacionAuxResult" nillable="true" type="q13:Documentacion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="AltaDocumentacion">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="documentacion" nillable="true" type="q13:Documentacion" />
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="empLog" nillable="true" type="q14:Empleado" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="documentacion" nillable="true" type="q14:Documentacion" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="empLog" nillable="true" type="q15:Empleado" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -115,8 +129,8 @@
   <xs:element name="ModificarDocumentacion">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="documentacion" nillable="true" type="q15:Documentacion" />
-        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="empLog" nillable="true" type="q16:Empleado" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="documentacion" nillable="true" type="q16:Documentacion" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="empLog" nillable="true" type="q17:Empleado" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -128,8 +142,8 @@
   <xs:element name="BajaDocumentacion">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="documentacion" nillable="true" type="q17:Documentacion" />
-        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="empLog" nillable="true" type="q18:Empleado" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="documentacion" nillable="true" type="q18:Documentacion" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="empLog" nillable="true" type="q19:Empleado" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -141,22 +155,22 @@
   <xs:element name="listadoDocumentacion">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="empLog" nillable="true" type="q19:Empleado" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="empLog" nillable="true" type="q20:Empleado" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="listadoDocumentacionResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="listadoDocumentacionResult" nillable="true" type="q20:ArrayOfDocumentacion" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="listadoDocumentacionResult" nillable="true" type="q21:ArrayOfDocumentacion" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="AltaSolicitud">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="solicitud" nillable="true" type="q21:Solicitud" />
-        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="empLog" nillable="true" type="q22:Usuario" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="solicitud" nillable="true" type="q22:Solicitud" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="empLog" nillable="true" type="q23:Usuario" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -168,14 +182,14 @@
   <xs:element name="listadoSolicitud">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="usLog" nillable="true" type="q23:Usuario" />
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="usLog" nillable="true" type="q24:Usuario" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="listadoSolicitudResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="listadoSolicitudResult" nillable="true" type="q24:ArrayOfSolicitud" />
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="listadoSolicitudResult" nillable="true" type="q25:ArrayOfSolicitud" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -183,14 +197,14 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="documento" type="xs:int" />
-        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="usLog" nillable="true" type="q25:Usuario" />
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="usLog" nillable="true" type="q26:Usuario" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="BuscarSolicitudResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="BuscarSolicitudResult" nillable="true" type="q26:Solicitud" />
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="BuscarSolicitudResult" nillable="true" type="q27:Solicitud" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -199,7 +213,7 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="solicitud" type="xs:int" />
         <xs:element minOccurs="0" name="accion" type="xs:int" />
-        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="usLog" nillable="true" type="q27:Empleado" />
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="usLog" nillable="true" type="q28:Empleado" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -212,22 +226,22 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="codigoTramite" nillable="true" type="xs:string" />
-        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="empLog" nillable="true" type="q28:Usuario" />
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="empLog" nillable="true" type="q29:Usuario" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="BuscarTramiteResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="BuscarTramiteResult" nillable="true" type="q29:Tramite" />
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="BuscarTramiteResult" nillable="true" type="q30:Tramite" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="AltaTramite">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="tramite" nillable="true" type="q30:Tramite" />
-        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="empLog" nillable="true" type="q31:Empleado" />
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="tramite" nillable="true" type="q31:Tramite" />
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="empLog" nillable="true" type="q32:Empleado" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -239,8 +253,8 @@
   <xs:element name="ModificarTramite">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="tramite" nillable="true" type="q32:Tramite" />
-        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="empLog" nillable="true" type="q33:Empleado" />
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="tramite" nillable="true" type="q33:Tramite" />
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="empLog" nillable="true" type="q34:Empleado" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -252,8 +266,8 @@
   <xs:element name="BajaTramite">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="tramite" nillable="true" type="q34:Tramite" />
-        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="empLog" nillable="true" type="q35:Empleado" />
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="tramite" nillable="true" type="q35:Tramite" />
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="empLog" nillable="true" type="q36:Empleado" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -270,7 +284,7 @@
   <xs:element name="ListarTramitesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="ListarTramitesResult" nillable="true" type="q36:ArrayOfTramite" />
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="ListarTramitesResult" nillable="true" type="q37:ArrayOfTramite" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -289,8 +303,8 @@
   <xs:element name="AltaHoraExtra">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="hemp" nillable="true" type="q37:EmpleadoHorasExtra" />
-        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="empLog" nillable="true" type="q38:Empleado" />
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="hemp" nillable="true" type="q38:EmpleadoHorasExtra" />
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" minOccurs="0" name="empLog" nillable="true" type="q39:Empleado" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
