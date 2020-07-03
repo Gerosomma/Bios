@@ -65,16 +65,16 @@
             // 
             this.BarraEstado.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.LblError});
-            this.BarraEstado.Location = new System.Drawing.Point(0, 293);
+            this.BarraEstado.Location = new System.Drawing.Point(0, 381);
             this.BarraEstado.Name = "BarraEstado";
-            this.BarraEstado.Size = new System.Drawing.Size(827, 22);
+            this.BarraEstado.Size = new System.Drawing.Size(700, 22);
             this.BarraEstado.TabIndex = 81;
             this.BarraEstado.Text = "statusStrip1";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(549, 30);
+            this.label6.Location = new System.Drawing.Point(337, 131);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(104, 13);
             this.label6.TabIndex = 80;
@@ -83,7 +83,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(306, 31);
+            this.label4.Location = new System.Drawing.Point(17, 132);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(116, 13);
             this.label4.TabIndex = 79;
@@ -91,9 +91,9 @@
             // 
             // btnAgregarDoc
             // 
-            this.btnAgregarDoc.Location = new System.Drawing.Point(626, 206);
+            this.btnAgregarDoc.Location = new System.Drawing.Point(414, 307);
             this.btnAgregarDoc.Name = "btnAgregarDoc";
-            this.btnAgregarDoc.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregarDoc.Size = new System.Drawing.Size(148, 23);
             this.btnAgregarDoc.TabIndex = 78;
             this.btnAgregarDoc.Text = "<-- Agregar";
             this.btnAgregarDoc.UseVisualStyleBackColor = true;
@@ -101,9 +101,9 @@
             // 
             // btnQuitarDoc
             // 
-            this.btnQuitarDoc.Location = new System.Drawing.Point(383, 206);
+            this.btnQuitarDoc.Location = new System.Drawing.Point(94, 307);
             this.btnQuitarDoc.Name = "btnQuitarDoc";
-            this.btnQuitarDoc.Size = new System.Drawing.Size(75, 23);
+            this.btnQuitarDoc.Size = new System.Drawing.Size(147, 23);
             this.btnQuitarDoc.TabIndex = 77;
             this.btnQuitarDoc.Text = "Quitar -->";
             this.btnQuitarDoc.UseVisualStyleBackColor = true;
@@ -112,23 +112,23 @@
             // dgvDocumentosActivos
             // 
             this.dgvDocumentosActivos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDocumentosActivos.Location = new System.Drawing.Point(549, 50);
+            this.dgvDocumentosActivos.Location = new System.Drawing.Point(337, 151);
             this.dgvDocumentosActivos.Name = "dgvDocumentosActivos";
-            this.dgvDocumentosActivos.Size = new System.Drawing.Size(223, 150);
+            this.dgvDocumentosActivos.Size = new System.Drawing.Size(299, 150);
             this.dgvDocumentosActivos.TabIndex = 76;
             // 
             // dgvDocumentosTramite
             // 
             this.dgvDocumentosTramite.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDocumentosTramite.Location = new System.Drawing.Point(306, 50);
+            this.dgvDocumentosTramite.Location = new System.Drawing.Point(17, 151);
             this.dgvDocumentosTramite.Name = "dgvDocumentosTramite";
-            this.dgvDocumentosTramite.Size = new System.Drawing.Size(223, 150);
+            this.dgvDocumentosTramite.Size = new System.Drawing.Size(295, 150);
             this.dgvDocumentosTramite.TabIndex = 75;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 145);
+            this.label3.Location = new System.Drawing.Point(334, 83);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 13);
             this.label3.TabIndex = 73;
@@ -136,7 +136,7 @@
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(88, 142);
+            this.txtPrecio.Location = new System.Drawing.Point(408, 80);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(198, 20);
             this.txtPrecio.TabIndex = 74;
@@ -144,7 +144,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(14, 115);
+            this.label2.Location = new System.Drawing.Point(334, 53);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 13);
             this.label2.TabIndex = 69;
@@ -177,7 +177,7 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(88, 112);
+            this.txtDescripcion.Location = new System.Drawing.Point(408, 50);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(198, 20);
             this.txtDescripcion.TabIndex = 71;
@@ -242,7 +242,7 @@
             this.BtnDeshacer});
             this.BarraHerramientas.Location = new System.Drawing.Point(0, 0);
             this.BarraHerramientas.Name = "BarraHerramientas";
-            this.BarraHerramientas.Size = new System.Drawing.Size(827, 25);
+            this.BarraHerramientas.Size = new System.Drawing.Size(700, 25);
             this.BarraHerramientas.TabIndex = 66;
             this.BarraHerramientas.Text = "toolStrip1";
             // 
@@ -250,7 +250,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(827, 315);
+            this.ClientSize = new System.Drawing.Size(700, 403);
             this.Controls.Add(this.BarraEstado);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
@@ -267,6 +267,7 @@
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.BarraHerramientas);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmABMTramite";
             this.Text = "frmABMTramite";
             this.BarraEstado.ResumeLayout(false);

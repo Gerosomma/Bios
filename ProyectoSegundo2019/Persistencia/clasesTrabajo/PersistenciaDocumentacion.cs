@@ -40,7 +40,7 @@ namespace Persistencia.Clases_de_trabajo
                 drDocumentacion = cmdBuscarDocumentacion.ExecuteReader();
                 if (drDocumentacion.Read())
                 {
-                    documentacion = new Documentacion((int)drDocumentacion["codigoInterno"], (string)drDocumentacion["nomDocumentacion"], (string)drDocumentacion["lugar"]);
+                    documentacion = new Documentacion((int)drDocumentacion["codigoInterno"], (string)drDocumentacion["nomDocumentacion"], (string)drDocumentacion["lugar"], (bool)drDocumentacion["activo"]);
                 }
                 return documentacion;
             }
@@ -61,7 +61,7 @@ namespace Persistencia.Clases_de_trabajo
             }
         }
 
-        public Documentacion BuscarDocumentacionAux(int codigoInterno, Empleado empLog)
+        public Documentacion BuscarDocumentacionAux(int codigoInterno)
         {
             SqlConnection conexion = null;
             SqlDataReader drDocumentacion = null;
@@ -69,7 +69,7 @@ namespace Persistencia.Clases_de_trabajo
 
             try
             {
-                conexion = new SqlConnection(Conexion.ObtenerCadenaConexion(empLog.Documento, empLog.Contrasenia));
+                conexion = new SqlConnection(Conexion.CadenaConexion);
                 SqlCommand cmdBuscarDocumentacion = new SqlCommand("BuscarDocumentacionAux", conexion);
                 cmdBuscarDocumentacion.CommandType = CommandType.StoredProcedure;
 
@@ -79,7 +79,7 @@ namespace Persistencia.Clases_de_trabajo
                 drDocumentacion = cmdBuscarDocumentacion.ExecuteReader();
                 if (drDocumentacion.Read())
                 {
-                    documentacion = new Documentacion((int)drDocumentacion["codigoInterno"], (string)drDocumentacion["nomDocumentacion"], (string)drDocumentacion["lugar"]);
+                    documentacion = new Documentacion((int)drDocumentacion["codigoInterno"], (string)drDocumentacion["nomDocumentacion"], (string)drDocumentacion["lugar"], (bool)drDocumentacion["activo"]);
                 }
                 return documentacion;
             }
@@ -255,7 +255,7 @@ namespace Persistencia.Clases_de_trabajo
                 drDocumentacion = cmdBajaDocumentacion.ExecuteReader();
                 while (drDocumentacion.Read())
                 {
-                    doc = new Documentacion((int)drDocumentacion["codigoInterno"], (string)drDocumentacion["nomDocumentacion"], (string)drDocumentacion["lugar"]);
+                    doc = new Documentacion((int)drDocumentacion["codigoInterno"], (string)drDocumentacion["nomDocumentacion"], (string)drDocumentacion["lugar"], (bool)drDocumentacion["activo"]);
                     listaDocumentacion.Add(doc);
                 }
                 return listaDocumentacion;

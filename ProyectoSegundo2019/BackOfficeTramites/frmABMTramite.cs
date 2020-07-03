@@ -22,7 +22,7 @@ namespace BackOfficeTramites
         {
             InitializeComponent();
             empleadoLogueado = empleado;
-
+            controlDocumentos(false);
             try
             {
                 ServiceClient wcf = new ServiceClient();
@@ -57,22 +57,38 @@ namespace BackOfficeTramites
 
         private void txtNumero_Validating(object sender, CancelEventArgs e)
         {
-            if (txtCodigo.Text.Length < 1)
-            {
-                LblError.Text = "Ingrese un Codigo.";
-                return;
-            }
-
             String codigo = txtCodigo.Text;
-
             try
             {
+                if (codigo.Length != 9)
+                {
+                    throw new FormatException("Codigo invalido, (debe componerse de 4 numeros y 5 letras respectivamente).");
+                }
+                for (int i = 0; i < codigo.Length; i++)
+                {
+                    if (i <= 3)
+                    {
+                        if (!Char.IsNumber(codigo[i]))
+                        {
+                            throw new FormatException("Codigo invalido, (debe componerse de 4 numeros y 5 letras respectivamente).");
+                        }
+                    }
+                    else
+                    {
+                        if (!Char.IsLetter(codigo[i]))
+                        {
+                            throw new FormatException("Codigo invalido, (debe componerse de 4 numeros y 5 letras respectivamente).");
+                        }
+                    }
+                }
+
                 ServiceClient wcf = new ServiceClient();
                 Tramite unTramite = wcf.BuscarTramite(codigo, empleadoLogueado);
                 if (unTramite == null)
                 {
                     BtnAlta.Enabled = true;
                     txtCodigo.Enabled = false;
+                    LblError.Text = "No existe tramite, puede agregarlo.";
                 }
                 else
                 {
@@ -92,7 +108,15 @@ namespace BackOfficeTramites
                                     Lugar = doc.Lugar
                                 }).ToList();
                     dgvDocumentosTramite.DataSource = rest;
+
+                    LblError.Text = "Tramite encontrado.";
                 }
+                controlDocumentos(true);
+            }
+            catch (FormatException ex)
+            {
+                LblError.Text = ex.Message;
+                txtCodigo.Focus();
             }
             catch (Exception ex)
             {
@@ -107,11 +131,11 @@ namespace BackOfficeTramites
             try
             {
                 Tramite tramite = new Tramite();
-
                 tramite.CodigoTramite = txtCodigo.Text;
                 tramite.NombreTramite = txtNombre.Text;
                 tramite.Descripcion = txtDescripcion.Text;
                 tramite.Precio = Convert.ToInt32(txtPrecio.Text);
+                tramite.DocumentacionExigida = new Documentacion[DocumentacionTramite.Count];
                 for (int i = 0; i < DocumentacionTramite.Count; i++)
                 {
                     tramite.DocumentacionExigida[i] = DocumentacionTramite[i];
@@ -147,6 +171,7 @@ namespace BackOfficeTramites
                     this.DesActivoBotones();
                     this.LimpioControles();
                     txtCodigo.Enabled = true;
+                    LblError.Text = "El tramite se a eliminado";
                 }
                 catch (Exception ex)
                 {
@@ -160,39 +185,44 @@ namespace BackOfficeTramites
             {
                 LblError.Text = "Debe buscar un Tramite para eliminar";
             }
-
         }
 
         private void BtnModificar_Click(object sender, EventArgs e)
         {
-            try
+            if (tramite != null)
             {
-                tramite.NombreTramite = txtNombre.Text.Trim();
-                tramite.Descripcion = txtDescripcion.Text.Trim();
-                for (int i = 0; i < DocumentacionTramite.Count; i++)
+                try
                 {
-                    tramite.DocumentacionExigida[i] = DocumentacionTramite[i];
+                    tramite.NombreTramite = txtNombre.Text.Trim();
+                    tramite.Descripcion = txtDescripcion.Text.Trim();
+                    for (int i = 0; i < DocumentacionTramite.Count; i++)
+                    {
+                        tramite.DocumentacionExigida[i] = DocumentacionTramite[i];
+                    }
+                    tramite.Precio = Convert.ToDecimal(txtPrecio.Text);
+
+                    ServiceClient wcf = new ServiceClient();
+                    wcf.ModificarTramite(tramite, empleadoLogueado);
+                    this.DesActivoBotones();
+                    this.LimpioControles();
+
+                    LblError.Text = "Modificacion con Exito";
                 }
-                //tramite.DocumentacionExigida[0] = DocumentacionTramite[0];
-                tramite.Precio = Convert.ToDecimal(txtPrecio.Text);
-
-                ServiceClient wcf = new ServiceClient();
-                wcf.ModificarTramite(tramite, empleadoLogueado);
-                this.DesActivoBotones();
-                this.LimpioControles();
-
-                LblError.Text = "Modificacion con Exito";
+                catch (FormatException ex)
+                {
+                    LblError.Text = "Precio invalido.";
+                }
+                catch (Exception ex)
+                {
+                    if (ex.Message.Length > 40)
+                        LblError.Text = ex.Message.Substring(0, 40);
+                    else
+                        LblError.Text = ex.Message;
+                }
             }
-            catch (FormatException ex)
+            else
             {
-                LblError.Text = "Precio invalido.";
-            }
-            catch (Exception ex)
-            {
-                if (ex.Message.Length > 40)
-                    LblError.Text = ex.Message.Substring(0, 40);
-                else
-                    LblError.Text = ex.Message;
+                LblError.Text = "Debe buscar un Tramite para eliminar";
             }
         }
 
@@ -207,11 +237,28 @@ namespace BackOfficeTramites
             BtnAlta.Enabled = false;
             BtnBaja.Enabled = false;
             BtnModificar.Enabled = false;
+            controlDocumentos(false);
+        }
+
+        private void controlDocumentos(bool estado)
+        {
+            label4.Visible = estado;
+            label6.Visible = estado;
+            dgvDocumentosActivos.Visible = estado;
+            dgvDocumentosTramite.Visible = estado;
+            btnAgregarDoc.Visible = estado;
+            btnQuitarDoc.Visible = estado;
+            
+            label4.Enabled = estado;
+            label6.Enabled = estado;
+            btnAgregarDoc.Enabled = estado;
+            btnQuitarDoc.Enabled = estado;
         }
 
         private void LimpioControles()
         {
             txtCodigo.Text = "";
+            txtCodigo.Focus();
             txtNombre.Text = "";
             txtDescripcion.Text = "";
             txtPrecio.Text = "";

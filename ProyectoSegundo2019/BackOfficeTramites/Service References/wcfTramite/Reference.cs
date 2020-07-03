@@ -225,6 +225,9 @@ namespace BackOfficeTramites.wcfTramite {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool ActivoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int CodigoInternoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -240,6 +243,19 @@ namespace BackOfficeTramites.wcfTramite {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool Activo {
+            get {
+                return this.ActivoField;
+            }
+            set {
+                if ((this.ActivoField.Equals(value) != true)) {
+                    this.ActivoField = value;
+                    this.RaisePropertyChanged("Activo");
+                }
             }
         }
         
@@ -633,6 +649,12 @@ namespace BackOfficeTramites.wcfTramite {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/BuscarDocumentacion", ReplyAction="http://tempuri.org/IService/BuscarDocumentacionResponse")]
         System.Threading.Tasks.Task<BackOfficeTramites.wcfTramite.Documentacion> BuscarDocumentacionAsync(int codigoInterno);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/BuscarDocumentacionAux", ReplyAction="http://tempuri.org/IService/BuscarDocumentacionAuxResponse")]
+        BackOfficeTramites.wcfTramite.Documentacion BuscarDocumentacionAux(int codigoInterno);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/BuscarDocumentacionAux", ReplyAction="http://tempuri.org/IService/BuscarDocumentacionAuxResponse")]
+        System.Threading.Tasks.Task<BackOfficeTramites.wcfTramite.Documentacion> BuscarDocumentacionAuxAsync(int codigoInterno);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AltaDocumentacion", ReplyAction="http://tempuri.org/IService/AltaDocumentacionResponse")]
         void AltaDocumentacion(BackOfficeTramites.wcfTramite.Documentacion documentacion, BackOfficeTramites.wcfTramite.Empleado empLog);
         
@@ -805,6 +827,14 @@ namespace BackOfficeTramites.wcfTramite {
         
         public System.Threading.Tasks.Task<BackOfficeTramites.wcfTramite.Documentacion> BuscarDocumentacionAsync(int codigoInterno) {
             return base.Channel.BuscarDocumentacionAsync(codigoInterno);
+        }
+        
+        public BackOfficeTramites.wcfTramite.Documentacion BuscarDocumentacionAux(int codigoInterno) {
+            return base.Channel.BuscarDocumentacionAux(codigoInterno);
+        }
+        
+        public System.Threading.Tasks.Task<BackOfficeTramites.wcfTramite.Documentacion> BuscarDocumentacionAuxAsync(int codigoInterno) {
+            return base.Channel.BuscarDocumentacionAuxAsync(codigoInterno);
         }
         
         public void AltaDocumentacion(BackOfficeTramites.wcfTramite.Documentacion documentacion, BackOfficeTramites.wcfTramite.Empleado empLog) {

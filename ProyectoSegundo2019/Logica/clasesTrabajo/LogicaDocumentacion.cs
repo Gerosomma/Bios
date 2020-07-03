@@ -47,9 +47,9 @@ namespace Logica.ClaseTrabajo
             return FabricaPersistencia.GetPersistenciaDocumentacion().listadoDocumentacion(empLog);
         }
 
-        public Documentacion BuscarDocumentacionAux(int codigoInterno, Empleado empLog)
+        public Documentacion BuscarDocumentacionAux(int codigoInterno)
         {
-            return FabricaPersistencia.GetPersistenciaDocumentacion().BuscarDocumentacionAux(codigoInterno, empLog);
+            return FabricaPersistencia.GetPersistenciaDocumentacion().BuscarDocumentacionAux(codigoInterno);
         }
     }
 }

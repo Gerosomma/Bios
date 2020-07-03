@@ -31,6 +31,7 @@
   <xs:element name="Solicitante" nillable="true" type="tns:Solicitante" />
   <xs:complexType name="Documentacion">
     <xs:sequence>
+      <xs:element minOccurs="0" name="Activo" type="xs:boolean" />
       <xs:element minOccurs="0" name="CodigoInterno" type="xs:int" />
       <xs:element minOccurs="0" name="Lugar" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NomDocumentacion" nillable="true" type="xs:string" />

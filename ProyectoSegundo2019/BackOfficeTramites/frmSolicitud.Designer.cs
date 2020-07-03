@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSolicitud));
             this.btnEjecutar = new System.Windows.Forms.Button();
             this.btnRechazada = new System.Windows.Forms.Button();
             this.dgvSolicitudes = new System.Windows.Forms.DataGridView();
@@ -66,6 +67,7 @@
             this.dgvSolicitudes.AllowUserToResizeRows = false;
             this.dgvSolicitudes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSolicitudes.Location = new System.Drawing.Point(12, 71);
+            this.dgvSolicitudes.MultiSelect = false;
             this.dgvSolicitudes.Name = "dgvSolicitudes";
             this.dgvSolicitudes.ReadOnly = true;
             this.dgvSolicitudes.Size = new System.Drawing.Size(560, 465);
@@ -95,8 +97,9 @@
             this.Controls.Add(this.dgvSolicitudes);
             this.Controls.Add(this.btnRechazada);
             this.Controls.Add(this.btnEjecutar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmSolicitud";
-            this.Text = "frmSolicitud";
+            this.Text = "Estado de Solicitudes";
             ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitudes)).EndInit();
             this.BarraEstado.ResumeLayout(false);
             this.BarraEstado.PerformLayout();

@@ -61,6 +61,12 @@ public class Service : IService
         return doc;
     }
 
+    Documentacion IService.BuscarDocumentacionAux(int codigoInterno)
+    {
+        Documentacion doc = FabricaLogica.GetLogicaDocumentacion().BuscarDocumentacionAux(codigoInterno);
+        return doc;
+    }
+
     Solicitud IService.BuscarSolicitud(int documento, Usuario usLog)
     {
         Solicitud sol = FabricaLogica.GetLogicaSolicitud().BuscarSolicitud(documento, usLog);

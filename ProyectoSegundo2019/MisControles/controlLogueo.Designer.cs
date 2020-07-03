@@ -66,6 +66,7 @@
             this.txtContrasena.Name = "txtContrasena";
             this.txtContrasena.Size = new System.Drawing.Size(182, 20);
             this.txtContrasena.TabIndex = 3;
+            this.txtContrasena.UseSystemPasswordChar = true;
             // 
             // txtUsuario
             // 

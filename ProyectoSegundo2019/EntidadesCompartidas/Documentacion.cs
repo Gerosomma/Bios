@@ -13,6 +13,7 @@ namespace EntidadesCompartidas
         private int _codigoInterno;
         private string _nomDocumentacion;
         private string _lugar;
+        private bool _activo;
 
         [DataMember]
         public int CodigoInterno
@@ -53,14 +54,21 @@ namespace EntidadesCompartidas
             }
         }
 
+        [DataMember]
+        public bool Activo
+        {
+            get { return _activo; }
+            set { _activo = value; }
+        }
         public Documentacion()
         { }
 
-        public Documentacion(int codigoInterno, string nomDocumentacion, string lugar)
+        public Documentacion(int codigoInterno, string nomDocumentacion, string lugar, bool activo)
         {
             CodigoInterno = codigoInterno;
             NomDocumentacion = nomDocumentacion;
             Lugar = lugar;
+            Activo = activo;
         }
     }
 }

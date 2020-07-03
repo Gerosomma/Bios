@@ -380,7 +380,7 @@ END
 GO
 
 -----------SP Documentacion-----------
-CREATE PROCEDURE AltaDocumentacion
+ALTER PROCEDURE AltaDocumentacion
 @codigoInterno INT,
 @nomDocumentacion VARCHAR(50),
 @lugar VARCHAR(50)
@@ -395,14 +395,17 @@ BEGIN
 	BEGIN
 		UPDATE Documentacion
 		SET activo = 1, 
-			nomDocumentacion = @nomDocumentacion
+			nomDocumentacion = @nomDocumentacion,
+			lugar = @lugar 
 		WHERE codigoInterno = @codigoInterno
 	END
-		 
-	INSERT INTO Documentacion VALUES (@codigoInterno, @nomDocumentacion, @lugar, 1)
-	IF (@@ERROR <> 0)
-		RETURN -2
-END
+	ELSE
+	BEGIN
+		INSERT INTO Documentacion VALUES (@codigoInterno, @nomDocumentacion, @lugar, 1)
+		IF (@@ERROR <> 0)
+			RETURN -2
+	END
+END;
 
 GO
 
@@ -426,6 +429,11 @@ BEGIN
 	FROM Documentacion 
 	WHERE codigoInterno = @codigoInterno
 END
+
+GO
+
+exec BuscarDocumentacionAux 1;
+
 
 GO
 
@@ -499,10 +507,12 @@ BEGIN
 			precio = @precio
 		WHERE codigoTramite = @codigoTramite
 	END
-		 
-	INSERT INTO Tramite VALUES (@codigoTramite, @nombreTramite, @descripcion, @precio, 1)
-	IF (@@ERROR <> 0)
-		RETURN -2
+	ELSE
+	BEGIN
+		INSERT INTO Tramite VALUES (@codigoTramite, @nombreTramite, @descripcion, @precio, 1)
+		IF (@@ERROR <> 0)
+			RETURN -2
+	END
 END
 
 GO
@@ -662,6 +672,8 @@ BEGIN
 	SELECT * FROM Documentacion WHERE activo = 1
 END
 go
+EXEC ListadoDocumentacion;
+GO
 
 CREATE PROCEDURE ListadoTramites
 AS
