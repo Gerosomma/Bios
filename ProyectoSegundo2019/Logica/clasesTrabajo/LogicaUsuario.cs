@@ -24,17 +24,22 @@ namespace Logica
 
         public Usuario LogueoUsuario(int documento, string contraseana)
         {
-            Usuario usuario = FabricaPersistencia.GetPersistenciaEmpelado().LoguearEmpleado(documento, contraseana);
-
-            if (usuario == null)
+            try
             {
-                usuario = FabricaPersistencia.GetPersistenciaSolicitante().LoguearSoli(documento, contraseana);
+                Usuario usuario = FabricaPersistencia.GetPersistenciaEmpelado().LoguearEmpleado(documento, contraseana);
+
+                if (usuario == null)
+                {
+                    usuario = FabricaPersistencia.GetPersistenciaSolicitante().LoguearSoli(documento, contraseana);
+                }
+
+                return usuario;
             }
-
-            if (usuario.Contrasenia != contraseana)
-                throw new Exception("Contraseña invalida, o usuario incorrecto");
-
-            return usuario;
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            
         }
 
         public Usuario BuscarUsuario(int documento, Usuario usLog)

@@ -30,7 +30,7 @@ namespace BackOfficeTramites
                 Empleado _unEmpleado = (Empleado)wcf.LogueoUsuario(controlLogueo1.Usuario, controlLogueo1.Contrasena);
 
                 if (_unEmpleado == null)
-                    lblError.Text = "CI o Pass Invalidos";
+                    lblError.Text = "Contraseña incorrecta, o usuario invalido.";
                 else
                 {
                     XmlDocument doc = new XmlDocument();

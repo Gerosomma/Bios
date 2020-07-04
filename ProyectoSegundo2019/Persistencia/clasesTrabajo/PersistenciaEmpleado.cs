@@ -47,6 +47,10 @@ namespace Persistencia.Clases_de_trabajo
                 }
                 return empleado;
             }
+            catch (SqlException)
+            {
+                throw new Exception("Contraseña incorrecta, o usuario invalido.");
+            }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
