@@ -12,6 +12,7 @@ namespace EntidadesCompartidas
         private string _nombreTramite;
         private string _descripcion;
         private decimal _precio;
+        private bool _activo;
         private List<Documentacion> _documentacionExigida = new List<Documentacion>();
         
         [DataMember]
@@ -95,16 +96,24 @@ namespace EntidadesCompartidas
             }
         }
 
+        [DataMember]
+        public bool Activo
+        {
+            get { return _activo; }
+            set { _activo = value; }
+        }
+
         public Tramite()
         { }
 
-        public Tramite(string codigoTramite, string nombreTramite, string descripcion, decimal precio, List<Documentacion> documentacionExigida)
+        public Tramite(string codigoTramite, string nombreTramite, string descripcion, decimal precio, List<Documentacion> documentacionExigida, bool activo)
         {
             CodigoTramite = codigoTramite;
             NombreTramite = nombreTramite;
             Descripcion = descripcion;
             Precio = precio;
             DocumentacionExigida = documentacionExigida;
+            Activo = activo;
         }
     }
 }

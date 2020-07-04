@@ -68,6 +68,8 @@ public interface IService
     [OperationContract]
     Tramite BuscarTramite(string codigoTramite, Usuario empLog);
     [OperationContract]
+    Tramite BuscarTramiteAux(string codigoTramite, Usuario empLog);
+    [OperationContract]
     void AltaTramite(Tramite tramite, Empleado empLog);
     [OperationContract]
     void ModificarTramite(Tramite tramite, Empleado empLog);

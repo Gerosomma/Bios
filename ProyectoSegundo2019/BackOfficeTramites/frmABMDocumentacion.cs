@@ -90,7 +90,7 @@ namespace BackOfficeTramites
                 txtNumero.ReadOnly = false;
                 LblError.Text = "Alta con Exito";
 
-                if (!doc.Activo)
+                if (!documentacion.Activo)
                 {
                     LblError.Text = "Se activo la documentacion con Exito";
                 }

@@ -37,6 +37,11 @@ namespace Logica.ClaseTrabajo
             return FabricaPersistencia.GetPersistenciaTramite().BuscarTramite(codigoTramite, empLog);
         }
 
+        public Tramite BuscarTramiteAux(string codigoTramite, Usuario empLog)
+        {
+            return FabricaPersistencia.GetPersistenciaTramite().BuscarTramiteAux(codigoTramite, empLog);
+        }
+
         public void ModificarTramite(Tramite tramite, Empleado empLog)
         {
             FabricaPersistencia.GetPersistenciaTramite().ModificarTramite(tramite, empLog);

@@ -83,6 +83,11 @@ public class Service : IService
         return FabricaLogica.GetLogicaTramite().BuscarTramite(codigoTramite, empLog);
     }
 
+    Tramite IService.BuscarTramiteAux(string codigoTramite, Usuario empLog)
+    {
+        return FabricaLogica.GetLogicaTramite().BuscarTramiteAux(codigoTramite, empLog);
+    }
+
     Usuario IService.BuscarUsuario(int documento, Usuario usLog)
     {
         try

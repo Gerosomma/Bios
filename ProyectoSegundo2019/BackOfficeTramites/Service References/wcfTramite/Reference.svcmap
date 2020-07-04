@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="40a13d8f-4e0b-46df-a6f9-f4f39a0d701c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="4304afcf-938f-476f-9537-55ba0167416a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,14 +19,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://pc107/WCF/Service.svc?wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://pc-gero/servTramites/Service.svc?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Service.wsdl" MetadataType="Wsdl" ID="2b731e83-b813-4789-841c-19bbc218ecba" SourceId="1" SourceUrl="http://pc107/WCF/Service.svc?wsdl" />
-    <MetadataFile FileName="Service.xsd" MetadataType="Schema" ID="8b43cf1c-8582-4eb3-9960-bfda266ed091" SourceId="1" SourceUrl="http://pc107/WCF/Service.svc?xsd=xsd2" />
-    <MetadataFile FileName="Service1.xsd" MetadataType="Schema" ID="b580cd62-fffb-47d6-964f-0eee199eb22e" SourceId="1" SourceUrl="http://pc107/WCF/Service.svc?xsd=xsd3" />
-    <MetadataFile FileName="Service2.xsd" MetadataType="Schema" ID="99bec50c-cfa8-476d-a7f7-aa1353f30e93" SourceId="1" SourceUrl="http://pc107/WCF/Service.svc?xsd=xsd0" />
-    <MetadataFile FileName="Service3.xsd" MetadataType="Schema" ID="423888c5-02d5-418e-be9b-78fe790cbec0" SourceId="1" SourceUrl="http://pc107/WCF/Service.svc?xsd=xsd1" />
+    <MetadataFile FileName="Service.xsd" MetadataType="Schema" ID="0a1298dd-44e0-4182-984f-5bd3ce10a98d" SourceId="1" SourceUrl="http://pc-gero/servTramites/Service.svc?xsd=xsd3" />
+    <MetadataFile FileName="Service.wsdl" MetadataType="Wsdl" ID="35157b8f-c479-428d-8ecf-35cfbaa4d9d6" SourceId="1" SourceUrl="http://pc-gero/servTramites/Service.svc?wsdl" />
+    <MetadataFile FileName="Service1.xsd" MetadataType="Schema" ID="193c8067-c95d-4757-bc6a-98b59332e5eb" SourceId="1" SourceUrl="http://pc-gero/servTramites/Service.svc?xsd=xsd0" />
+    <MetadataFile FileName="Service2.xsd" MetadataType="Schema" ID="750c1599-2f1c-41fb-86de-916fd0cd0bf6" SourceId="1" SourceUrl="http://pc-gero/servTramites/Service.svc?xsd=xsd2" />
+    <MetadataFile FileName="Service3.xsd" MetadataType="Schema" ID="7f6a3c54-52dd-44d2-bf02-861fb753b16f" SourceId="1" SourceUrl="http://pc-gero/servTramites/Service.svc?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

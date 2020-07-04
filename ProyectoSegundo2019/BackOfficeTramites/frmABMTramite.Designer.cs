@@ -50,6 +50,7 @@
             this.BtnAlta = new System.Windows.Forms.ToolStripButton();
             this.BtnDeshacer = new System.Windows.Forms.ToolStripButton();
             this.BarraHerramientas = new System.Windows.Forms.ToolStrip();
+            this.btnActivo = new System.Windows.Forms.Button();
             this.BarraEstado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDocumentosActivos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDocumentosTramite)).BeginInit();
@@ -65,9 +66,9 @@
             // 
             this.BarraEstado.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.LblError});
-            this.BarraEstado.Location = new System.Drawing.Point(0, 381);
+            this.BarraEstado.Location = new System.Drawing.Point(0, 353);
             this.BarraEstado.Name = "BarraEstado";
-            this.BarraEstado.Size = new System.Drawing.Size(700, 22);
+            this.BarraEstado.Size = new System.Drawing.Size(662, 22);
             this.BarraEstado.TabIndex = 81;
             this.BarraEstado.Text = "statusStrip1";
             // 
@@ -128,7 +129,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(334, 83);
+            this.label3.Location = new System.Drawing.Point(273, 83);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 13);
             this.label3.TabIndex = 73;
@@ -136,7 +137,7 @@
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(408, 80);
+            this.txtPrecio.Location = new System.Drawing.Point(344, 80);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(198, 20);
             this.txtPrecio.TabIndex = 74;
@@ -144,7 +145,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(334, 53);
+            this.label2.Location = new System.Drawing.Point(273, 53);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 13);
             this.label2.TabIndex = 69;
@@ -161,7 +162,7 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(88, 80);
+            this.txtNombre.Location = new System.Drawing.Point(61, 80);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(198, 20);
             this.txtNombre.TabIndex = 70;
@@ -177,14 +178,14 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(408, 50);
+            this.txtDescripcion.Location = new System.Drawing.Point(344, 50);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(198, 20);
             this.txtDescripcion.TabIndex = 71;
             // 
             // txtCodigo
             // 
-            this.txtCodigo.Location = new System.Drawing.Point(88, 50);
+            this.txtCodigo.Location = new System.Drawing.Point(61, 50);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(198, 20);
             this.txtCodigo.TabIndex = 68;
@@ -242,15 +243,29 @@
             this.BtnDeshacer});
             this.BarraHerramientas.Location = new System.Drawing.Point(0, 0);
             this.BarraHerramientas.Name = "BarraHerramientas";
-            this.BarraHerramientas.Size = new System.Drawing.Size(700, 25);
+            this.BarraHerramientas.Size = new System.Drawing.Size(662, 25);
             this.BarraHerramientas.TabIndex = 66;
             this.BarraHerramientas.Text = "toolStrip1";
+            // 
+            // btnActivo
+            // 
+            this.btnActivo.Enabled = false;
+            this.btnActivo.Image = global::BackOfficeTramites.Properties.Resources.activo;
+            this.btnActivo.Location = new System.Drawing.Point(558, 41);
+            this.btnActivo.Name = "btnActivo";
+            this.btnActivo.Size = new System.Drawing.Size(78, 103);
+            this.btnActivo.TabIndex = 82;
+            this.btnActivo.Text = "Activo";
+            this.btnActivo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnActivo.UseVisualStyleBackColor = true;
+            this.btnActivo.Click += new System.EventHandler(this.BtnAlta_Click);
             // 
             // frmABMTramite
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 403);
+            this.ClientSize = new System.Drawing.Size(662, 375);
+            this.Controls.Add(this.btnActivo);
             this.Controls.Add(this.BarraEstado);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
@@ -304,5 +319,6 @@
         private System.Windows.Forms.ToolStripButton BtnAlta;
         private System.Windows.Forms.ToolStripButton BtnDeshacer;
         private System.Windows.Forms.ToolStrip BarraHerramientas;
+        private System.Windows.Forms.Button btnActivo;
     }
 }

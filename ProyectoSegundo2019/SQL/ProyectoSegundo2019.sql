@@ -537,6 +537,11 @@ BEGIN
 	WHERE t.codigoTramite = @codigoTramite
 END
 
+
+
+exec BuscarTramiteAux '1035geros';
+exec BuscarDocumentacionTramite '1034geros';
+exec BuscarDocumentacion 1;
 GO
 
 CREATE PROCEDURE BuscarDocumentacionTramite
@@ -571,7 +576,7 @@ END
 
 GO
 
-CREATE PROCEDURE BajaTramite
+alter PROCEDURE BajaTramite
 @codigoTramite VARCHAR(9)
 AS
 BEGIN
@@ -605,7 +610,7 @@ BEGIN
 		COMMIT TRANSACTION
 	END
 END
-select * from empleado
+
 GO
 
 -----------SP Solicitud-----------
@@ -685,8 +690,6 @@ END
 
 GO
 
-
-go
 CREATE PROCEDURE ListadoSolicitudes
 AS
 BEGIN
@@ -695,10 +698,8 @@ BEGIN
 	ON Tramite.codigoTramite = Solicitud.codTramite INNER JOIN Solicitante
 	ON Solicitud.docSolicitante = Solicitante.documento INNER JOIN Usuario
 	ON Solicitante.documento = Usuario.documento
-	WHERE YEAR(Solicitud.fechaHora) = YEAR(GETDATE())
+	WHERE YEAR(Solicitud.fechaHora) = YEAR(GETDATE()) AND Solicitud.estado = 'alta'
 END
-
-go
 
 go
 CREATE PROCEDURE ListadoSolicitudess
@@ -709,8 +710,6 @@ BEGIN
 	WHERE YEAR(fechaHora) = YEAR(GETDATE())
 END
 
-select * from Documentacion
-select * from Solicitud
 GO
 
 CREATE PROCEDURE CambioEstadoSolicitud
@@ -749,7 +748,7 @@ BEGIN
 END
 
 GO
-select * from Solicitud
+
 CREATE PROCEDURE BuscarSolicitud
 @numero int 
 AS
@@ -778,8 +777,6 @@ CREATE PROCEDURE BajaExigen
 @codTramite VARCHAR(9)
 AS
 BEGIN
-	IF NOT EXISTS(SELECT * FROM Exigen WHERE codTramite = @codTramite)
-		RETURN -1
 	DELETE FROM Exigen WHERE codTramite = @codTramite
 	IF (@@ERROR <> 0)
 		RETURN -2

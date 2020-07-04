@@ -62,9 +62,6 @@ namespace Persistencia.Clases_de_trabajo
 
                 switch ((int)valorRetorno.Value)
                 {
-                    case -1:
-                        throw new Exception("La fila no existe.");
-                        break;
                     case -2:
                         throw new Exception("Ocurrió un error al realizar la baja.");
                         break;
@@ -76,7 +73,7 @@ namespace Persistencia.Clases_de_trabajo
             }
         }
 
-        internal List<Documentacion> listadoDocumentacionExigida(string codigoTramite)
+        public List<Documentacion> listadoDocumentacionExigida(string codigoTramite)
         {
             SqlConnection conexion = null;
             SqlDataReader drRelacion = null;
@@ -96,7 +93,7 @@ namespace Persistencia.Clases_de_trabajo
                 drRelacion = cmdLisDocumentosTramite.ExecuteReader();
                 while (drRelacion.Read())
                 {
-                    doc = PersistenciaDocumentacion.getInstancia().BuscarDocumentacion((int)drRelacion["codDocumentacion"]);
+                    doc = PersistenciaDocumentacion.getInstancia().BuscarDocumentacionAux((int)drRelacion["codDocumentacion"]);
                     listaDocumentacion.Add(doc);
                 }
                 return listaDocumentacion;
