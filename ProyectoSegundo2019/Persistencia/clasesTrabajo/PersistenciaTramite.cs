@@ -69,7 +69,7 @@ namespace Persistencia.Clases_de_trabajo
             SqlConnection conexion = null;
             SqlDataReader drTramite = null;
             Tramite tramite = null;
-            List<Documentacion> documentacion = new List<Documentacion>();
+            List<Documentacion> documentacion = null;
 
             try
             {

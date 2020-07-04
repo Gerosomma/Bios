@@ -59,6 +59,9 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "wcfTramites", "wcfTramites\
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackOfficeTramites", "BackOfficeTramites\BackOfficeTramites.csproj", "{6E766272-EA84-467C-9988-3C9F2162B37E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{AC67AE29-F274-4DF9-B28F-917D769713CA} = {AC67AE29-F274-4DF9-B28F-917D769713CA}
+	EndProjectSection
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "InstaladorTramites", "InstaladorTramites\InstaladorTramites.vdproj", "{3CE14189-0565-4D72-9E6D-F7AF57AB970E}"
 EndProject
