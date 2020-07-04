@@ -43,7 +43,7 @@ namespace Persistencia.Clases_de_trabajo
                 if (drTramite.Read())
                 {
                     documentacion = PersistenciaExigen.getInstancia().listadoDocumentacionExigida((string)drTramite["codigoTramite"]);
-                    tramite = new Tramite((string)drTramite["codigoTramite"], (string)drTramite["nombreTramite"], (string)drTramite["descripcion"], (decimal)drTramite["precio"], documentacion);
+                    tramite = new Tramite((string)drTramite["codigoTramite"], (string)drTramite["nombreTramite"], (string)drTramite["descripcion"], (decimal)drTramite["precio"], documentacion, (bool)drTramite["activo"]);
                 }
                 return tramite;
             }
@@ -69,7 +69,7 @@ namespace Persistencia.Clases_de_trabajo
             SqlConnection conexion = null;
             SqlDataReader drTramite = null;
             Tramite tramite = null;
-            List<Documentacion> documentacion = null;
+            List<Documentacion> documentacion = new List<Documentacion>();
 
             try
             {
@@ -84,7 +84,7 @@ namespace Persistencia.Clases_de_trabajo
                 if (drTramite.Read())
                 {
                     documentacion = PersistenciaExigen.getInstancia().listadoDocumentacionExigida((string)drTramite["codigoTramite"]);
-                    tramite = new Tramite((string)drTramite["codigoTramite"], (string)drTramite["nombreTramite"], (string)drTramite["descripcion"], (decimal)drTramite["precio"], documentacion);
+                    tramite = new Tramite((string)drTramite["codigoTramite"], (string)drTramite["nombreTramite"], (string)drTramite["descripcion"], (decimal)drTramite["precio"], documentacion, (bool)drTramite["activo"]);
                 }
                 return tramite;
             }
@@ -294,7 +294,7 @@ namespace Persistencia.Clases_de_trabajo
                 while (drTramite.Read())
                 {
                     documentacion = PersistenciaExigen.getInstancia().listadoDocumentacionExigida((string)drTramite["codigoTramite"]);
-                    tramite = new Tramite((string)drTramite["codigoTramite"], (string)drTramite["nombreTramite"], (string)drTramite["descripcion"], (decimal)drTramite["precio"], documentacion);
+                    tramite = new Tramite((string)drTramite["codigoTramite"], (string)drTramite["nombreTramite"], (string)drTramite["descripcion"], (decimal)drTramite["precio"], documentacion, (bool)drTramite["activo"]);
                     listaTramites.Add(tramite);
                 }
                 return listaTramites;

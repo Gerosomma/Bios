@@ -427,6 +427,9 @@ namespace BackOfficeTramites.wcfTramite {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool ActivoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CodigoTramiteField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -448,6 +451,19 @@ namespace BackOfficeTramites.wcfTramite {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool Activo {
+            get {
+                return this.ActivoField;
+            }
+            set {
+                if ((this.ActivoField.Equals(value) != true)) {
+                    this.ActivoField = value;
+                    this.RaisePropertyChanged("Activo");
+                }
             }
         }
         
@@ -709,6 +725,12 @@ namespace BackOfficeTramites.wcfTramite {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/BuscarTramite", ReplyAction="http://tempuri.org/IService/BuscarTramiteResponse")]
         System.Threading.Tasks.Task<BackOfficeTramites.wcfTramite.Tramite> BuscarTramiteAsync(string codigoTramite, BackOfficeTramites.wcfTramite.Usuario empLog);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/BuscarTramiteAux", ReplyAction="http://tempuri.org/IService/BuscarTramiteAuxResponse")]
+        BackOfficeTramites.wcfTramite.Tramite BuscarTramiteAux(string codigoTramite, BackOfficeTramites.wcfTramite.Usuario empLog);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/BuscarTramiteAux", ReplyAction="http://tempuri.org/IService/BuscarTramiteAuxResponse")]
+        System.Threading.Tasks.Task<BackOfficeTramites.wcfTramite.Tramite> BuscarTramiteAuxAsync(string codigoTramite, BackOfficeTramites.wcfTramite.Usuario empLog);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AltaTramite", ReplyAction="http://tempuri.org/IService/AltaTramiteResponse")]
         void AltaTramite(BackOfficeTramites.wcfTramite.Tramite tramite, BackOfficeTramites.wcfTramite.Empleado empLog);
         
@@ -907,6 +929,14 @@ namespace BackOfficeTramites.wcfTramite {
         
         public System.Threading.Tasks.Task<BackOfficeTramites.wcfTramite.Tramite> BuscarTramiteAsync(string codigoTramite, BackOfficeTramites.wcfTramite.Usuario empLog) {
             return base.Channel.BuscarTramiteAsync(codigoTramite, empLog);
+        }
+        
+        public BackOfficeTramites.wcfTramite.Tramite BuscarTramiteAux(string codigoTramite, BackOfficeTramites.wcfTramite.Usuario empLog) {
+            return base.Channel.BuscarTramiteAux(codigoTramite, empLog);
+        }
+        
+        public System.Threading.Tasks.Task<BackOfficeTramites.wcfTramite.Tramite> BuscarTramiteAuxAsync(string codigoTramite, BackOfficeTramites.wcfTramite.Usuario empLog) {
+            return base.Channel.BuscarTramiteAuxAsync(codigoTramite, empLog);
         }
         
         public void AltaTramite(BackOfficeTramites.wcfTramite.Tramite tramite, BackOfficeTramites.wcfTramite.Empleado empLog) {

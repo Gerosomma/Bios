@@ -11,6 +11,7 @@ namespace Logica
     public interface ILogicaTramite
     {
         Tramite BuscarTramite(string codigoTramite, Usuario empLog);
+        Tramite BuscarTramiteAux(string codigoTramite, Usuario empLog);
         void AltaTramite(Tramite tramite, Empleado empLog);
         void ModificarTramite(Tramite tramite, Empleado empLog);
         void BajaTramite(Tramite tramite, Empleado empLog);

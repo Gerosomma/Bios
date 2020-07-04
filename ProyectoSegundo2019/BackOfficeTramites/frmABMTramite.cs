@@ -83,7 +83,7 @@ namespace BackOfficeTramites
                 }
 
                 ServiceClient wcf = new ServiceClient();
-                Tramite unTramite = wcf.BuscarTramite(codigo, empleadoLogueado);
+                Tramite unTramite = wcf.BuscarTramiteAux(codigo, empleadoLogueado);
                 if (unTramite == null)
                 {
                     BtnAlta.Enabled = true;
@@ -108,6 +108,15 @@ namespace BackOfficeTramites
                                     Lugar = doc.Lugar
                                 }).ToList();
                     dgvDocumentosTramite.DataSource = rest;
+                    btnActivo.Text = "Activo";
+                    if (!unTramite.Activo)
+                    {
+                        btnActivo.Enabled = true;
+                        LblError.Text = "El tramite esta inactivo.";
+                        btnActivo.Image = BackOfficeTramites.Properties.Resources.inactivo;
+                        btnActivo.Text = "Activar";
+
+                    }
 
                     LblError.Text = "Tramite encontrado.";
                 }
@@ -130,19 +139,19 @@ namespace BackOfficeTramites
         {
             try
             {
-                Tramite tramite = new Tramite();
-                tramite.CodigoTramite = txtCodigo.Text;
-                tramite.NombreTramite = txtNombre.Text;
-                tramite.Descripcion = txtDescripcion.Text;
-                tramite.Precio = Convert.ToInt32(txtPrecio.Text);
-                tramite.DocumentacionExigida = new Documentacion[DocumentacionTramite.Count];
+                Tramite unTramite = new Tramite();
+                unTramite.CodigoTramite = txtCodigo.Text;
+                unTramite.NombreTramite = txtNombre.Text;
+                unTramite.Descripcion = txtDescripcion.Text;
+                unTramite.Precio = Convert.ToInt32(txtPrecio.Text);
+                unTramite.DocumentacionExigida = new Documentacion[DocumentacionTramite.Count];
                 for (int i = 0; i < DocumentacionTramite.Count; i++)
                 {
-                    tramite.DocumentacionExigida[i] = DocumentacionTramite[i];
+                    unTramite.DocumentacionExigida[i] = DocumentacionTramite[i];
                 }
 
                 ServiceClient wcf = new ServiceClient();
-                wcf.AltaTramite(tramite, empleadoLogueado);
+                wcf.AltaTramite(unTramite, empleadoLogueado);
                 this.DesActivoBotones();
                 this.LimpioControles();
 
@@ -150,6 +159,11 @@ namespace BackOfficeTramites
                 txtCodigo.ReadOnly = false;
 
                 LblError.Text = "Alta con Exito";
+
+                if (!tramite.Activo)
+                {
+                    LblError.Text = "Se activo tramite con Exito.";
+                }
             }
             catch (Exception ex)
             {
@@ -195,6 +209,7 @@ namespace BackOfficeTramites
                 {
                     tramite.NombreTramite = txtNombre.Text.Trim();
                     tramite.Descripcion = txtDescripcion.Text.Trim();
+                    tramite.DocumentacionExigida = new Documentacion[DocumentacionTramite.Count];
                     for (int i = 0; i < DocumentacionTramite.Count; i++)
                     {
                         tramite.DocumentacionExigida[i] = DocumentacionTramite[i];

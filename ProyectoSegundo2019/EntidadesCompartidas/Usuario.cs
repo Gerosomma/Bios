@@ -16,7 +16,6 @@ namespace EntidadesCompartidas
         private int _documento;
         private string _contrasenia;
         private string _nombreCompleto;
-        //private Regex _expresion = new Regex(@"[a-zA-ZñÑ]{3}\d{2}[\|°¬¡!#$%&\/=()¿?'-_\\´{},;.:`+*~^<>@]");
 
         [DataMember]
         public int Documento
@@ -50,8 +49,6 @@ namespace EntidadesCompartidas
                 {
                     _contrasenia = value;
                 }
-                //if (_expresion.IsMatch(value) && value.Trim().Length == 6) { _contrasenia = value; }
-                //else { throw new Exception("El formato de la contraseña no es válido."); }
             }
         }
 
