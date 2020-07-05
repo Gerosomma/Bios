@@ -693,16 +693,13 @@ GO
 CREATE PROCEDURE ListadoSolicitudes
 AS
 BEGIN
-	SELECT Solicitud.*, Tramite.*, Solicitante.*, Usuario.*
-	FROM Tramite INNER JOIN Solicitud
-	ON Tramite.codigoTramite = Solicitud.codTramite INNER JOIN Solicitante
-	ON Solicitud.docSolicitante = Solicitante.documento INNER JOIN Usuario
-	ON Solicitante.documento = Usuario.documento
-	WHERE YEAR(Solicitud.fechaHora) = YEAR(GETDATE()) AND Solicitud.estado = 'alta'
+	SELECT *
+	FROM Solicitud
+	WHERE YEAR(fechaHora) = YEAR(GETDATE()) AND estado = 'alta'
 END
 
 go
-CREATE PROCEDURE ListadoSolicitudess
+CREATE PROCEDURE ListadoSolicitudesXanio
 AS
 BEGIN
 	SELECT *
@@ -711,6 +708,8 @@ BEGIN
 END
 
 GO
+
+EXEC ListadoSolicitudesXanio;
 
 CREATE PROCEDURE CambioEstadoSolicitud
 @numero int,

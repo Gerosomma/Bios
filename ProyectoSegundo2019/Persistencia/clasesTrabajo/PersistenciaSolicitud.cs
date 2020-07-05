@@ -178,8 +178,8 @@ namespace Persistencia.Clases_de_trabajo
                 drSolicitud = cmdBajaDocumentacion.ExecuteReader();
                 while (drSolicitud.Read())
                 {
-                    tramite = PersistenciaTramite.getInstancia().BuscarTramiteAux((string)drSolicitud["codigoTramite"], usLog);
-                    solicitante = PersistenciaSolicitante.getInstancia().BuscarSolicitante((int)drSolicitud["documento"], usLog);
+                    tramite = PersistenciaTramite.getInstancia().BuscarTramiteAux((string)drSolicitud["codTramite"], usLog);
+                    solicitante = PersistenciaSolicitante.getInstancia().BuscarSolicitante((int)drSolicitud["docSolicitante"], usLog);
                     solicitud = new Solicitud((int)drSolicitud["numero"], (string)drSolicitud["estado"], (DateTime)drSolicitud["fechaHora"], solicitante, tramite);
                     listaSolicitud.Add(solicitud);
                 }
