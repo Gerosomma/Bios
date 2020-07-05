@@ -115,10 +115,14 @@ namespace BackOfficeTramites
                         LblError.Text = "El tramite esta inactivo.";
                         btnActivo.Image = BackOfficeTramites.Properties.Resources.inactivo;
                         btnActivo.Text = "Activar";
-
+                        BtnBaja.Enabled = false;
+                        BtnModificar.Enabled = false;
+                    }
+                    else
+                    {
+                        LblError.Text = "Tramite encontrado.";
                     }
 
-                    LblError.Text = "Tramite encontrado.";
                 }
                 controlDocumentos(true);
             }
@@ -253,6 +257,7 @@ namespace BackOfficeTramites
             BtnBaja.Enabled = false;
             BtnModificar.Enabled = false;
             controlDocumentos(false);
+            btnActivo.Enabled = false;
         }
 
         private void controlDocumentos(bool estado)
@@ -288,6 +293,8 @@ namespace BackOfficeTramites
                             Lugar = doc.Lugar
                         }).ToList();
             dgvDocumentosTramite.DataSource = rest;
+            btnActivo.Text = "Activo";
+            btnActivo.Image = BackOfficeTramites.Properties.Resources.activo;
         }
 
         private void btnQuitarDoc_Click(object sender, EventArgs e)

@@ -144,6 +144,7 @@ namespace Persistencia.Clases_de_trabajo
                         break;
                 }
 
+                PersistenciaExigen.BajaExigen(tramite, transaccion);
                 foreach (Documentacion doc in tramite.DocumentacionExigida)
                 {
                     PersistenciaExigen.AltaExigen(doc, tramite, transaccion);
