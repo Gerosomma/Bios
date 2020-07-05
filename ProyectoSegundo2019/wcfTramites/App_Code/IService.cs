@@ -62,6 +62,8 @@ public interface IService
     [OperationContract]
     List<Solicitud> listadoSolicitud(Usuario usLog);
     [OperationContract]
+    List<Solicitud> listadoSolicitudXanio(Usuario usLog);
+    [OperationContract]
     Solicitud BuscarSolicitud(int documento, Usuario usLog);
     [OperationContract]
     void CambiarEstadoSolicitud(int solicitud, int accion, Empleado usLog);

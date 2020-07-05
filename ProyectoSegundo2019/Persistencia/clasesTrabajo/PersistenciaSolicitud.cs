@@ -198,90 +198,47 @@ namespace Persistencia.Clases_de_trabajo
             }
         }
 
+        public List<Solicitud> listadoSolicitudXanio(Usuario usLog)
+        {
+            SqlConnection conexion = null;
+            SqlDataReader drSolicitud = null;
 
+            List<Solicitud> listaSolicitud = new List<Solicitud>();
+            Solicitud solicitud = null;
+            Solicitante solicitante = null;
+            Tramite tramite = null;
+            Documentacion documentacion = null;
+            List<Documentacion> documentaciones = new List<Documentacion>();
 
-        //va a ser necesario
-        //public string xmlMedicamentos()
-        //{
-        //    List<Medicamento> listaMedicamentos = new List<Medicamento>();
-        //    try
-        //    {
-        //        Empleado ususario = PersistenciaEmpleado.GetInstancia().LoguearEmpleado("web", "1995");
-        //        if (ususario != null)
-        //        {
-        //            listaMedicamentos = ConsultaMedicamento(ususario);
+            try
+            {
+                conexion = new SqlConnection(Conexion.ObtenerCadenaConexion(usLog.Documento, usLog.Contrasenia));
 
-        //            XmlDocument doc = new XmlDocument();
-        //            XmlElement elementoRaiz = doc.CreateElement(string.Empty, "Medicamentos", string.Empty);
-        //            doc.AppendChild(elementoRaiz);
+                SqlCommand cmdBajaDocumentacion = new SqlCommand("ListadoSolicitudesXanio", conexion);
+                cmdBajaDocumentacion.CommandType = CommandType.StoredProcedure;
 
-        //            foreach (Medicamento med in listaMedicamentos)
-        //            {
-        //                XmlElement elementoMedicamento = doc.CreateElement(string.Empty, "Medicamento", string.Empty);
-        //                elementoRaiz.AppendChild(elementoMedicamento);
-
-        //                XmlElement elementoNombreFabricante = doc.CreateElement(string.Empty, "Fabricante", string.Empty);
-        //                XmlText nombreFabricante = doc.CreateTextNode(med.Fabricante.Nombre.ToString());
-        //                elementoNombreFabricante.AppendChild(nombreFabricante);
-        //                elementoMedicamento.AppendChild(elementoNombreFabricante);
-
-        //                XmlElement elementoDireccionFabricante = doc.CreateElement(string.Empty, "DireccionFabricante", string.Empty);
-        //                XmlText direccionFarmaceutica = doc.CreateTextNode(med.Fabricante.DireccionFiscal.ToString());
-        //                elementoDireccionFabricante.AppendChild(direccionFarmaceutica);
-        //                elementoMedicamento.AppendChild(elementoDireccionFabricante);
-
-        //                XmlElement elementoTelefono = doc.CreateElement(string.Empty, "Telefono", string.Empty);
-        //                XmlText telefonoFarmaceutica = doc.CreateTextNode(med.Fabricante.Telefono.ToString());
-        //                elementoTelefono.AppendChild(telefonoFarmaceutica);
-        //                elementoMedicamento.AppendChild(elementoTelefono);
-
-        //                XmlElement elementoEmail = doc.CreateElement(string.Empty, "Email", string.Empty);
-        //                XmlText emailFarmaceutica = doc.CreateTextNode(med.Fabricante.CorreoElectronico.ToString());
-        //                elementoEmail.AppendChild(emailFarmaceutica);
-        //                elementoMedicamento.AppendChild(elementoEmail);
-
-        //                XmlElement elementoCodigo = doc.CreateElement(string.Empty, "Codigo", string.Empty);
-        //                XmlText codigoMedicamento = doc.CreateTextNode(med.Codigo.ToString());
-        //                elementoCodigo.AppendChild(codigoMedicamento);
-        //                elementoMedicamento.AppendChild(elementoCodigo);
-
-        //                XmlElement elementoNombreMedicamento = doc.CreateElement(string.Empty, "Nombre", string.Empty);
-        //                XmlText nombreMedicamento = doc.CreateTextNode(med.Nombre.ToString());
-        //                elementoNombreMedicamento.AppendChild(nombreMedicamento);
-        //                elementoMedicamento.AppendChild(elementoNombreMedicamento);
-
-        //                XmlElement elementoDescripcion = doc.CreateElement(string.Empty, "Descripcion", string.Empty);
-        //                XmlText descripcionMedicamento = doc.CreateTextNode(med.Descripcion.ToString());
-        //                elementoDescripcion.AppendChild(descripcionMedicamento);
-        //                elementoMedicamento.AppendChild(elementoDescripcion);
-
-        //                XmlElement elementoTipo = doc.CreateElement(string.Empty, "Tipo", string.Empty);
-        //                XmlText tipoMedicamento = doc.CreateTextNode(med.Tipo.ToString());
-        //                elementoTipo.AppendChild(tipoMedicamento);
-        //                elementoMedicamento.AppendChild(elementoTipo);
-
-        //                XmlElement elementoPrecio = doc.CreateElement(string.Empty, "Precio", string.Empty);
-        //                XmlText precioMedicamento = doc.CreateTextNode(med.Precio.ToString());
-        //                elementoPrecio.AppendChild(precioMedicamento);
-        //                elementoMedicamento.AppendChild(elementoPrecio);
-
-        //                XmlElement elementoStock = doc.CreateElement(string.Empty, "StockActual", string.Empty);
-        //                XmlText stockActual = doc.CreateTextNode(med.StockActual.ToString());
-        //                elementoStock.AppendChild(stockActual);
-        //                elementoMedicamento.AppendChild(elementoStock);
-        //            }
-        //            return doc.InnerXml;
-        //        }
-        //        else
-        //        {
-        //            throw new Exception("Error: no existe usuario");
-        //        }
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw new Exception("Error: " + ex.Message);
-        //    }
-        //}
+                conexion.Open();
+                drSolicitud = cmdBajaDocumentacion.ExecuteReader();
+                while (drSolicitud.Read())
+                {
+                    tramite = PersistenciaTramite.getInstancia().BuscarTramiteAux((string)drSolicitud["codTramite"], usLog);
+                    solicitante = PersistenciaSolicitante.getInstancia().BuscarSolicitante((int)drSolicitud["docSolicitante"], usLog);
+                    solicitud = new Solicitud((int)drSolicitud["numero"], (string)drSolicitud["estado"], (DateTime)drSolicitud["fechaHora"], solicitante, tramite);
+                    listaSolicitud.Add(solicitud);
+                }
+                return listaSolicitud;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                if (conexion != null)
+                {
+                    conexion.Close();
+                }
+            }
+        }
     }
 }

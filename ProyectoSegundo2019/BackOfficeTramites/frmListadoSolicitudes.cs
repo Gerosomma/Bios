@@ -34,7 +34,7 @@ namespace BackOfficeTramites
                 ServiceClient wcf = new ServiceClient();
                 documentacion = wcf.listadoDocumentacion(empleado).ToList<Documentacion>();
                 tramites = wcf.ListarTramites().ToList<Tramite>();
-                solicitudes = wcf.listadoSolicitud(empleado).ToList<Solicitud>();
+                solicitudes = wcf.listadoSolicitudXanio(empleado).ToList<Solicitud>();
                 var res = (from sol in solicitudes
                            select new
                            {

@@ -31,6 +31,11 @@ namespace Logica.ClaseTrabajo
             return FabricaPersistencia.GetPersistenciaSolicitud().listadoSolicitud(usLog);
         }
 
+        public List<Solicitud> listadoSolicitudXanio(Usuario usLog)
+        {
+            return FabricaPersistencia.GetPersistenciaSolicitud().listadoSolicitudXanio(usLog);
+        }
+
         public Solicitud BuscarSolicitud(int documento, Usuario usLog)
         {
             return FabricaPersistencia.GetPersistenciaSolicitud().BuscarSolicitud(documento, usLog);

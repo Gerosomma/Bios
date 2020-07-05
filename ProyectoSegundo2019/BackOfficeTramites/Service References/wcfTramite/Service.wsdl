@@ -92,6 +92,12 @@
   <wsdl:message name="IService_listadoSolicitud_OutputMessage">
     <wsdl:part name="parameters" element="tns:listadoSolicitudResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_listadoSolicitudXanio_InputMessage">
+    <wsdl:part name="parameters" element="tns:listadoSolicitudXanio" />
+  </wsdl:message>
+  <wsdl:message name="IService_listadoSolicitudXanio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:listadoSolicitudXanioResponse" />
+  </wsdl:message>
   <wsdl:message name="IService_BuscarSolicitud_InputMessage">
     <wsdl:part name="parameters" element="tns:BuscarSolicitud" />
   </wsdl:message>
@@ -208,6 +214,10 @@
     <wsdl:operation name="listadoSolicitud">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/listadoSolicitud" message="tns:IService_listadoSolicitud_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/listadoSolicitudResponse" message="tns:IService_listadoSolicitud_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="listadoSolicitudXanio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/listadoSolicitudXanio" message="tns:IService_listadoSolicitudXanio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/listadoSolicitudXanioResponse" message="tns:IService_listadoSolicitudXanio_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="BuscarSolicitud">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/BuscarSolicitud" message="tns:IService_BuscarSolicitud_InputMessage" />
@@ -371,6 +381,15 @@
     </wsdl:operation>
     <wsdl:operation name="listadoSolicitud">
       <soap:operation soapAction="http://tempuri.org/IService/listadoSolicitud" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listadoSolicitudXanio">
+      <soap:operation soapAction="http://tempuri.org/IService/listadoSolicitudXanio" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

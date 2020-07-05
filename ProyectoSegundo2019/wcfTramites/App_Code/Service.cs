@@ -11,15 +11,6 @@ using Logica;
 
 public class Service : IService
 {
-    //necesario para q serialize los dos tipos de cuentas hacia el WS
-    //public void ParaSerializar(Empleado emp, Solicitante soli, Tramite tram, Solicitud sol, Documentacion doc) { }
-    ////necesario para q serialize el tipo de cuenta no usado directamente desde el WS
-    //public Solicitante ParaSerializarsol() { return new Solicitante(); }
-    //public Tramite serTramite() { return new Tramite(); }
-    //public Solicitud serSoli() { return new Solicitud(); }
-    //public Documentacion serDoc() { return new Documentacion(); }
-
-
     void IService.AltaDocumentacion(Documentacion documentacion, Empleado empLog)
     {
         FabricaLogica.GetLogicaDocumentacion().AltaDocumentacion(documentacion, empLog);
@@ -126,6 +117,11 @@ public class Service : IService
     List<Solicitud> IService.listadoSolicitud(Usuario usLog)
     {
         return FabricaLogica.GetLogicaSolicitud().listadoSolicitud(usLog);
+    }
+
+    List<Solicitud> IService.listadoSolicitudXanio(Usuario usLog)
+    {
+        return FabricaLogica.GetLogicaSolicitud().listadoSolicitudXanio(usLog);
     }
 
     string IService.listadoTramitesXml()

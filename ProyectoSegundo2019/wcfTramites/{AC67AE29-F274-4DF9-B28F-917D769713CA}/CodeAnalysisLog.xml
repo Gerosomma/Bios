@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="k:\visualstudio2015\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
 <FxCopReport Version="14.0">
  <Targets>
-  <Target Name="C:\Users\somma\AppData\Local\Temp\tmp5D9C.tmp.cadir\bin\App_Code.dll">
+  <Target Name="C:\Users\somma\AppData\Local\Temp\tmpD506.tmp.cadir\bin\App_Code.dll">
    <Modules>
     <Module Name="app_code.dll">
      <Namespaces>
@@ -12,179 +12,186 @@
          <Members>
           <Member Name="#IService.AltaDocumentacion(EntidadesCompartidas.Documentacion,EntidadesCompartidas.Empleado)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-07-05 18:04:55Z" FixCategory="NonBreaking">
-             <Issue Certainty="95" Level="Error" Path="c:\Users\somma\Source\Repos\Bios\Bios\ProyectoSegundo2019\wcfTramites\App_Code" File="Service.cs" Line="24">Convierta 'Service' en sealed (un cambio rotundo si ya se envió la clase), implemente el método de forma no explícita o implemente un nuevo método que exponga la funcionalidad de 'IService.AltaDocumentacion(Documentacion, Empleado)' y que sea visible para clases derivadas.</Issue>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-07-05 19:05:30Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="c:\Users\somma\Source\Repos\Bios\Bios\ProyectoSegundo2019\wcfTramites\App_Code" File="Service.cs" Line="15">Convierta 'Service' en sealed (un cambio rotundo si ya se envió la clase), implemente el método de forma no explícita o implemente un nuevo método que exponga la funcionalidad de 'IService.AltaDocumentacion(Documentacion, Empleado)' y que sea visible para clases derivadas.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#IService.AltaHoraExtra(EntidadesCompartidas.EmpleadoHorasExtra,EntidadesCompartidas.Empleado)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-07-05 18:04:55Z" FixCategory="NonBreaking">
-             <Issue Certainty="95" Level="Error" Path="c:\Users\somma\Source\Repos\Bios\Bios\ProyectoSegundo2019\wcfTramites\App_Code" File="Service.cs" Line="161">Convierta 'Service' en sealed (un cambio rotundo si ya se envió la clase), implemente el método de forma no explícita o implemente un nuevo método que exponga la funcionalidad de 'IService.AltaHoraExtra(EmpleadoHorasExtra, Empleado)' y que sea visible para clases derivadas.</Issue>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-07-05 19:05:30Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="c:\Users\somma\Source\Repos\Bios\Bios\ProyectoSegundo2019\wcfTramites\App_Code" File="Service.cs" Line="157">Convierta 'Service' en sealed (un cambio rotundo si ya se envió la clase), implemente el método de forma no explícita o implemente un nuevo método que exponga la funcionalidad de 'IService.AltaHoraExtra(EmpleadoHorasExtra, Empleado)' y que sea visible para clases derivadas.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#IService.AltaSolicitud(EntidadesCompartidas.Solicitud,EntidadesCompartidas.Usuario)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-07-05 18:04:55Z" FixCategory="NonBreaking">
-             <Issue Certainty="95" Level="Error" Path="c:\Users\somma\Source\Repos\Bios\Bios\ProyectoSegundo2019\wcfTramites\App_Code" File="Service.cs" Line="29">Convierta 'Service' en sealed (un cambio rotundo si ya se envió la clase), implemente el método de forma no explícita o implemente un nuevo método que exponga la funcionalidad de 'IService.AltaSolicitud(Solicitud, Usuario)' y que sea visible para clases derivadas.</Issue>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-07-05 19:05:30Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="c:\Users\somma\Source\Repos\Bios\Bios\ProyectoSegundo2019\wcfTramites\App_Code" File="Service.cs" Line="20">Convierta 'Service' en sealed (un cambio rotundo si ya se envió la clase), implemente el método de forma no explícita o implemente un nuevo método que exponga la funcionalidad de 'IService.AltaSolicitud(Solicitud, Usuario)' y que sea visible para clases derivadas.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#IService.AltaTramite(EntidadesCompartidas.Tramite,EntidadesCompartidas.Empleado)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-07-05 18:04:55Z" FixCategory="NonBreaking">
-             <Issue Certainty="95" Level="Error" Path="c:\Users\somma\Source\Repos\Bios\Bios\ProyectoSegundo2019\wcfTramites\App_Code" File="Service.cs" Line="34">Convierta 'Service' en sealed (un cambio rotundo si ya se envió la clase), implemente el método de forma no explícita o implemente un nuevo método que exponga la funcionalidad de 'IService.AltaTramite(Tramite, Empleado)' y que sea visible para clases derivadas.</Issue>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-07-05 19:05:30Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="c:\Users\somma\Source\Repos\Bios\Bios\ProyectoSegundo2019\wcfTramites\App_Code" File="Service.cs" Line="25">Convierta 'Service' en sealed (un cambio rotundo si ya se envió la clase), implemente el método de forma no explícita o implemente un nuevo método que exponga la funcionalidad de 'IService.AltaTramite(Tramite, Empleado)' y que sea visible para clases derivadas.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#IService.AltaUsuario(EntidadesCompartidas.Usuario,EntidadesCompartidas.Usuario)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-07-05 18:04:55Z" FixCategory="NonBreaking">
-             <Issue Certainty="95" Level="Error" Path="c:\Users\somma\Source\Repos\Bios\Bios\ProyectoSegundo2019\wcfTramites\App_Code" File="Service.cs" Line="39">Convierta 'Service' en sealed (un cambio rotundo si ya se envió la clase), implemente el método de forma no explícita o implemente un nuevo método que exponga la funcionalidad de 'IService.AltaUsuario(Usuario, Usuario)' y que sea visible para clases derivadas.</Issue>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-07-05 19:05:30Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="c:\Users\somma\Source\Repos\Bios\Bios\ProyectoSegundo2019\wcfTramites\App_Code" File="Service.cs" Line="30">Convierta 'Service' en sealed (un cambio rotundo si ya se envió la clase), implemente el método de forma no explícita o implemente un nuevo método que exponga la funcionalidad de 'IService.AltaUsuario(Usuario, Usuario)' y que sea visible para clases derivadas.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#IService.BajaDocumentacion(EntidadesCompartidas.Documentacion,EntidadesCompartidas.Empleado)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-07-05 18:04:55Z" FixCategory="NonBreaking">
-             <Issue Certainty="95" Level="Error" Path="c:\Users\somma\Source\Repos\Bios\Bios\ProyectoSegundo2019\wcfTramites\App_Code" File="Service.cs" Line="44">Convierta 'Service' en sealed (un cambio rotundo si ya se envió la clase), implemente el método de forma no explícita o implemente un nuevo método que exponga la funcionalidad de 'IService.BajaDocumentacion(Documentacion, Empleado)' y que sea visible para clases derivadas.</Issue>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-07-05 19:05:30Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="c:\Users\somma\Source\Repos\Bios\Bios\ProyectoSegundo2019\wcfTramites\App_Code" File="Service.cs" Line="35">Convierta 'Service' en sealed (un cambio rotundo si ya se envió la clase), implemente el método de forma no explícita o implemente un nuevo método que exponga la funcionalidad de 'IService.BajaDocumentacion(Documentacion, Empleado)' y que sea visible para clases derivadas.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#IService.BajaTramite(EntidadesCompartidas.Tramite,EntidadesCompartidas.Empleado)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-07-05 18:04:55Z" FixCategory="NonBreaking">
-             <Issue Certainty="95" Level="Error" Path="c:\Users\somma\Source\Repos\Bios\Bios\ProyectoSegundo2019\wcfTramites\App_Code" File="Service.cs" Line="49">Convierta 'Service' en sealed (un cambio rotundo si ya se envió la clase), implemente el método de forma no explícita o implemente un nuevo método que exponga la funcionalidad de 'IService.BajaTramite(Tramite, Empleado)' y que sea visible para clases derivadas.</Issue>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-07-05 19:05:30Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="c:\Users\somma\Source\Repos\Bios\Bios\ProyectoSegundo2019\wcfTramites\App_Code" File="Service.cs" Line="40">Convierta 'Service' en sealed (un cambio rotundo si ya se envió la clase), implemente el método de forma no explícita o implemente un nuevo método que exponga la funcionalidad de 'IService.BajaTramite(Tramite, Empleado)' y que sea visible para clases derivadas.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#IService.BajaUsuario(EntidadesCompartidas.Usuario,EntidadesCompartidas.Empleado)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-07-05 18:04:55Z" FixCategory="NonBreaking">
-             <Issue Certainty="95" Level="Error" Path="c:\Users\somma\Source\Repos\Bios\Bios\ProyectoSegundo2019\wcfTramites\App_Code" File="Service.cs" Line="54">Convierta 'Service' en sealed (un cambio rotundo si ya se envió la clase), implemente el método de forma no explícita o implemente un nuevo método que exponga la funcionalidad de 'IService.BajaUsuario(Usuario, Empleado)' y que sea visible para clases derivadas.</Issue>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-07-05 19:05:30Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="c:\Users\somma\Source\Repos\Bios\Bios\ProyectoSegundo2019\wcfTramites\App_Code" File="Service.cs" Line="45">Convierta 'Service' en sealed (un cambio rotundo si ya se envió la clase), implemente el método de forma no explícita o implemente un nuevo método que exponga la funcionalidad de 'IService.BajaUsuario(Usuario, Empleado)' y que sea visible para clases derivadas.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#IService.BuscarDocumentacion(System.Int32)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-07-05 18:04:55Z" FixCategory="NonBreaking">
-             <Issue Certainty="95" Level="Error" Path="c:\Users\somma\Source\Repos\Bios\Bios\ProyectoSegundo2019\wcfTramites\App_Code" File="Service.cs" Line="59">Convierta 'Service' en sealed (un cambio rotundo si ya se envió la clase), implemente el método de forma no explícita o implemente un nuevo método que exponga la funcionalidad de 'IService.BuscarDocumentacion(int)' y que sea visible para clases derivadas.</Issue>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-07-05 19:05:30Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="c:\Users\somma\Source\Repos\Bios\Bios\ProyectoSegundo2019\wcfTramites\App_Code" File="Service.cs" Line="50">Convierta 'Service' en sealed (un cambio rotundo si ya se envió la clase), implemente el método de forma no explícita o implemente un nuevo método que exponga la funcionalidad de 'IService.BuscarDocumentacion(int)' y que sea visible para clases derivadas.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#IService.BuscarDocumentacionAux(System.Int32)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-07-05 18:04:55Z" FixCategory="NonBreaking">
-             <Issue Certainty="95" Level="Error" Path="c:\Users\somma\Source\Repos\Bios\Bios\ProyectoSegundo2019\wcfTramites\App_Code" File="Service.cs" Line="65">Convierta 'Service' en sealed (un cambio rotundo si ya se envió la clase), implemente el método de forma no explícita o implemente un nuevo método que exponga la funcionalidad de 'IService.BuscarDocumentacionAux(int)' y que sea visible para clases derivadas.</Issue>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-07-05 19:05:30Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="c:\Users\somma\Source\Repos\Bios\Bios\ProyectoSegundo2019\wcfTramites\App_Code" File="Service.cs" Line="56">Convierta 'Service' en sealed (un cambio rotundo si ya se envió la clase), implemente el método de forma no explícita o implemente un nuevo método que exponga la funcionalidad de 'IService.BuscarDocumentacionAux(int)' y que sea visible para clases derivadas.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#IService.BuscarSolicitud(System.Int32,EntidadesCompartidas.Usuario)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-07-05 18:04:55Z" FixCategory="NonBreaking">
-             <Issue Certainty="95" Level="Error" Path="c:\Users\somma\Source\Repos\Bios\Bios\ProyectoSegundo2019\wcfTramites\App_Code" File="Service.cs" Line="71">Convierta 'Service' en sealed (un cambio rotundo si ya se envió la clase), implemente el método de forma no explícita o implemente un nuevo método que exponga la funcionalidad de 'IService.BuscarSolicitud(int, Usuario)' y que sea visible para clases derivadas.</Issue>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-07-05 19:05:30Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="c:\Users\somma\Source\Repos\Bios\Bios\ProyectoSegundo2019\wcfTramites\App_Code" File="Service.cs" Line="62">Convierta 'Service' en sealed (un cambio rotundo si ya se envió la clase), implemente el método de forma no explícita o implemente un nuevo método que exponga la funcionalidad de 'IService.BuscarSolicitud(int, Usuario)' y que sea visible para clases derivadas.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#IService.BuscarTramite(System.String,EntidadesCompartidas.Usuario)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-07-05 18:04:55Z" FixCategory="NonBreaking">
-             <Issue Certainty="95" Level="Error" Path="c:\Users\somma\Source\Repos\Bios\Bios\ProyectoSegundo2019\wcfTramites\App_Code" File="Service.cs" Line="82">Convierta 'Service' en sealed (un cambio rotundo si ya se envió la clase), implemente el método de forma no explícita o implemente un nuevo método que exponga la funcionalidad de 'IService.BuscarTramite(string, Usuario)' y que sea visible para clases derivadas.</Issue>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-07-05 19:05:30Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="c:\Users\somma\Source\Repos\Bios\Bios\ProyectoSegundo2019\wcfTramites\App_Code" File="Service.cs" Line="73">Convierta 'Service' en sealed (un cambio rotundo si ya se envió la clase), implemente el método de forma no explícita o implemente un nuevo método que exponga la funcionalidad de 'IService.BuscarTramite(string, Usuario)' y que sea visible para clases derivadas.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#IService.BuscarTramiteAux(System.String,EntidadesCompartidas.Usuario)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-07-05 18:04:55Z" FixCategory="NonBreaking">
-             <Issue Certainty="95" Level="Error" Path="c:\Users\somma\Source\Repos\Bios\Bios\ProyectoSegundo2019\wcfTramites\App_Code" File="Service.cs" Line="87">Convierta 'Service' en sealed (un cambio rotundo si ya se envió la clase), implemente el método de forma no explícita o implemente un nuevo método que exponga la funcionalidad de 'IService.BuscarTramiteAux(string, Usuario)' y que sea visible para clases derivadas.</Issue>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-07-05 19:05:30Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="c:\Users\somma\Source\Repos\Bios\Bios\ProyectoSegundo2019\wcfTramites\App_Code" File="Service.cs" Line="78">Convierta 'Service' en sealed (un cambio rotundo si ya se envió la clase), implemente el método de forma no explícita o implemente un nuevo método que exponga la funcionalidad de 'IService.BuscarTramiteAux(string, Usuario)' y que sea visible para clases derivadas.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#IService.BuscarUsuario(System.Int32,EntidadesCompartidas.Usuario)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-07-05 18:04:55Z" FixCategory="NonBreaking">
-             <Issue Certainty="95" Level="Error" Path="c:\Users\somma\Source\Repos\Bios\Bios\ProyectoSegundo2019\wcfTramites\App_Code" File="Service.cs" Line="92">Convierta 'Service' en sealed (un cambio rotundo si ya se envió la clase), implemente el método de forma no explícita o implemente un nuevo método que exponga la funcionalidad de 'IService.BuscarUsuario(int, Usuario)' y que sea visible para clases derivadas.</Issue>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-07-05 19:05:30Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="c:\Users\somma\Source\Repos\Bios\Bios\ProyectoSegundo2019\wcfTramites\App_Code" File="Service.cs" Line="83">Convierta 'Service' en sealed (un cambio rotundo si ya se envió la clase), implemente el método de forma no explícita o implemente un nuevo método que exponga la funcionalidad de 'IService.BuscarUsuario(int, Usuario)' y que sea visible para clases derivadas.</Issue>
             </Message>
-            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2020-07-05 18:04:55Z" FixCategory="NonBreaking">
-             <Issue Certainty="95" Level="Error" Path="c:\Users\somma\Source\Repos\Bios\Bios\ProyectoSegundo2019\wcfTramites\App_Code" File="Service.cs" Line="97">'Service.IService.BuscarUsuario(int, Usuario)' vuelve a producir una excepción detectada y la especifica explícitamente como un argumento. Utilice 'throw' sin un argumento, para mantener la ubicación de la pila donde se provocó inicialmente la excepción.</Issue>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2020-07-05 19:05:30Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="c:\Users\somma\Source\Repos\Bios\Bios\ProyectoSegundo2019\wcfTramites\App_Code" File="Service.cs" Line="88">'Service.IService.BuscarUsuario(int, Usuario)' vuelve a producir una excepción detectada y la especifica explícitamente como un argumento. Utilice 'throw' sin un argumento, para mantener la ubicación de la pila donde se provocó inicialmente la excepción.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#IService.CambiarEstadoSolicitud(System.Int32,System.Int32,EntidadesCompartidas.Empleado)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-07-05 18:04:55Z" FixCategory="NonBreaking">
-             <Issue Certainty="95" Level="Error" Path="c:\Users\somma\Source\Repos\Bios\Bios\ProyectoSegundo2019\wcfTramites\App_Code" File="Service.cs" Line="77">Convierta 'Service' en sealed (un cambio rotundo si ya se envió la clase), implemente el método de forma no explícita o implemente un nuevo método que exponga la funcionalidad de 'IService.CambiarEstadoSolicitud(int, int, Empleado)' y que sea visible para clases derivadas.</Issue>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-07-05 19:05:30Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="c:\Users\somma\Source\Repos\Bios\Bios\ProyectoSegundo2019\wcfTramites\App_Code" File="Service.cs" Line="68">Convierta 'Service' en sealed (un cambio rotundo si ya se envió la clase), implemente el método de forma no explícita o implemente un nuevo método que exponga la funcionalidad de 'IService.CambiarEstadoSolicitud(int, int, Empleado)' y que sea visible para clases derivadas.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#IService.GetData(System.Int32)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-07-05 18:04:55Z" FixCategory="NonBreaking">
-             <Issue Certainty="95" Level="Error" Path="c:\Users\somma\Source\Repos\Bios\Bios\ProyectoSegundo2019\wcfTramites\App_Code" File="Service.cs" Line="104">Convierta 'Service' en sealed (un cambio rotundo si ya se envió la clase), implemente el método de forma no explícita o implemente un nuevo método que exponga la funcionalidad de 'IService.GetData(int)' y que sea visible para clases derivadas.</Issue>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-07-05 19:05:30Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="c:\Users\somma\Source\Repos\Bios\Bios\ProyectoSegundo2019\wcfTramites\App_Code" File="Service.cs" Line="95">Convierta 'Service' en sealed (un cambio rotundo si ya se envió la clase), implemente el método de forma no explícita o implemente un nuevo método que exponga la funcionalidad de 'IService.GetData(int)' y que sea visible para clases derivadas.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#IService.GetDataUsingDataContract(CompositeType)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-07-05 18:04:55Z" FixCategory="NonBreaking">
-             <Issue Certainty="95" Level="Error" Path="c:\Users\somma\Source\Repos\Bios\Bios\ProyectoSegundo2019\wcfTramites\App_Code" File="Service.cs" Line="109">Convierta 'Service' en sealed (un cambio rotundo si ya se envió la clase), implemente el método de forma no explícita o implemente un nuevo método que exponga la funcionalidad de 'IService.GetDataUsingDataContract(CompositeType)' y que sea visible para clases derivadas.</Issue>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-07-05 19:05:30Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="c:\Users\somma\Source\Repos\Bios\Bios\ProyectoSegundo2019\wcfTramites\App_Code" File="Service.cs" Line="100">Convierta 'Service' en sealed (un cambio rotundo si ya se envió la clase), implemente el método de forma no explícita o implemente un nuevo método que exponga la funcionalidad de 'IService.GetDataUsingDataContract(CompositeType)' y que sea visible para clases derivadas.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#IService.listadoDocumentacion(EntidadesCompartidas.Empleado)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-07-05 18:04:55Z" FixCategory="NonBreaking">
-             <Issue Certainty="95" Level="Error" Path="c:\Users\somma\Source\Repos\Bios\Bios\ProyectoSegundo2019\wcfTramites\App_Code" File="Service.cs" Line="122">Convierta 'Service' en sealed (un cambio rotundo si ya se envió la clase), implemente el método de forma no explícita o implemente un nuevo método que exponga la funcionalidad de 'IService.listadoDocumentacion(Empleado)' y que sea visible para clases derivadas.</Issue>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-07-05 19:05:30Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="c:\Users\somma\Source\Repos\Bios\Bios\ProyectoSegundo2019\wcfTramites\App_Code" File="Service.cs" Line="113">Convierta 'Service' en sealed (un cambio rotundo si ya se envió la clase), implemente el método de forma no explícita o implemente un nuevo método que exponga la funcionalidad de 'IService.listadoDocumentacion(Empleado)' y que sea visible para clases derivadas.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#IService.listadoSolicitud(EntidadesCompartidas.Usuario)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-07-05 18:04:55Z" FixCategory="NonBreaking">
-             <Issue Certainty="95" Level="Error" Path="c:\Users\somma\Source\Repos\Bios\Bios\ProyectoSegundo2019\wcfTramites\App_Code" File="Service.cs" Line="127">Convierta 'Service' en sealed (un cambio rotundo si ya se envió la clase), implemente el método de forma no explícita o implemente un nuevo método que exponga la funcionalidad de 'IService.listadoSolicitud(Usuario)' y que sea visible para clases derivadas.</Issue>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-07-05 19:05:30Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="c:\Users\somma\Source\Repos\Bios\Bios\ProyectoSegundo2019\wcfTramites\App_Code" File="Service.cs" Line="118">Convierta 'Service' en sealed (un cambio rotundo si ya se envió la clase), implemente el método de forma no explícita o implemente un nuevo método que exponga la funcionalidad de 'IService.listadoSolicitud(Usuario)' y que sea visible para clases derivadas.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#IService.listadoSolicitudXanio(EntidadesCompartidas.Usuario)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-07-05 19:05:30Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="c:\Users\somma\Source\Repos\Bios\Bios\ProyectoSegundo2019\wcfTramites\App_Code" File="Service.cs" Line="123">Convierta 'Service' en sealed (un cambio rotundo si ya se envió la clase), implemente el método de forma no explícita o implemente un nuevo método que exponga la funcionalidad de 'IService.listadoSolicitudXanio(Usuario)' y que sea visible para clases derivadas.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#IService.listadoTramitesXml()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-07-05 18:04:55Z" FixCategory="NonBreaking">
-             <Issue Certainty="95" Level="Error" Path="c:\Users\somma\Source\Repos\Bios\Bios\ProyectoSegundo2019\wcfTramites\App_Code" File="Service.cs" Line="132">Convierta 'Service' en sealed (un cambio rotundo si ya se envió la clase), implemente el método de forma no explícita o implemente un nuevo método que exponga la funcionalidad de 'IService.listadoTramitesXml()' y que sea visible para clases derivadas.</Issue>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-07-05 19:05:30Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="c:\Users\somma\Source\Repos\Bios\Bios\ProyectoSegundo2019\wcfTramites\App_Code" File="Service.cs" Line="128">Convierta 'Service' en sealed (un cambio rotundo si ya se envió la clase), implemente el método de forma no explícita o implemente un nuevo método que exponga la funcionalidad de 'IService.listadoTramitesXml()' y que sea visible para clases derivadas.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#IService.ListarTramites()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-07-05 18:04:55Z" FixCategory="NonBreaking">
-             <Issue Certainty="95" Level="Error" Path="c:\Users\somma\Source\Repos\Bios\Bios\ProyectoSegundo2019\wcfTramites\App_Code" File="Service.cs" Line="137">Convierta 'Service' en sealed (un cambio rotundo si ya se envió la clase), implemente el método de forma no explícita o implemente un nuevo método que exponga la funcionalidad de 'IService.ListarTramites()' y que sea visible para clases derivadas.</Issue>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-07-05 19:05:30Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="c:\Users\somma\Source\Repos\Bios\Bios\ProyectoSegundo2019\wcfTramites\App_Code" File="Service.cs" Line="133">Convierta 'Service' en sealed (un cambio rotundo si ya se envió la clase), implemente el método de forma no explícita o implemente un nuevo método que exponga la funcionalidad de 'IService.ListarTramites()' y que sea visible para clases derivadas.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#IService.LogueoUsuario(System.Int32,System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-07-05 18:04:55Z" FixCategory="NonBreaking">
-             <Issue Certainty="95" Level="Error" Path="c:\Users\somma\Source\Repos\Bios\Bios\ProyectoSegundo2019\wcfTramites\App_Code" File="Service.cs" Line="142">Convierta 'Service' en sealed (un cambio rotundo si ya se envió la clase), implemente el método de forma no explícita o implemente un nuevo método que exponga la funcionalidad de 'IService.LogueoUsuario(int, string)' y que sea visible para clases derivadas.</Issue>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-07-05 19:05:30Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="c:\Users\somma\Source\Repos\Bios\Bios\ProyectoSegundo2019\wcfTramites\App_Code" File="Service.cs" Line="138">Convierta 'Service' en sealed (un cambio rotundo si ya se envió la clase), implemente el método de forma no explícita o implemente un nuevo método que exponga la funcionalidad de 'IService.LogueoUsuario(int, string)' y que sea visible para clases derivadas.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#IService.ModificarDocumentacion(EntidadesCompartidas.Documentacion,EntidadesCompartidas.Empleado)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-07-05 18:04:55Z" FixCategory="NonBreaking">
-             <Issue Certainty="95" Level="Error" Path="c:\Users\somma\Source\Repos\Bios\Bios\ProyectoSegundo2019\wcfTramites\App_Code" File="Service.cs" Line="147">Convierta 'Service' en sealed (un cambio rotundo si ya se envió la clase), implemente el método de forma no explícita o implemente un nuevo método que exponga la funcionalidad de 'IService.ModificarDocumentacion(Documentacion, Empleado)' y que sea visible para clases derivadas.</Issue>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-07-05 19:05:30Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="c:\Users\somma\Source\Repos\Bios\Bios\ProyectoSegundo2019\wcfTramites\App_Code" File="Service.cs" Line="143">Convierta 'Service' en sealed (un cambio rotundo si ya se envió la clase), implemente el método de forma no explícita o implemente un nuevo método que exponga la funcionalidad de 'IService.ModificarDocumentacion(Documentacion, Empleado)' y que sea visible para clases derivadas.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#IService.ModificarTramite(EntidadesCompartidas.Tramite,EntidadesCompartidas.Empleado)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-07-05 18:04:55Z" FixCategory="NonBreaking">
-             <Issue Certainty="95" Level="Error" Path="c:\Users\somma\Source\Repos\Bios\Bios\ProyectoSegundo2019\wcfTramites\App_Code" File="Service.cs" Line="152">Convierta 'Service' en sealed (un cambio rotundo si ya se envió la clase), implemente el método de forma no explícita o implemente un nuevo método que exponga la funcionalidad de 'IService.ModificarTramite(Tramite, Empleado)' y que sea visible para clases derivadas.</Issue>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-07-05 19:05:30Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="c:\Users\somma\Source\Repos\Bios\Bios\ProyectoSegundo2019\wcfTramites\App_Code" File="Service.cs" Line="148">Convierta 'Service' en sealed (un cambio rotundo si ya se envió la clase), implemente el método de forma no explícita o implemente un nuevo método que exponga la funcionalidad de 'IService.ModificarTramite(Tramite, Empleado)' y que sea visible para clases derivadas.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#IService.ModificarUsuario(EntidadesCompartidas.Usuario,EntidadesCompartidas.Empleado)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-07-05 18:04:55Z" FixCategory="NonBreaking">
-             <Issue Certainty="95" Level="Error" Path="c:\Users\somma\Source\Repos\Bios\Bios\ProyectoSegundo2019\wcfTramites\App_Code" File="Service.cs" Line="157">Convierta 'Service' en sealed (un cambio rotundo si ya se envió la clase), implemente el método de forma no explícita o implemente un nuevo método que exponga la funcionalidad de 'IService.ModificarUsuario(Usuario, Empleado)' y que sea visible para clases derivadas.</Issue>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2020-07-05 19:05:30Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="c:\Users\somma\Source\Repos\Bios\Bios\ProyectoSegundo2019\wcfTramites\App_Code" File="Service.cs" Line="153">Convierta 'Service' en sealed (un cambio rotundo si ya se envió la clase), implemente el método de forma no explícita o implemente un nuevo método que exponga la funcionalidad de 'IService.ModificarUsuario(Usuario, Empleado)' y que sea visible para clases derivadas.</Issue>
             </Message>
            </Messages>
           </Member>

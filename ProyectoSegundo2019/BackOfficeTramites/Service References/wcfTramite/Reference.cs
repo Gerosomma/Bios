@@ -707,6 +707,12 @@ namespace BackOfficeTramites.wcfTramite {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/listadoSolicitud", ReplyAction="http://tempuri.org/IService/listadoSolicitudResponse")]
         System.Threading.Tasks.Task<BackOfficeTramites.wcfTramite.Solicitud[]> listadoSolicitudAsync(BackOfficeTramites.wcfTramite.Usuario usLog);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/listadoSolicitudXanio", ReplyAction="http://tempuri.org/IService/listadoSolicitudXanioResponse")]
+        BackOfficeTramites.wcfTramite.Solicitud[] listadoSolicitudXanio(BackOfficeTramites.wcfTramite.Usuario usLog);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/listadoSolicitudXanio", ReplyAction="http://tempuri.org/IService/listadoSolicitudXanioResponse")]
+        System.Threading.Tasks.Task<BackOfficeTramites.wcfTramite.Solicitud[]> listadoSolicitudXanioAsync(BackOfficeTramites.wcfTramite.Usuario usLog);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/BuscarSolicitud", ReplyAction="http://tempuri.org/IService/BuscarSolicitudResponse")]
         BackOfficeTramites.wcfTramite.Solicitud BuscarSolicitud(int documento, BackOfficeTramites.wcfTramite.Usuario usLog);
         
@@ -905,6 +911,14 @@ namespace BackOfficeTramites.wcfTramite {
         
         public System.Threading.Tasks.Task<BackOfficeTramites.wcfTramite.Solicitud[]> listadoSolicitudAsync(BackOfficeTramites.wcfTramite.Usuario usLog) {
             return base.Channel.listadoSolicitudAsync(usLog);
+        }
+        
+        public BackOfficeTramites.wcfTramite.Solicitud[] listadoSolicitudXanio(BackOfficeTramites.wcfTramite.Usuario usLog) {
+            return base.Channel.listadoSolicitudXanio(usLog);
+        }
+        
+        public System.Threading.Tasks.Task<BackOfficeTramites.wcfTramite.Solicitud[]> listadoSolicitudXanioAsync(BackOfficeTramites.wcfTramite.Usuario usLog) {
+            return base.Channel.listadoSolicitudXanioAsync(usLog);
         }
         
         public BackOfficeTramites.wcfTramite.Solicitud BuscarSolicitud(int documento, BackOfficeTramites.wcfTramite.Usuario usLog) {
