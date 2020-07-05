@@ -486,7 +486,7 @@ END
 GO
 
 -----------SP Tramite-----------
-CREATE PROCEDURE AltaTramite 
+ALTER PROCEDURE AltaTramite 
 @codigoTramite VARCHAR(9),
 @nombreTramite VARCHAR(50),
 @descripcion VARCHAR(80),
