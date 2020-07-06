@@ -4,6 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div class="general">
+        <h2>Complete el formulario para ingresar usuario.</h2>
         <table class="tabLogin">
             <tr>
                 <td></td>
