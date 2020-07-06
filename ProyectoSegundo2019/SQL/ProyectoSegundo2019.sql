@@ -84,39 +84,6 @@ insert into Exigen values ('1035geros', 1);
 insert into Exigen values ('1036geros', 1);
 insert into Exigen values ('1037geros', 1);
 
-select * from Usuario;
-select * from Empleado;
-select * from Solicitud;
-select * from Documentacion;
-select * from Tramite;
-select * from Solicitante;
-exec AltaSolicitante 46813407, 'AAA22?', 'Gabriel Bermudez', 091651452;
-exec AltaSolicitante 464532133, 'AAA22?', 'Geronimo somma', 091654252;
-exec AltaSolicitante 8685490, 'AAA22?', 'Geronimo somma', 091654252;
-
-DECLARE @fecha DATETIME 
-set @fecha = GETDATE();
-exec AltaSolicitud 'alta', @fecha, 8685490, '1037geros';
-exec AltaSolicitud 'alta', @fecha, 8685490, '1036geros';
-exec AltaSolicitud 'alta', @fecha, 8685490, '1035geros';
-exec AltaSolicitud 'alta', @fecha, 8685490, '1034geros';
-exec AltaSolicitud 'alta', @fecha, 8685490, '1034geros';
-exec AltaSolicitud 'alta', @fecha, 8685490, '1034geros';
-exec AltaSolicitud 'alta', @fecha, 8685490, '1036geros';
-exec AltaSolicitud 'alta', @fecha, 8685490, '1037geros';
-exec AltaSolicitud 'alta', @fecha, 8685490, '1037geros';
-exec AltaSolicitud 'alta', @fecha, 8685490, '1034geros';
-exec AltaSolicitud 'alta', @fecha, 8685490, '1034geros';
-exec AltaSolicitud 'alta', @fecha, 8685490, '1036geros';
-exec AltaSolicitud 'alta', @fecha, 8685490, '1037geros';
-exec AltaSolicitud 'alta', @fecha, 8685490, '1037geros';
-
-select * from Solicitud
--------------SP Empleado-----------
---use ProyectoSegundo2019;
-EXEC AltaEmpleado 99, 'AAA22?', 'Empleado', '14:00', '22:00';
-EXEC AltaEmpleado 4645321, 'AAA22?', 'Luis Fagundez', '00:00', '02:30';
-SELECT * FROM Solicitante
 go
 CREATE PROCEDURE AltaEmpleado
 @documento VARCHAR(50),
@@ -486,7 +453,7 @@ END
 GO
 
 -----------SP Tramite-----------
-ALTER PROCEDURE AltaTramite 
+create PROCEDURE AltaTramite 
 @codigoTramite VARCHAR(9),
 @nombreTramite VARCHAR(50),
 @descripcion VARCHAR(80),
@@ -576,7 +543,7 @@ END
 
 GO
 
-alter PROCEDURE BajaTramite
+create PROCEDURE BajaTramite
 @codigoTramite VARCHAR(9)
 AS
 BEGIN
@@ -814,6 +781,7 @@ GO
 
 EXEC sp_addrolemember[db_rol_solicitante], [IIS APPPOOL\DefaultAppPool]
 
+go
 
 create ROLE db_rol_empleado
 CREATE ROLE db_rol_solicitante
@@ -849,7 +817,33 @@ GRANT EXECUTE ON dbo.ModificarDocumentacion TO [db_rol_empleado]
 GRANT EXECUTE ON dbo.ModificarEmpleado TO [db_rol_empleado]
 GRANT EXECUTE ON dbo.ModificarTramite TO [db_rol_empleado]
 
+go
 
+exec AltaSolicitante 46813407, 'AAA22?', 'Gabriel Bermudez', 091651452;
+exec AltaSolicitante 464532133, 'AAA22?', 'Geronimo somma', 091654252;
+exec AltaSolicitante 8685490, 'AAA22?', 'Geronimo somma', 091654252;
+
+DECLARE @fecha DATETIME 
+set @fecha = GETDATE();
+exec AltaSolicitud 'alta', @fecha, 8685490, '1037geros';
+exec AltaSolicitud 'alta', @fecha, 8685490, '1036geros';
+exec AltaSolicitud 'alta', @fecha, 8685490, '1035geros';
+exec AltaSolicitud 'alta', @fecha, 8685490, '1034geros';
+exec AltaSolicitud 'alta', @fecha, 8685490, '1034geros';
+exec AltaSolicitud 'alta', @fecha, 8685490, '1034geros';
+exec AltaSolicitud 'alta', @fecha, 8685490, '1036geros';
+exec AltaSolicitud 'alta', @fecha, 8685490, '1037geros';
+exec AltaSolicitud 'alta', @fecha, 8685490, '1037geros';
+exec AltaSolicitud 'alta', @fecha, 8685490, '1034geros';
+exec AltaSolicitud 'alta', @fecha, 8685490, '1034geros';
+exec AltaSolicitud 'alta', @fecha, 8685490, '1036geros';
+exec AltaSolicitud 'alta', @fecha, 8685490, '1037geros';
+exec AltaSolicitud 'alta', @fecha, 8685490, '1037geros';
+
+-------------SP Empleado-----------
+--use ProyectoSegundo2019;
+EXEC AltaEmpleado 99, 'AAA22?', 'Empleado', '14:00', '22:00';
+EXEC AltaEmpleado 4645321, 'AAA22?', 'Luis Fagundez', '00:00', '02:30';
 
 --GO
 
