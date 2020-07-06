@@ -34,6 +34,9 @@ public partial class RegistroDeUsuario : System.Web.UI.Page
             wcf.AltaUsuario(nuevoSolicitante, null);
 
             lblError.Text = "Registro realizado con éxito";
+            txtDocumento.Text = "";
+            txtNombre.Text = "";
+            txtTelefono.Text = "";
         }
         catch (Exception ex)
         {
