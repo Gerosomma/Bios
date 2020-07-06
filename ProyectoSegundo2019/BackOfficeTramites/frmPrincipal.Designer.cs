@@ -36,7 +36,9 @@
             this.tsmSolicitudes = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmSalir = new System.Windows.Forms.ToolStripMenuItem();
             this.listadoDeSolicitudesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -71,7 +73,7 @@
             // tsmTramite
             // 
             this.tsmTramite.Name = "tsmTramite";
-            this.tsmTramite.Size = new System.Drawing.Size(58, 20);
+            this.tsmTramite.Size = new System.Drawing.Size(59, 20);
             this.tsmTramite.Text = "Tramite";
             this.tsmTramite.Click += new System.EventHandler(this.tsmTramite_Click);
             // 
@@ -98,17 +100,28 @@
             this.listadoDeSolicitudesToolStripMenuItem.Text = "Listado de solicitudes";
             this.listadoDeSolicitudesToolStripMenuItem.Click += new System.EventHandler(this.listadoDeSolicitudesToolStripMenuItem_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::BackOfficeTramites.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(128, 39);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(554, 528);
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 701);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPrincipal";
             this.Text = "Formulario principal";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -123,5 +136,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmSolicitudes;
         private System.Windows.Forms.ToolStripMenuItem tsmSalir;
         private System.Windows.Forms.ToolStripMenuItem listadoDeSolicitudesToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

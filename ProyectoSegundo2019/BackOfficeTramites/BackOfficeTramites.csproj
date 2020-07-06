@@ -197,6 +197,7 @@
     <Content Include="img\logo.ico" />
     <Content Include="img\modificar.bmp" />
     <Content Include="img\nuevo.bmp" />
+    <None Include="Resources\logo.png" />
     <None Include="Service References\wcfTramite\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
