@@ -44,24 +44,24 @@ public partial class SolicitudDeTramite : System.Web.UI.Page
             DateTime fecha = new DateTime();
             int hora = 0;
 
-            if (calFecha.SelectedDate > DateTime.Today)
+            if (calFecha.SelectedDate.Date == null)
             {
-                fecha = calFecha.SelectedDate;
+                throw new Exception("Debe seleccionar una fecha.");
             }
-            else
+            if (gvTramites.SelectedValue == null)
             {
-                lblMensaje.Text = "Debe seleccionar una fecha próxima al día de hoy.";
+                throw new Exception("Debe seleccionar un tramite a realizar.");
             }
-
+            fecha = calFecha.SelectedDate;
             try
             {
                 hora = Convert.ToInt32(ddlHora.SelectedValue);
             }
             catch (Exception)
             {
-                lblMensaje.Text = "Debe seleccionar hora.";
+                throw new Exception("Debe seleccionar hora.");
             }
-
+            
             DateTime fechaHora = new DateTime(fecha.Year, fecha.Month, fecha.Day, hora, 0, 0);
 
             ServiceClient wcf = new ServiceClient();

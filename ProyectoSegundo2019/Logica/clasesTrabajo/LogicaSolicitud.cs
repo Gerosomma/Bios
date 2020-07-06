@@ -21,8 +21,17 @@ namespace Logica.ClaseTrabajo
             return _instancia;
         }
 
+        internal static void validarSolicitud(Solicitud solicitud)
+        {
+            if (solicitud.FechaHora.Date < DateTime.Today.Date)
+            {
+                throw new Exception("La fecha de solicitud debe ser siguiente al dia de hoy.");
+            }
+        } 
+
         public void AltaSolicitud(Solicitud solicitud, Usuario empLog)
         {
+            validarSolicitud(solicitud);
             FabricaPersistencia.GetPersistenciaSolicitud().AltaSolicitud(solicitud, empLog);
         }
 

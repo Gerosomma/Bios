@@ -2,10 +2,10 @@
 <wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
-      <xsd:import schemaLocation="http://pc107/WCF/Service.svc?xsd=xsd0" namespace="http://tempuri.org/" />
-      <xsd:import schemaLocation="http://pc107/WCF/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://pc107/WCF/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/" />
-      <xsd:import schemaLocation="http://pc107/WCF/Service.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" />
+      <xsd:import schemaLocation="http://localhost/servTramites/Service.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost/servTramites/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost/servTramites/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/" />
+      <xsd:import schemaLocation="http://localhost/servTramites/Service.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/EntidadesCompartidas" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IService_GetDataUsingDataContract_InputMessage">
@@ -92,6 +92,12 @@
   <wsdl:message name="IService_listadoSolicitud_OutputMessage">
     <wsdl:part name="parameters" element="tns:listadoSolicitudResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_listadoSolicitudXanio_InputMessage">
+    <wsdl:part name="parameters" element="tns:listadoSolicitudXanio" />
+  </wsdl:message>
+  <wsdl:message name="IService_listadoSolicitudXanio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:listadoSolicitudXanioResponse" />
+  </wsdl:message>
   <wsdl:message name="IService_BuscarSolicitud_InputMessage">
     <wsdl:part name="parameters" element="tns:BuscarSolicitud" />
   </wsdl:message>
@@ -109,6 +115,12 @@
   </wsdl:message>
   <wsdl:message name="IService_BuscarTramite_OutputMessage">
     <wsdl:part name="parameters" element="tns:BuscarTramiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_BuscarTramiteAux_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarTramiteAux" />
+  </wsdl:message>
+  <wsdl:message name="IService_BuscarTramiteAux_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarTramiteAuxResponse" />
   </wsdl:message>
   <wsdl:message name="IService_AltaTramite_InputMessage">
     <wsdl:part name="parameters" element="tns:AltaTramite" />
@@ -203,6 +215,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService/listadoSolicitud" message="tns:IService_listadoSolicitud_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/listadoSolicitudResponse" message="tns:IService_listadoSolicitud_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="listadoSolicitudXanio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/listadoSolicitudXanio" message="tns:IService_listadoSolicitudXanio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/listadoSolicitudXanioResponse" message="tns:IService_listadoSolicitudXanio_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="BuscarSolicitud">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/BuscarSolicitud" message="tns:IService_BuscarSolicitud_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/BuscarSolicitudResponse" message="tns:IService_BuscarSolicitud_OutputMessage" />
@@ -214,6 +230,10 @@
     <wsdl:operation name="BuscarTramite">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/BuscarTramite" message="tns:IService_BuscarTramite_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/BuscarTramiteResponse" message="tns:IService_BuscarTramite_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarTramiteAux">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/BuscarTramiteAux" message="tns:IService_BuscarTramiteAux_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/BuscarTramiteAuxResponse" message="tns:IService_BuscarTramiteAux_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="AltaTramite">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/AltaTramite" message="tns:IService_AltaTramite_InputMessage" />
@@ -368,6 +388,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="listadoSolicitudXanio">
+      <soap:operation soapAction="http://tempuri.org/IService/listadoSolicitudXanio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="BuscarSolicitud">
       <soap:operation soapAction="http://tempuri.org/IService/BuscarSolicitud" style="document" />
       <wsdl:input>
@@ -388,6 +417,15 @@
     </wsdl:operation>
     <wsdl:operation name="BuscarTramite">
       <soap:operation soapAction="http://tempuri.org/IService/BuscarTramite" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarTramiteAux">
+      <soap:operation soapAction="http://tempuri.org/IService/BuscarTramiteAux" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -452,7 +490,7 @@
   </wsdl:binding>
   <wsdl:service name="Service">
     <wsdl:port name="BasicHttpBinding_IService" binding="tns:BasicHttpBinding_IService">
-      <soap:address location="http://pc107/WCF/Service.svc" />
+      <soap:address location="http://localhost/servTramites/Service.svc" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>
