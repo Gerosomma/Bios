@@ -84,6 +84,7 @@ namespace servicioWindows
                     eventLog.WriteEntry("hora " + fin.Substring(0, 2));
                     eventLog.WriteEntry("minutos " + fin.Substring(2, 2));
                     DateTime finTrabajo = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, Convert.ToInt32(fin.Substring(0, 2)), Convert.ToInt32(fin.Substring(2, 2)), 0);
+                    
                     //calcular minutos extra.
                     int minutosExtra = Convert.ToInt32((ahora - finTrabajo).TotalMinutes);
                     eventLog.WriteEntry("Verifica si hay minutos extra.");

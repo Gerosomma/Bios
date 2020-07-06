@@ -4,12 +4,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div class="general">
-        <table style="width: 70%;">
+        <table>
             <tr>
                 <td style="font-size: xx-large;">¡BIENVENIDO!</td>
             </tr>
             <tr>
-                <td><img src="img/cerebro.jpg" /></td>
             </tr>
         </table>
     </div>
