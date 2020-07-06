@@ -72,52 +72,7 @@ CREATE TABLE Exigen (
 
 GO
 
-insert into Tramite values ('1034geros', 'tramite ', 'descripcion', 150.00, 1);
-insert into Tramite values ('1035geros', 'tramite  2', 'descripcion', 150.00, 1);
-insert into Tramite values ('1036geros', 'tramite  3', 'descripcion', 150.00, 1);
-insert into Tramite values ('1037geros', 'tramite  4', 'descripcion', 150.00, 1);
-
-insert into Documentacion values (1, 'cedula', 'registro civil', 1);
-
-insert into Exigen values ('1034geros', 1);
-insert into Exigen values ('1035geros', 1);
-insert into Exigen values ('1036geros', 1);
-insert into Exigen values ('1037geros', 1);
-
-select * from Usuario;
-select * from Empleado;
-select * from Solicitud;
-select * from Documentacion;
-select * from Tramite;
-select * from Solicitante;
-exec AltaSolicitante 46813407, 'AAA22?', 'Gabriel Bermudez', 091651452;
-exec AltaSolicitante 464532133, 'AAA22?', 'Geronimo somma', 091654252;
-exec AltaSolicitante 8685490, 'AAA22?', 'Geronimo somma', 091654252;
-
-DECLARE @fecha DATETIME 
-set @fecha = GETDATE();
-exec AltaSolicitud 'alta', @fecha, 8685490, '1037geros';
-exec AltaSolicitud 'alta', @fecha, 8685490, '1036geros';
-exec AltaSolicitud 'alta', @fecha, 8685490, '1035geros';
-exec AltaSolicitud 'alta', @fecha, 8685490, '1034geros';
-exec AltaSolicitud 'alta', @fecha, 8685490, '1034geros';
-exec AltaSolicitud 'alta', @fecha, 8685490, '1034geros';
-exec AltaSolicitud 'alta', @fecha, 8685490, '1036geros';
-exec AltaSolicitud 'alta', @fecha, 8685490, '1037geros';
-exec AltaSolicitud 'alta', @fecha, 8685490, '1037geros';
-exec AltaSolicitud 'alta', @fecha, 8685490, '1034geros';
-exec AltaSolicitud 'alta', @fecha, 8685490, '1034geros';
-exec AltaSolicitud 'alta', @fecha, 8685490, '1036geros';
-exec AltaSolicitud 'alta', @fecha, 8685490, '1037geros';
-exec AltaSolicitud 'alta', @fecha, 8685490, '1037geros';
-
-select * from Solicitud
 -------------SP Empleado-----------
---use ProyectoSegundo2019;
-EXEC AltaEmpleado 99, 'AAA22?', 'Empleado', '14:00', '22:00';
-EXEC AltaEmpleado 4645321, 'AAA22?', 'Luis Fagundez', '00:00', '02:30';
-SELECT * FROM Solicitante
-go
 CREATE PROCEDURE AltaEmpleado
 @documento VARCHAR(50),
 @contrasena VARCHAR(6),
@@ -432,11 +387,6 @@ END
 
 GO
 
-exec BuscarDocumentacionAux 1;
-
-
-GO
-
 CREATE PROCEDURE ModificarDocumentacion
 @codigoInterno INT,
 @nomDocumentacion VARCHAR(50),
@@ -537,11 +487,6 @@ BEGIN
 	WHERE t.codigoTramite = @codigoTramite
 END
 
-
-
-exec BuscarTramiteAux '1035geros';
-exec BuscarDocumentacionTramite '1034geros';
-exec BuscarDocumentacion 1;
 GO
 
 CREATE PROCEDURE BuscarDocumentacionTramite
@@ -676,8 +621,7 @@ AS
 BEGIN 
 	SELECT * FROM Documentacion WHERE activo = 1
 END
-go
-EXEC ListadoDocumentacion;
+
 GO
 
 CREATE PROCEDURE ListadoTramites
@@ -779,10 +723,8 @@ BEGIN
 		RETURN -2
 END
 
-
---roles
---go
-go
+GO
+-----------------------------Roles--------------------------
 USE master
 GO
 
@@ -815,7 +757,7 @@ GO
 EXEC sp_addrolemember[db_rol_solicitante], [IIS APPPOOL\DefaultAppPool]
 
 
-create ROLE db_rol_empleado
+CREATE ROLE db_rol_empleado
 CREATE ROLE db_rol_solicitante
 
 GRANT EXECUTE ON dbo.AltaEmpleado TO [db_rol_empleado]
@@ -849,85 +791,47 @@ GRANT EXECUTE ON dbo.ModificarDocumentacion TO [db_rol_empleado]
 GRANT EXECUTE ON dbo.ModificarEmpleado TO [db_rol_empleado]
 GRANT EXECUTE ON dbo.ModificarTramite TO [db_rol_empleado]
 
+GO
 
+----------------Datos de prueba-----------------
+USE ProyectoSegundo2019
+GO
 
---GO
+EXEC AltaEmpleado 4347981, 'AAA22?', 'Empleado', '14:00', '22:00';
+EXEC AltaEmpleado 4645321, 'AAA22?', 'Luis Fagundez', '00:00', '02:30';
 
---CREATE PROCEDURE ListarHorasExtras
---AS
---BEGIN
---	SELECT u.*, e.horaInicio, e.horaFin, x.fecha, x.minutosExtra
---	FROM EmpleadoHorasExtra x INNER JOIN Empleado e	
---		ON x.documento = e.documento INNER JOIN Usuario u
---			ON e.documento = u.documento
---END
+EXEC AltaSolicitante 46813407, 'AAA22?', 'Gabriel Bermudez', 091651452;
+EXEC AltaSolicitante 464532133, 'AAA22?', 'Geronimo somma', 091654252;
+EXEC AltaSolicitante 8685490, 'AAA22?', 'Geronimo somma', 091654252;
 
---GO
+EXEC AltaTramite '1034geros', 'tramite 1', 'descripcion', 150.00;
+EXEC AltaTramite '1035geros', 'tramite 2', 'descripcion', 150.00;
+EXEC AltaTramite '1036geros', 'tramite 3', 'descripcion', 150.00;
+EXEC AltaTramite '1037geros', 'tramite 4', 'descripcion', 150.00;
 
---exec ListarHorasExtras;
+EXEC AltaDocumentacion 1, 'cedula', 'registro civil';
+EXEC AltaDocumentacion 2, 'credencial', 'registro civil';
 
-----====================================SENTENCIASSSSSS========================================|||||||||||||||||||||||||||||||||||||||||||||
+EXEC AltaExigen '1034geros', 1;
+EXEC AltaExigen '1035geros', 2;
+EXEC AltaExigen '1036geros', 1;
+EXEC AltaExigen '1037geros', 2;
 
+DECLARE @fecha DATETIME 
+set @fecha = GETDATE();
+EXEC AltaSolicitud 'alta', @fecha, 8685490, '1037geros';
+EXEC AltaSolicitud 'alta', @fecha, 8685490, '1036geros';
+EXEC AltaSolicitud 'alta', @fecha, 8685490, '1035geros';
+EXEC AltaSolicitud 'alta', @fecha, 8685490, '1034geros';
+EXEC AltaSolicitud 'alta', @fecha, 8685490, '1034geros';
+EXEC AltaSolicitud 'alta', @fecha, 8685490, '1034geros';
+EXEC AltaSolicitud 'alta', @fecha, 8685490, '1036geros';
+EXEC AltaSolicitud 'alta', @fecha, 8685490, '1037geros';
+EXEC AltaSolicitud 'alta', @fecha, 8685490, '1037geros';
+EXEC AltaSolicitud 'alta', @fecha, 8685490, '1034geros';
+EXEC AltaSolicitud 'alta', @fecha, 8685490, '1034geros';
+EXEC AltaSolicitud 'alta', @fecha, 8685490, '1036geros';
+EXEC AltaSolicitud 'alta', @fecha, 8685490, '1037geros';
+EXEC AltaSolicitud 'alta', @fecha, 8685490, '1037geros';
 
-
---exec CambioEstadoSolicitud 4;
-
---DECLARE @RC int
---DECLARE @documentoEmpleado int
---DECLARE @fecha datetime
---DECLARE @minutosExtra int
-
---SET @documentoEmpleado = 46453213
---SET @fecha = GETDATE()
---SET @minutosExtra = 15
-
---EXECUTE @RC = [ProyectoSegundo2019].[dbo].[AltaHoraExtra] 
---   @documentoEmpleado
---  ,@fecha
---  ,@minutosExtra
---GO
-
-
---exec ListadoSolicitudes 4645321;
---EXEC ListadoTramites;
---GO
---exec AltaSolicitante 4645321, '123456', 'Geronimo Somma', 091654252;
---exec AltaSolicitud 'Alta', 13012020, 46453213, '123';
-
---INSERT INTO Solicitud (fechaHora, docSolicitante, codTramite)
---VALUES (GETDATE(), 4645321, '123')
-
---exec AltaTramite '123', 'Certificado de Domicilio', 'certificado emitido en jefatura que certifica la direccion de un individuo.', 250;
-
-
-
-
---exec ListadoDocumentacion;
-
---go
---EXEC AltaEmpleado 46453213, '123456', 'Geronimo Somma', '24:00', '06:00'
---GO
---DECLARE @RC int
---DECLARE @documento int
---DECLARE @contrasena varchar(6)
---DECLARE @nombreCompleto varchar(50)
---DECLARE @horaInicio varchar(5)
---DECLARE @horaFin varchar(5)
-
---set @documento = 46453213
---set @contrasena = '123456'
---set @nombreCompleto = 'Geronimo Somma'
---set @horaInicio = '24:00'
---set @horaFin = '06:00'
-
---EXECUTE @RC = [ProyectoSegundo2019].[dbo].[AltaEmpleado] 
---   @documento
---  ,@contrasena
---  ,@nombreCompleto
---  ,@horaInicio
---  ,@horaFin
---select @RC
---GO
-
-
---====================================SENTENCIASSSSSS=======================================|||||||||||||||||||||||||||||||||||||||||||||
+GO
