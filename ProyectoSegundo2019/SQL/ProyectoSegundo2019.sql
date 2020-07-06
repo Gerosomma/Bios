@@ -695,7 +695,7 @@ AS
 BEGIN
 	SELECT *
 	FROM Solicitud
-	WHERE YEAR(fechaHora) = YEAR(GETDATE()) AND estado = 'alta'
+	WHERE estado = 'alta'
 END
 
 go
@@ -708,8 +708,6 @@ BEGIN
 END
 
 GO
-
-EXEC ListadoSolicitudesXanio;
 
 CREATE PROCEDURE CambioEstadoSolicitud
 @numero int,
