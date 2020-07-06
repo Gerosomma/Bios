@@ -17,7 +17,7 @@ USE ProyectoSegundo2019
 
 CREATE TABLE Usuario (
 	documento INT NOT NULL PRIMARY KEY,
-	contrasena VARCHAR(6) NOT NULL CHECK (contrasena LIKE '[a-zA-Z][a-zA-Z][a-zA-Z][0-9][0-9][|°¬¿?¡!"#$%&/\()=@´`¨+-*~{}^_<>,;.:]'),
+	contrasena VARCHAR(6) NOT NULL CHECK (contrasena LIKE '[a-zA-Z][a-zA-Z][a-zA-Z][0-9][0-9][|Â°Â¬Â¿?Â¡!"#$%&/\()=@Â´`Â¨+-*~{}^_<>,;.:]'),
 	nombreCompleto VARCHAR(50) NOT NULL check (rtrim(ltrim(nombreCompleto)) <> '')
 )
 
@@ -436,7 +436,7 @@ END
 GO
 
 -----------SP Tramite-----------
-ALTER PROCEDURE AltaTramite 
+create PROCEDURE AltaTramite 
 @codigoTramite VARCHAR(9),
 @nombreTramite VARCHAR(50),
 @descripcion VARCHAR(80),
@@ -521,7 +521,7 @@ END
 
 GO
 
-alter PROCEDURE BajaTramite
+create PROCEDURE BajaTramite
 @codigoTramite VARCHAR(9)
 AS
 BEGIN
@@ -756,6 +756,7 @@ GO
 
 EXEC sp_addrolemember[db_rol_solicitante], [IIS APPPOOL\DefaultAppPool]
 
+go
 
 CREATE ROLE db_rol_empleado
 CREATE ROLE db_rol_solicitante
