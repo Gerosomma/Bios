@@ -46,6 +46,7 @@
             this.dgvSolicitudes.AllowUserToOrderColumns = true;
             this.dgvSolicitudes.AllowUserToResizeColumns = false;
             this.dgvSolicitudes.AllowUserToResizeRows = false;
+            this.dgvSolicitudes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSolicitudes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSolicitudes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Ejecutar,
@@ -65,7 +66,6 @@
             this.Ejecutar.ReadOnly = true;
             this.Ejecutar.Text = "Ejecutar";
             this.Ejecutar.UseColumnTextForButtonValue = true;
-            this.Ejecutar.Width = 50;
             // 
             // Anular
             // 
@@ -74,7 +74,6 @@
             this.Anular.ReadOnly = true;
             this.Anular.Text = "Anular";
             this.Anular.UseColumnTextForButtonValue = true;
-            this.Anular.Width = 50;
             // 
             // BarraEstado
             // 
