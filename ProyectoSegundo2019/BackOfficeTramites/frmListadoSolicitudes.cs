@@ -85,11 +85,11 @@ namespace BackOfficeTramites
             try
             {
                 var resultado = (from sol in solicitudes
-                                 orderby sol.FechaHora.Date
-                                 group sol by sol.FechaHora.Date into grupo
+                                 orderby  sol.FechaHora.Date
+                                 group sol by sol.FechaHora.Date.Month into grupo
                                  select new
                                  {
-                                     Mes = meses[grupo.Key.Month -1],
+                                     Mes = meses[grupo.Key -1],
                                      Cantidad = grupo.Count()
 
                                  }).ToList();

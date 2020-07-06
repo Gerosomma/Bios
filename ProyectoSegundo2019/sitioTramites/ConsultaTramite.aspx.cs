@@ -79,7 +79,7 @@ public partial class ConsultaTramite : System.Web.UI.Page
 
                 XElement element = XElement.Parse(doc.OuterXml);
                 var res = (from node in element.Elements("Tramite")
-                           where Convert.ToInt32(((string)(node.Element("codigo"))).Substring(0, 3)) <= anio &&
+                           where Convert.ToInt32(((string)(node.Element("codigo"))).Substring(0, 4)) == anio &&
                                  (decimal)node.Element("precio") <= precio
                            select new
                            {
