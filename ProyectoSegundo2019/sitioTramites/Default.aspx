@@ -4,13 +4,18 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div class="general">
+        &nbsp;&nbsp;&nbsp;&nbsp;
         <table>
             <tr>
-                <td style="font-size: xx-large;">¡BIENVENIDO!</td>
+                <td style="font-size: xx-large; font-weight: 700;">¡BIENVENIDO!</td>
             </tr>
             <tr>
+                <td style="font-size: x-large; font-weight: 700;">En esta página podrá consultar todos los trámites disponibles y solicitarlos sin salir de su hogar</td>
             </tr>
-        </table>
+            </table>
+        <br />
+        <br />
+        <asp:Image ID="Image1" runat="server" Height="300px" ImageUrl="~/img/logo.png" />
     </div>
 </asp:Content>
 
