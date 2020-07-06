@@ -62,9 +62,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -80,6 +83,11 @@
     <Compile Include="ProjectInstaller.Designer.cs">
       <DependentUpon>ProjectInstaller.cs</DependentUpon>
     </Compile>
+    <Compile Include="Service References\wcfTramite\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service1.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -91,16 +99,34 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\EntidadesCompartidas\EntidadesCompartidas.csproj">
-      <Project>{b80b4d16-2441-4968-a147-9d49e78af3f3}</Project>
-      <Name>EntidadesCompartidas</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Logica\Logica.csproj">
-      <Project>{b9a9a159-ab00-42c5-aec3-9097a474dcc8}</Project>
-      <Name>Logica</Name>
-    </ProjectReference>
+    <None Include="Service References\wcfTramite\Service.wsdl" />
+    <None Include="Service References\wcfTramite\Service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wcfTramite\Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wcfTramite\Service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wcfTramite\Service3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wcfTramite\servicioWindows.wcfTramite.CompositeType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wcfTramite\servicioWindows.wcfTramite.Documentacion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wcfTramite\servicioWindows.wcfTramite.Solicitud.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wcfTramite\servicioWindows.wcfTramite.Tramite.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wcfTramite\servicioWindows.wcfTramite.Usuario.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ProjectInstaller.resx">
@@ -121,6 +147,24 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\wcfTramite\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\wcfTramite\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\wcfTramite\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\wcfTramite\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
