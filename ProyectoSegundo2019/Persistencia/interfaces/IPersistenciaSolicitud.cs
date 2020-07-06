@@ -11,6 +11,7 @@ namespace Persistencia.Interfaces
     {
         void AltaSolicitud(Solicitud solicitud, Usuario empLog);
         List<Solicitud> listadoSolicitud(Usuario usLog);
+        List<Solicitud> listadoSolicitudXanio(Usuario usLog);
         Solicitud BuscarSolicitud(int documento, Usuario usLog);
         void CambiarEstadoSolicitud(int solicitud, int accion, Empleado usLog);
     }

@@ -18,12 +18,15 @@ namespace BackOfficeTramites
         List<Solicitud> solicitudes = new List<Solicitud>();
         List<Tramite> tramites = new List<Tramite>();
         List<Documentacion> documentacion = new List<Documentacion>();
+        String[] meses = { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" };
         public frmListadoSolicitudes(Empleado empleado)
         {
             InitializeComponent();
             empleadoLogueado = empleado;
-
             ListarSolicitudes(empleado);
+            dtpFecha.MinDate = new DateTime(DateTime.Today.Year, 1, 1);
+            dtpFecha.MaxDate = new DateTime(DateTime.Today.Year, 12, 31);
+            lblTitulo.Text += DateTime.Today.Year.ToString();
         }
 
         private void ListarSolicitudes(Empleado empleado)
@@ -34,7 +37,7 @@ namespace BackOfficeTramites
                 ServiceClient wcf = new ServiceClient();
                 documentacion = wcf.listadoDocumentacion(empleado).ToList<Documentacion>();
                 tramites = wcf.ListarTramites().ToList<Tramite>();
-                solicitudes = wcf.listadoSolicitud(empleado).ToList<Solicitud>();
+                solicitudes = wcf.listadoSolicitudXanio(empleado).ToList<Solicitud>();
                 var res = (from sol in solicitudes
                            select new
                            {
@@ -47,7 +50,7 @@ namespace BackOfficeTramites
 
                 dgvSolicitudes.AutoGenerateColumns = true;
                 dgvSolicitudes.DataSource = res;
-
+                lblMensaje.Text = "";
             }
             catch (Exception ex)
             {
@@ -69,6 +72,7 @@ namespace BackOfficeTramites
 
                                  }).ToList();
                 dgvSolicitudes.DataSource = resultado;
+                lblMensaje.Text = "Solicitudes filtradas por tramite.";
             }
             catch (Exception ex)
             {
@@ -85,11 +89,12 @@ namespace BackOfficeTramites
                                  group sol by sol.FechaHora.Date into grupo
                                  select new
                                  {
-                                     Mes = grupo.Key.Month,
+                                     Mes = meses[grupo.Key.Month -1],
                                      Cantidad = grupo.Count()
 
                                  }).ToList();
                 dgvSolicitudes.DataSource = resultado;
+                lblMensaje.Text = "Solicitudes filtradas por mes.";
             }
             catch (Exception ex)
             {
@@ -113,6 +118,7 @@ namespace BackOfficeTramites
                                  }
                                     ).ToList();
                 dgvSolicitudes.DataSource = resultado;
+                lblMensaje.Text = "Solicitudes filtradas por documentacion.";
             }
             catch (Exception ex)
             {
@@ -147,6 +153,7 @@ namespace BackOfficeTramites
                                  }
                                 ).ToList();
                 dgvSolicitudes.DataSource = resultado;
+                lblMensaje.Text = "Solicitudes filtradas por fecha " + fechaSeleccionada.ToShortDateString() + ".";
             }
             catch (Exception ex)
             {

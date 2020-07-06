@@ -203,6 +203,7 @@
     </None>
     <None Include="Service References\wcfTramite\configuration.svcinfo" />
     <None Include="Service References\wcfTramite\configuration91.svcinfo" />
+    <None Include="Service References\wcfTramite\Service.disco" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MisControles\MisControles.csproj">

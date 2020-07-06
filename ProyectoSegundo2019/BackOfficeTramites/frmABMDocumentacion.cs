@@ -56,6 +56,8 @@ namespace BackOfficeTramites
                         LblError.Text = "El documento esta inactivo.";
                         btnActivo.Image = BackOfficeTramites.Properties.Resources.inactivo;
                         btnActivo.Text = "Activar";
+                        BtnBaja.Enabled = false;
+                        BtnModificar.Enabled = false;
                     }
                 }
             }
