@@ -2,21 +2,31 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <style type="text/css">
-        .auto-style1 {
-            width: 331px;
+        .columna1 {
+            width: 20%;
             font-size: medium;
             text-align: right;
+        }
+        .columna2 {
+            width: 35%;
+            font-size: medium;
+            text-align: left;
+        }
+        .columna3 {
+            width: 35%;
+            font-size: medium;
+            text-align: left;
         }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div class="general">
+        <h2>Complete el siguiente formulario para registrar su solicitud: </h2>
         <table style="width: 100%;">
             <tr>
-                <td class="auto-style1">Seleccione fecha y hora:</td>
-                <td style="font-size: x-large; text-align: left;">
+                <td class="columna1">Seleccione hora:</td>
+                <td class="columna2" style="font-size: x-large; text-align: left;">
                     <asp:DropDownList ID="ddlHora" runat="server">
-                        <asp:ListItem></asp:ListItem>
                         <asp:ListItem Value="9">9:00</asp:ListItem>
                         <asp:ListItem Value="10">10:00</asp:ListItem>
                         <asp:ListItem Value="11">11:00</asp:ListItem>
@@ -29,31 +39,41 @@
                         <asp:ListItem Value="18">18:00</asp:ListItem>
                         <asp:ListItem Value="19">19:00</asp:ListItem>
                     </asp:DropDownList>
-                    <asp:Calendar ID="calFecha" runat="server" style="font-size: medium"></asp:Calendar>
                 </td>
-                <td style="text-align: left">
-                    &nbsp;</td>
+                <td class="columna3">&nbsp;</td>
             </tr>
             <tr>
-                <td class="auto-style1" style="font-size: medium">Seleccione el trámite a realizar:</td>
-                <td style="font-size: large">&nbsp;<asp:GridView ID="gvTramites" runat="server" AutoGenerateColumns="False" DataKeyNames="CodigoTramite">
+                <td class="columna1">Seleccione fecha:</td>
+                <td class="columna2" style="font-size: x-large; text-align: left;">
+                    <asp:Calendar ID="calFecha" runat="server" style="font-size: medium" SelectedDate="07/01/2020 04:06:00">
+                        <SelectedDayStyle BackColor="#FFFFCC" ForeColor="Black" />
+                    </asp:Calendar>
+                </td>
+                <td class="columna3" style="text-align: left">
+                    Seleccione el trámite a realizar:<asp:GridView ID="gvTramites" runat="server" AutoGenerateColumns="False" DataKeyNames="CodigoTramite">
                     <Columns>
                         <asp:BoundField DataField="CodigoTramite" Visible="False" />
                         <asp:BoundField DataField="NombreTramite" HeaderText="Tramite" />
                         <asp:CommandField ButtonType="Button" ShowSelectButton="True" />
                     </Columns>
+                        <SelectedRowStyle ForeColor="Black" BackColor="#FFFFCC" />
                     </asp:GridView>
                 </td>
-                <td>&nbsp;</td>
             </tr>
             <tr>
-                <td class="auto-style1">
-                    <asp:Label ID="lblMensaje" runat="server" style="text-align: right"></asp:Label>
+                <td class="columna1" style="font-size: medium">&nbsp;</td>
+                <td class="columna2" style="font-size: large">&nbsp;</td>
+                <td class="columna3">&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="columna1">
+                    &nbsp;</td>
+                <td class="columna2" style="font-size: medium;">
+                    <asp:Button ID="btnSolicitarTramite" runat="server" OnClick="btnSolicitarTramite_Click" Text="Solicitar Tramite" Height="50px" Width="40%" />
                 </td>
-                <td style="font-size: medium; text-align: left">
-                    <asp:Button ID="btnSolicitarTramite" runat="server" OnClick="btnSolicitarTramite_Click" Text="Solicitar Tramite" />
+                <td class="columna3" style="text-align: left">
+                    <asp:Label ID="lblMensaje" runat="server" Width="50%"></asp:Label>
                 </td>
-                <td>&nbsp;</td>
             </tr>
         </table>
     </div>

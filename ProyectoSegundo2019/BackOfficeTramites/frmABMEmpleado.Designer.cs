@@ -79,6 +79,7 @@
             this.TxtPassword.Name = "TxtPassword";
             this.TxtPassword.Size = new System.Drawing.Size(198, 20);
             this.TxtPassword.TabIndex = 41;
+            this.TxtPassword.UseSystemPasswordChar = true;
             // 
             // TxtNombre
             // 

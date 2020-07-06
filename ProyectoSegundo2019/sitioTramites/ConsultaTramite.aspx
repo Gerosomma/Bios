@@ -4,6 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div class="general">
+        <h2>Seleccione un tramite para ver las exigencias.</h2>
         <div class="cont">
             <div class="mediaIzquierda">
             <asp:Repeater ID="rpTramites" runat="server" ViewStateMode="Enabled" OnItemCommand="rpTramites_ItemCommand" >

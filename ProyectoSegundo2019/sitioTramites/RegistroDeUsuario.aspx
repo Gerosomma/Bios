@@ -4,6 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div class="general">
+        <h2>Complete el formulario para ingresar usuario.</h2>
         <table class="tabLogin">
             <tr>
                 <td></td>
@@ -15,7 +16,7 @@
             </tr>
             <tr>
                 <td>Contraseña</td>
-                <td><asp:TextBox ID="txtContrasenia" runat="server"></asp:TextBox></td>
+                <td><asp:TextBox ID="txtContrasenia" runat="server" TextMode="Password"></asp:TextBox></td>
             </tr>
             <tr>
                 <td>Nombre completo</td>
