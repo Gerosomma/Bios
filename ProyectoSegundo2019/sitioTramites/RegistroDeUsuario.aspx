@@ -16,7 +16,7 @@
             </tr>
             <tr>
                 <td>Contraseña</td>
-                <td><asp:TextBox ID="txtContrasenia" runat="server"></asp:TextBox></td>
+                <td><asp:TextBox ID="txtContrasenia" runat="server" TextMode="Password"></asp:TextBox></td>
             </tr>
             <tr>
                 <td>Nombre completo</td>
