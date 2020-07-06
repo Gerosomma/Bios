@@ -19,12 +19,15 @@
         Precio: $<xsl:value-of select="/Tramite/precio"/>
         <br />
         <h3>Documentacion exigida:</h3>
-        Codigo: <xsl:value-of select="/Tramite/DocumentacionExigida/Documento/codigo"/>
-        <br />
-        Documento: <xsl:value-of select="/Tramite/DocumentacionExigida/Documento/nombre"/>
-        <br />
-        Lugar gestion documento: <br /><xsl:value-of select="/Tramite/DocumentacionExigida/Documento/lugar"/>
-        <br />
+
+        <xsl:for-each select="/Tramite/DocumentacionExigida/Documento">
+          <h4>
+            Documento: <xsl:value-of select="nombre"/>
+          </h4>
+          Codigo: <xsl:value-of select="codigo"/>
+          <br />
+          Lugar gestion documento: <br /><xsl:value-of select="lugar"/>
+        </xsl:for-each>
       </body>
     </html>
   </xsl:template>

@@ -7,11 +7,12 @@ using System.Linq;
 using System.ServiceProcess;
 using System.Text;
 using System.Threading.Tasks;
-using Logica;
-using EntidadesCompartidas;
+using servicioWindows.wcfTramite;
 using System.Timers;
 using System.IO;
 using System.Xml;
+using System.Configuration;
+
 namespace servicioWindows
 {
     public partial class Service1 : ServiceBase
@@ -21,12 +22,12 @@ namespace servicioWindows
         {
             InitializeComponent();
             eventLog = new System.Diagnostics.EventLog();
-            if (!System.Diagnostics.EventLog.SourceExists("MySource"))
+            if (!System.Diagnostics.EventLog.SourceExists("MyServicioTramite"))
             {
-                System.Diagnostics.EventLog.CreateEventSource("MySource", "MyNewLog");
+                System.Diagnostics.EventLog.CreateEventSource("MyServicioTramite", "MyLogServicioTramite");
             }
-            eventLog.Source = "MySource";
-            eventLog.Log = "MyNewLog";
+            eventLog.Source = "MyServicioTramite";
+            eventLog.Log = "MyLogServicioTramite";
         }
 
         protected override void OnStart(string[] args)
@@ -49,17 +50,17 @@ namespace servicioWindows
 
         public void OnTimer(object sender, ElapsedEventArgs args)
         {
-            string ruta = Path.Combine(@"~\Debug\XML\empleadoLogueado.xml");
-            eventLog.WriteEntry("Monitoring the System", EventLogEntryType.Information, evento++);
-            if (File.Exists(ruta))
+            try
             {
-                try
+                string ruta = ConfigurationManager.AppSettings["xmlPath"];
+                eventLog.WriteEntry("Monitoriando xml, " + ruta, EventLogEntryType.Information, evento++);
+                if (File.Exists(ruta))
                 {
                     XmlDocument doc = new XmlDocument();
                     doc.Load(ruta);
                     string documento = "", inicio = "", fin = "", nombre = "", contrasenia = "";
                     XmlNodeList empleado = doc.GetElementsByTagName("EmpleadoLogueado");
-
+                    eventLog.WriteEntry("Existe empleado logueado, leemos xml.");
                     foreach (XmlElement nodo in empleado)
                     {
                         XmlNodeList nDoc = nodo.GetElementsByTagName("Documento");
@@ -73,24 +74,41 @@ namespace servicioWindows
                         inicio = nInicio[0].InnerText;
                         fin = nFin[0].InnerText;
                     }
-                    Empleado emp = new Empleado(Convert.ToInt32(documento), contrasenia, nombre, inicio, fin);
-
+                    Empleado emp = new Empleado();
+                    emp.Documento = Convert.ToInt32(documento);
+                    emp.Contrasenia = contrasenia;
+                    emp.NombreCompleto = nombre;
+                    emp.HoraInicio = inicio;
+                    emp.HoraFin = fin;
                     DateTime ahora = DateTime.Now;
-                    DateTime finTrabajo = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, Convert.ToInt32(fin.Substring(3, 2)), Convert.ToInt32(fin.Substring(0, 2)), 0);
+                    eventLog.WriteEntry("hora " + fin.Substring(0, 2));
+                    eventLog.WriteEntry("minutos " + fin.Substring(2, 2));
+                    DateTime finTrabajo = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, Convert.ToInt32(fin.Substring(0, 2)), Convert.ToInt32(fin.Substring(2, 2)), 0);
                     //calcular minutos extra.
                     int minutosExtra = Convert.ToInt32((ahora - finTrabajo).TotalMinutes);
-
+                    eventLog.WriteEntry("Verifica si hay minutos extra.");
                     if (minutosExtra >= 1)
                     {
-                        EmpleadoHorasExtra horasExtra = new EmpleadoHorasExtra(emp, ahora, minutosExtra);
-                        FabricaLogica.GetLogicaHorasExtra().AltaHoraExtra(horasExtra, emp);
+                        ServiceClient wcf = new ServiceClient();
+                        EmpleadoHorasExtra horasExtra = new EmpleadoHorasExtra();
+                        eventLog.WriteEntry("Ingreso minutos extra emp: " + emp.NombreCompleto + ", cant: " + minutosExtra.ToString());
+                        horasExtra.Empleado = emp;
+                        horasExtra.Fecha = ahora;
+                        horasExtra.MinutosExtra = minutosExtra;
+                        wcf.AltaHoraExtra(horasExtra, emp);
                         eventLog.WriteEntry("Se inserto horas extra", EventLogEntryType.SuccessAudit);
                     }
+
                 }
-                catch (Exception ex)
+                else
                 {
-                    eventLog.WriteEntry(ex.Message, EventLogEntryType.Error);
+                    eventLog.WriteEntry("No existe empleado logueado.");
                 }
+
+            }
+            catch (Exception ex)
+            {
+                eventLog.WriteEntry(ex.Message, EventLogEntryType.Error);
             }
 
         }
